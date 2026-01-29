@@ -1,129 +1,74 @@
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  background: #f0f2f5;
-  color: #333;
+font-family: Arial, sans-serif;
+margin: 0;
+background: #f0f2f5;
+color: #333;
 }
+
 
 .navbar {
-  background: #003f7d;
-  padding: 1rem;
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
+background: #003f7d;
+padding: 1rem;
+display: flex;
+justify-content: center;
+gap: 2rem;
 }
+
 
 .navbar ul {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
-  margin: 0;
-  padding: 0;
+list-style: none;
+display: flex;
+gap: 1.5rem;
+margin: 0;
+padding: 0;
 }
+
 
 .navbar a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
+color: #fff;
+text-decoration: none;
+font-weight: bold;
 }
+
 
 .tab-content {
-  display: none;
-  padding: 2rem;
+display: none;
+padding: 2rem;
 }
+
 
 .tab-content.active {
-  display: block;
+display: block;
 }
+
 
 .banner-img {
-  display: block;
-  max-width: 90%;
-  margin: 0 auto 1.5rem;
+display: block;
+max-width: 90%;
+margin: 0 auto 1.5rem;
 }
 
-.home-content ul,
-.home-content ol {
-  margin-left: 2rem;
+
+.home-content ul, .home-content ol {
+margin-left: 2rem;
 }
+
 
 .home-images {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  margin: 1rem 0;
+display: flex;
+gap: 1rem;
+justify-content: center;
+margin: 1rem 0;
 }
+
 
 .about-section {
-  background: #eef4ff;
-  padding: 2rem;
-  border-radius: 8px;
-  max-width: 800px;
-  margin: auto;
+background: #eef4ff;
+padding: 2rem;
+border-radius: 8px;
+max-width: 800px;
+margin: auto;
 }
+
 
 .catalog-nav {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-  margin-bottom: 2rem;
-}
-
-.catalog-tab {
-  padding: 0.6rem 1.2rem;
-  background: #00509e;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.catalog-tab:hover {
-  background: #003f7d;
-}
-
-.order-btn {
-  background: #f29f05;
-  color: #fff;
-  padding: 0.6rem 1.2rem;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
-  align-self: center;
-}
-
-.category-content {
-  display: none;
-}
-
-.category-content.active {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  justify-content: center;
-}
-
-.footer {
-  background: #222;
-  color: #fff;
-  padding: 1rem;
-  text-align: center;
-  font-size: 0.9rem;
-}
-
-@media (max-width: 768px) {
-  .navbar ul {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .home-images {
-    flex-direction: column;
-  }
-
-  .catalog-nav {
-    flex-direction: column;
-    align-items: center;
-  }
-}

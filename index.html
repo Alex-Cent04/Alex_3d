@@ -1,69 +1,59 @@
-
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Alex 3D Models</title>
-  <link rel="stylesheet" href="style_final.css" />
-</head>
-<body>
-  <nav class="navbar">
-    <ul>
-      <li><a href="#" onclick="showTab('home')">Головна</a></li>
-      <li><a href="#" onclick="showTab('about')">Про нас</a></li>
-      <li><a href="#" onclick="showTab('catalog')">Категорії</a></li>
-      <li><a href="#" onclick="showTab('contacts')">Контакти</a></li>
-    </ul>
-  </nav>
-
-  <section id="home" class="tab active">
-    <h1>Ласкаво просимо!</h1>
-    <p>Банер, новини, новинки, конкурс.</p>
-  </section>
-
-  <section id="about" class="tab">
-    <h2>Про нас</h2>
-    <p>Ми виготовляємо моделі сільськогосподарської техніки з 3D‑друку. Кольори: червоний, синій, зелений, білий та інші. Масштаб: 1:43. Працюємо офіційно — ФОП Сентіщев О.О.</p>
-  </section>
-
-  <section id="catalog" class="tab">
-    <h2>Категорії</h2>
-    <div class="catalog-tabs">
-      <button onclick="showCategory('tractors')">Трактори</button>
-      <button onclick="showCategory('combines')">Комбайни</button>
-      <button onclick="showCategory('trailers')">Причепи</button>
-      <button onclick="showCategory('attachments')">Причіпні пристрої</button>
-      <button onclick="showCategory('buses')">Автобуси</button>
-      <button onclick="showCategory('tanks')">Танки</button>
-    </div>
-    <div class="catalog-content">
-      <div id="tractors" class="category active">[Тут будуть трактори]</div>
-      <div id="combines" class="category">[Тут будуть комбайни]</div>
-      <div id="trailers" class="category">[Тут будуть причепи]</div>
-      <div id="attachments" class="category">[Тут будуть причіпні пристрої]</div>
-      <div id="buses" class="category">[Тут будуть автобуси]</div>
-      <div id="tanks" class="category">[Тут будуть танки]</div>
-    </div>
-    <a class="order-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSefb3jfz7Q1SULBn4MrR6eHET8fHfmB35yGddly2uTD9gTnbA/viewform" target="_blank">Оформити замовлення</a>
-  </section>
-
-  <section id="contacts" class="tab">
-    <h2>Контакти</h2>
-    <p>Email: osentisev0@gmail.com</p>
-    <p>Телефон: +380 96 501 5297</p>
-    <p><a href="https://t.me/alex3dp" target="_blank">Telegram</a> | <a href="https://www.tiktok.com/@lex_3d4?_r=1&_t=ZM-92Fr6T23tSi" target="_blank">TikTok</a></p>
-  </section>
-
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Каталог моделей техніки</title>
+  <link rel="stylesheet" href="style.css" />
   <script>
     function showTab(tabId) {
-      document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
-      document.getElementById(tabId).classList.add('active');
+      document.querySelectorAll(".tab-section").forEach(el => el.style.display = "none");
+      document.getElementById(tabId).style.display = "block";
     }
-    function showCategory(catId) {
-      document.querySelectorAll('.category').forEach(c => c.classList.remove('active'));
-      document.getElementById(catId).classList.add('active');
-    }
+    window.onload = () => showTab('home');
   </script>
+</head>
+<body>
+  <nav class="tab-menu">
+    <button onclick="showTab('home')">Головна</button>
+    <button onclick="showTab('catalog')">Каталог</button>
+    <button onclick="showTab('about')">Про нас</button>
+    <button onclick="showTab('contacts')">Контакти</button>
+  </nav>
+
+  <section id="home" class="tab-section">
+    <header class="header">
+      <h1>Каталог моделей техніки</h1>
+      <p>3D-друковані моделі в масштабі 1:43 з пластику PETG</p>
+      <a class="order-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSefb3jfz7Q1SULBn4MrR6eHET8fHfmB35yGddly2uTD9gTnbA/viewform" target="_blank">Замовити через форму</a>
+    </header>
+  </section>
+
+  <main id="catalog" class="tab-section" style="display:none;">
+    <!-- ТУТ ВСТАВ ВЕСЬ КАТАЛОГ ЯК Є -->
+    <!-- Ми його не змінюємо, просто розміщуємо в секції catalog -->
+  </main>
+
+  <section id="about" class="tab-section" style="display:none;">
+    <div class="about-section">
+      <h2>Про нас</h2>
+      <p>Ми виготовляємо моделі сільськогосподарської техніки за допомогою 3D‑друку з пластику <strong>PETG</strong> у масштабі <strong>1:43</strong>.</p>
+      <p>Фарбування не потрібне — ми використовуємо кольоровий пластик. Ви можете обрати доступний колір:</p>
+      <p><strong>Червоний, зелений, синій, білий, жовтий, помаранчевий, сірий, чорний, хакі, прозорий</strong>.</p>
+      <ul>
+        <li><strong>Зібрані</strong> — дорожчі, готові до демонстрації</li>
+        <li><strong>Розібрані</strong> — дешевші, для самостійного складання</li>
+      </ul>
+      <p><strong>Працюємо офіційно — ФОП Сентіщев О.О.</strong></p>
+    </div>
+  </section>
+
+  <footer id="contacts" class="tab-section" style="display:none;">
+    <div class="footer">
+      <p>Зв’язок: <a href="mailto:osentisev0@gmail.com">osentisev0@gmail.com</a> | Тел: +380 96 501 5297</p>
+      <p><a href="https://t.me/alex3dp" target="_blank">Telegram‑група</a> | <a href="https://www.tiktok.com/@lex_3d4?_r=1&_t=ZM-92Fr6T23tSi" target="_blank">TikTok</a></p>
+      <p>© 2026 ФОП Сентіщев О.О. Всі права захищено.</p>
+    </div>
+  </footer>
 </body>
 </html>

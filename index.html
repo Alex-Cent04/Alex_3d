@@ -5,65 +5,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Каталог моделей техніки</title>
   <link rel="stylesheet" href="style.css" />
-  <script>
-    function showCategory(id) {
-      const sections = document.querySelectorAll('.category-section');
-      sections.forEach(section => section.style.display = 'none');
-      document.getElementById(id).style.display = 'block';
-    }
-    window.onload = function() {
-      showCategory('home'); // Show home on page load
-    }
-  </script>
 </head>
 <body>
 
-  <nav class="main-nav">
+  <!-- Навігація -->
+  <nav class="navbar">
     <ul>
-      <li><a href="javascript:void(0);" onclick="showCategory('home')">Головна</a></li>
-      <li><a href="javascript:void(0);" onclick="showCategory('about')">Про нас</a></li>
-      <li><a href="javascript:void(0);" onclick="showCategory('products')">Категорії</a></li>
-      <li><a href="javascript:void(0);" onclick="showCategory('contacts')">Контакти</a></li>
+      <li><a href="#home">Головна</a></li>
+      <li><a href="#about">Про нас</a></li>
+      <li><a href="#catalog">Категорії</a></li>
+      <li><a href="#contacts">Контакти</a></li>
     </ul>
   </nav>
 
-  <section id="home" class="category-section" style="display:none;">
-    <div class="home-section">
-      <h1>Ласкаво просимо!</h1>
-      <div class="hero-banner"><img src="images/banner-placeholder.jpg" alt="Банер" /></div>
-      <div class="news">
-        <h2>Новинки незабаром</h2>
-        <ul>
-          <li>Нива СК5 — у продажі з Нового року</li>
-          <li>Комбайн РКС-6 — готовий до запуску</li>
-          <li>Нові автобуси в масштабі 1:43</li>
-        </ul>
-        <h3>Конкурс завершено!</h3>
-        <p>Вітаємо переможців:</p>
-        <ol>
-          <li>Іваненко Петро — модель К-700</li>
-          <li>Шевчук Марія — модель ПРТ-10</li>
-          <li>Олександр Білик — модель Богдан А092</li>
-        </ol>
+  <!-- Головна -->
+  <section class="home" id="home">
+    <h1>Ласкаво просимо!</h1>
+    <img src="images/banner-placeholder.jpg" alt="Банер" class="banner-img" />
+    <div class="home-content">
+      <h2>Новинки незабаром</h2>
+      <div class="upcoming">
+        <p>Нива СК5</p>
+        <img src="images/niva-preview.jpg" alt="Нива СК5">
+        <p>Комбайн РКС-6</p>
+        <img src="images/rks-preview.jpg" alt="РКС-6">
       </div>
+      <h2>Конкурс завершено!</h2>
+      <p>Вітаємо переможців:</p>
+      <ol>
+        <li>Іваненко Петро — модель К-700</li>
+        <li>Шевчук Марія — модель ПРТ-10</li>
+        <li>Олександр Білик — модель Богдан А092</li>
+      </ol>
     </div>
   </section>
 
-  <section id="products" class="category-section" style="display:none;">
-    <div class="products-container">
-      <h2 class="category-title">Каталог моделей</h2>
-      <p style="text-align:center;">
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSefb3jfz7Q1SULBn4MrR6eHET8fHfmB35yGddly2uTD9gTnbA/viewform" class="order-btn" target="_blank">Оформити замовлення</a>
-      </p>
-    </div>
-  </section>
-
-  <section id="about" class="category-section" style="display:none;">
-    <div class="about-section">
-      <h2>Про нас</h2>
+  <!-- Про нас -->
+  <section class="about-section" id="about">
+    <h2>Про нас</h2>
+    <div class="about-box">
       <p>Ми виготовляємо моделі сільськогосподарської техніки за допомогою 3D‑друку з пластику <strong>PETG</strong> у масштабі <strong>1:43</strong>.</p>
-      <p>Фарбування не потрібне — ми використовуємо кольоровий пластик. Ви можете обрати доступний колір:
-        <br><strong>Червоний, зелений, синій, білий, жовтий, помаранчевий, сірий, чорний, хакі, прозорий</strong>.</p>
+      <p>Фарбування не потрібне — ми використовуємо кольоровий пластик. Ви можете обрати доступний колір:</p>
+      <p><strong>Червоний, зелений, синій, білий, жовтий, помаранчевий, сірий, чорний, хакі, прозорий</strong>.</p>
       <ul>
         <li><strong>Зібрані</strong> — дорожчі, готові до демонстрації</li>
         <li><strong>Розібрані</strong> — дешевші, для самостійного складання (потрібно прибрати підтримки)</li>
@@ -72,13 +55,57 @@
     </div>
   </section>
 
-  <footer id="contacts" class="category-section" style="display:none;">
-    <div class="footer">
-      <p>Зв’язок: <a href="mailto:osentisev0@gmail.com">osentisev0@gmail.com</a> | Тел: +380 96 501 5297</p>
-      <p><a href="https://t.me/alex3dp" target="_blank">Telegram‑група</a> | <a href="https://www.tiktok.com/@lex_3d4?_r=1&_t=ZM-92Fr6T23tSi" target="_blank">TikTok</a></p>
-      <p>© 2026 ФОП Сентіщев О.О. Всі права захищено.</p>
+  <!-- Категорії -->
+  <section class="catalog-section" id="catalog">
+    <h2>Каталог моделей</h2>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSefb3jfz7Q1SULBn4MrR6eHET8fHfmB35yGddly2uTD9gTnbA/viewform" class="order-btn" target="_blank">Зробити замовлення</a>
+
+    <div class="tab-buttons">
+      <button onclick="showTab('tractors')">Трактори</button>
+      <button onclick="showTab('combines')">Комбайни</button>
+      <button onclick="showTab('trailers')">Причепи</button>
+      <button onclick="showTab('attachments')">Причіпні пристрої</button>
+      <button onclick="showTab('buses')">Автобуси</button>
+      <button onclick="showTab('tanks')">Танки</button>
     </div>
+
+    <div id="tractors" class="tab-content active-tab">
+      <p>Тут будуть ваші моделі тракторів…</p>
+    </div>
+    <div id="combines" class="tab-content">
+      <p>Тут будуть ваші моделі комбайнів…</p>
+    </div>
+    <div id="trailers" class="tab-content">
+      <p>Тут будуть ваші моделі причепів…</p>
+    </div>
+    <div id="attachments" class="tab-content">
+      <p>Тут будуть ваші причіпні пристрої…</p>
+    </div>
+    <div id="buses" class="tab-content">
+      <p>Тут будуть ваші моделі автобусів…</p>
+    </div>
+    <div id="tanks" class="tab-content">
+      <p>Тут будуть ваші моделі танків…</p>
+    </div>
+  </section>
+
+  <!-- Контакти -->
+  <footer class="footer" id="contacts">
+    <p>Зв’язок: <a href="mailto:osentisev0@gmail.com">osentisev0@gmail.com</a> | Тел: +380 96 501 5297</p>
+    <p>
+      <a href="https://t.me/alex3dp" target="_blank">Telegram‑група</a> |
+      <a href="https://www.tiktok.com/@lex_3d4?_r=1&_t=ZM-92Fr6T23tSi" target="_blank">TikTok</a>
+    </p>
+    <p>© 2026 ФОП Сентіщев О.О. Всі права захищено.</p>
   </footer>
 
+  <script>
+    function showTab(id) {
+      document.querySelectorAll('.tab-content').forEach(tab => {
+        tab.classList.remove('active-tab');
+      });
+      document.getElementById(id).classList.add('active-tab');
+    }
+  </script>
 </body>
 </html>

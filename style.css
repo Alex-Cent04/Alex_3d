@@ -110,3 +110,39 @@ body {
   justify-content: center;
   gap: 1.5rem;
 }
+/* Додати в кінець style.css */
+.tab-content {
+  display: none;
+}
+.tab-content.active-tab {
+  display: block;
+}
+
+.catalog-tabs {
+  text-align: center;
+  margin: 1rem 0;
+}
+.catalog-tabs button {
+  background-color: #00509e;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.2rem;
+  margin: 0.3rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.catalog-tabs button:hover {
+  background-color: #003f7d;
+}
+
+.catalog-category {
+  display: none;
+}
+.catalog-category.active-category {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+

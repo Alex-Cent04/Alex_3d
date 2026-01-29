@@ -1,25 +1,22 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Каталог моделей техніки</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alex 3D Models</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <!-- Меню -->
   <nav class="navbar">
-    <ul class="tabs">
-      <li><button class="tablink active" data-tab="home">Головна</button></li>
-      <li><button class="tablink" data-tab="about">Про нас</button></li>
-      <li><button class="tablink" data-tab="catalog">Категорії</button></li>
-      <li><button class="tablink" data-tab="contacts">Контакти</button></li>
+    <ul>
+      <li><a href="#home">Головна</a></li>
+      <li><a href="#about">Про нас</a></li>
+      <li><a href="#catalog">Категорії</a></li>
+      <li><a href="#contacts">Контакти</a></li>
     </ul>
   </nav>
 
-  <!-- Головна -->
-  <section class="tab-content" id="home" style="display: block;">
+  <section id="home" class="tab-content">
     <h1>Ласкаво просимо!</h1>
     <img src="images/banner-placeholder.jpg" alt="Банер" class="banner-img" />
     <div class="home-content">
@@ -29,11 +26,12 @@
         <li>Комбайн РКС-6 — готовий до запуску</li>
         <li>Нові автобуси в масштабі 1:43</li>
       </ul>
-      <div class="preview-images">
-        <img src="images/preview1.jpg" alt="Новинка 1"/>
-        <img src="images/preview2.jpg" alt="Новинка 2"/>
+      <div class="home-images">
+        <img src="images/preview1.jpg" alt="Новинка 1">
+        <img src="images/preview2.jpg" alt="Новинка 2">
       </div>
       <h2>Конкурс завершено!</h2>
+      <p>Вітаємо переможців:</p>
       <ol>
         <li>Іваненко Петро — модель К-700</li>
         <li>Шевчук Марія — модель ПРТ-10</li>
@@ -42,93 +40,75 @@
     </div>
   </section>
 
-  <!-- Про нас -->
-  <section class="tab-content" id="about">
-    <div class="about-container">
+  <section id="about" class="tab-content">
+    <div class="about-section">
       <h2>Про нас</h2>
-      <p>Ми виготовляємо моделі сільськогосподарської техніки за допомогою 3D‑друку з пластику <strong>PETG</strong> у масштабі <strong>1:43</strong>.</p>
-      <p>Фарбування не потрібне — ми використовуємо кольоровий пластик. Доступні кольори:
-        <br><strong>Червоний, зелений, синій, білий, жовтий, помаранчевий, сірий, чорний, хакі, прозорий</strong>.
-      </p>
+      <p>Ми виготовляємо моделі сільськогосподарської техніки за допомогою 3D‑друку з пластику PETG у масштабі 1:43.</p>
+      <p>Фарбування не потрібне — ми використовуємо кольоровий пластик. Ви можете обрати доступний колір:</p>
+      <p><strong>Червоний, зелений, синій, білий, жовтий, помаранчевий, сірий, чорний, хакі, прозорий</strong>.</p>
       <ul>
         <li><strong>Зібрані</strong> — дорожчі, готові до демонстрації</li>
-        <li><strong>Розібрані</strong> — дешевші, для самостійного складання</li>
+        <li><strong>Розібрані</strong> — дешевші, для самостійного складання (потрібно прибрати підтримки)</li>
       </ul>
       <p><strong>Працюємо офіційно — ФОП Сентіщев О.О.</strong></p>
     </div>
   </section>
 
-  <!-- Категорії -->
-  <section class="tab-content" id="catalog">
-    <div class="catalog-tabs">
-      <button class="catalog-btn active" data-category="tractors">Трактори</button>
-      <button class="catalog-btn" data-category="combines">Комбайни</button>
-      <button class="catalog-btn" data-category="trailers">Причепи</button>
-      <button class="catalog-btn" data-category="implements">Причіпні пристрої</button>
-      <button class="catalog-btn" data-category="buses">Автобуси</button>
-      <button class="catalog-btn" data-category="tanks">Танки</button>
+  <section id="catalog" class="tab-content">
+    <div class="catalog-nav">
+      <button class="catalog-tab" onclick="showCategory('tractors')">Трактори</button>
+      <button class="catalog-tab" onclick="showCategory('combines')">Комбайни</button>
+      <button class="catalog-tab" onclick="showCategory('trailers')">Причепи</button>
+      <button class="catalog-tab" onclick="showCategory('attachments')">Причіпні пристрої</button>
+      <button class="catalog-tab" onclick="showCategory('buses')">Автобуси</button>
+      <button class="catalog-tab" onclick="showCategory('tanks')">Танки</button>
+      <a class="order-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSefb3jfz7Q1SULBn4MrR6eHET8fHfmB35yGddly2uTD9gTnbA/viewform" target="_blank">Оформити замовлення</a>
     </div>
-
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSefb3jfz7Q1SULBn4MrR6eHET8fHfmB35yGddly2uTD9gTnbA/viewform" target="_blank" class="order-btn">Зробити замовлення</a>
-
-    <div class="products-container">
-      <div class="category-content" id="tractors" style="display: block;">
-        <p>🔧 Тут будуть трактори…</p>
-      </div>
-      <div class="category-content" id="combines">
-        <p>🌾 Тут будуть комбайни…</p>
-      </div>
-      <div class="category-content" id="trailers">
-        <p>🚜 Тут будуть причепи…</p>
-      </div>
-      <div class="category-content" id="implements">
-        <p>⚙️ Тут будуть причіпні пристрої…</p>
-      </div>
-      <div class="category-content" id="buses">
-        <p>🚌 Тут будуть автобуси…</p>
-      </div>
-      <div class="category-content" id="tanks">
-        <p>🛡️ Тут будуть танки…</p>
-      </div>
+    <div class="catalog-content">
+      <div id="tractors" class="category-content active">[Тут вставити моделі тракторів]</div>
+      <div id="combines" class="category-content">[Тут вставити моделі комбайнів]</div>
+      <div id="trailers" class="category-content">[Тут вставити моделі причепів]</div>
+      <div id="attachments" class="category-content">[Тут вставити причіпні пристрої]</div>
+      <div id="buses" class="category-content">[Тут вставити моделі автобусів]</div>
+      <div id="tanks" class="category-content">[Тут вставити моделі танків]</div>
     </div>
   </section>
 
-  <!-- Контакти -->
-  <section class="tab-content" id="contacts">
-    <footer class="footer">
-      <p>Зв’язок: <a href="mailto:osentisev0@gmail.com">osentisev0@gmail.com</a> | Тел: +380 96 501 5297</p>
-      <p>
-        <a href="https://t.me/alex3dp" target="_blank">Telegram‑група</a> |
-        <a href="https://www.tiktok.com/@lex_3d4?_r=1&_t=ZM-92Fr6T23tSi" target="_blank">TikTok</a>
-      </p>
-      <p>© 2026 ФОП Сентіщев О.О. Всі права захищено.</p>
-    </footer>
-  </section>
+  <footer id="contacts" class="footer">
+    <p>Зв’язок: <a href="mailto:osentisev0@gmail.com">osentisev0@gmail.com</a> | Тел: +380 96 501 5297</p>
+    <p>
+      <a href="https://t.me/alex3dp" target="_blank">Telegram‑група</a> |
+      <a href="https://www.tiktok.com/@lex_3d4?_r=1&_t=ZM-92Fr6T23tSi" target="_blank">TikTok</a>
+    </p>
+    <p>© 2026 ФОП Сентіщев О.О. Всі права захищено.</p>
+  </footer>
 
-  <!-- JavaScript -->
   <script>
-    const tabLinks = document.querySelectorAll(".tablink");
-    const tabContents = document.querySelectorAll(".tab-content");
-    tabLinks.forEach(link => {
-      link.addEventListener("click", () => {
-        tabLinks.forEach(btn => btn.classList.remove("active"));
-        tabContents.forEach(tab => tab.style.display = "none");
-        link.classList.add("active");
-        document.getElementById(link.dataset.tab).style.display = "block";
+    const navLinks = document.querySelectorAll('.navbar a');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    function activateTab(id) {
+      tabContents.forEach(tab => tab.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const id = this.getAttribute('href').substring(1);
+        activateTab(id);
       });
     });
 
-    const catalogBtns = document.querySelectorAll(".catalog-btn");
-    const categoryContents = document.querySelectorAll(".category-content");
-    catalogBtns.forEach(btn => {
-      btn.addEventListener("click", () => {
-        catalogBtns.forEach(b => b.classList.remove("active"));
-        categoryContents.forEach(c => c.style.display = "none");
-        btn.classList.add("active");
-        document.getElementById(btn.dataset.category).style.display = "block";
-      });
+    // Показати "Головна" при завантаженні сторінки
+    document.addEventListener('DOMContentLoaded', () => {
+      activateTab('home');
     });
+
+    function showCategory(categoryId) {
+      document.querySelectorAll('.category-content').forEach(div => div.classList.remove('active'));
+      document.getElementById(categoryId).classList.add('active');
+    }
   </script>
-
 </body>
 </html>

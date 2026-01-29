@@ -32,6 +32,40 @@
   <main id="catalog" class="tab-section" style="display:none;">
     <!-- ТУТ ВСТАВ ВЕСЬ КАТАЛОГ ЯК Є -->
     <!-- Ми його не змінюємо, просто розміщуємо в секції catalog -->
+    <div class="catalog-tabs">
+  <button onclick="showCategory('tractors')">Трактори</button>
+  <button onclick="showCategory('combines')">Комбайни</button>
+  <button onclick="showCategory('trailers')">Причепи</button>
+  <button onclick="showCategory('attachments')">Причепні пристрої</button>
+  <button onclick="showCategory('buses')">Автобуси</button>
+  <button onclick="showCategory('tanks')">Танки</button>
+</div>
+
+<div id="tractors" class="catalog-category active-category">
+  <!-- Тут розміщуєш всі картки з тракторами -->
+</div>
+<div id="combines" class="catalog-category">
+  <!-- Тут картки з комбайнами -->
+</div>
+<div id="trailers" class="catalog-category">
+  <!-- Тут причепи -->
+</div>
+<div id="attachments" class="catalog-category">
+  <!-- Тут причепні пристрої -->
+</div>
+<div id="buses" class="catalog-category">
+  <!-- Тут автобуси -->
+</div>
+<div id="tanks" class="catalog-category">
+  <!-- Тут танки -->
+</div>
+
+<script>
+  function showCategory(categoryId) {
+    document.querySelectorAll('.catalog-category').forEach(div => div.classList.remove('active-category'));
+    document.getElementById(categoryId).classList.add('active-category');
+  }
+</script>
   </main>
 
   <section id="about" class="tab-section" style="display:none;">

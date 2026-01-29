@@ -4,24 +4,17 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Каталог моделей техніки</title>
-  <link rel="stylesheet" href="style.css" />
-  <script>
-    function showTab(tabId) {
-      document.querySelectorAll(".tab-section").forEach(el => el.style.display = "none");
-      document.getElementById(tabId).style.display = "block";
-    }
-    window.onload = () => showTab('home');
-  </script>
+  <link href="style.css" rel="stylesheet" />
 </head>
 <body>
-  <nav class="tab-menu">
+  <nav class="nav-tabs">
     <button onclick="showTab('home')">Головна</button>
     <button onclick="showTab('catalog')">Каталог</button>
     <button onclick="showTab('about')">Про нас</button>
     <button onclick="showTab('contacts')">Контакти</button>
   </nav>
 
-  <section id="home" class="tab-section">
+  <section id="home" class="tab-content active-tab">
     <header class="header">
       <h1>Каталог моделей техніки</h1>
       <p>3D-друковані моделі в масштабі 1:43 з пластику PETG</p>
@@ -29,67 +22,70 @@
     </header>
   </section>
 
-  <main id="catalog" class="tab-section" style="display:none;">
-    <!-- ТУТ ВСТАВ ВЕСЬ КАТАЛОГ ЯК Є -->
-    <!-- Ми його не змінюємо, просто розміщуємо в секції catalog -->
+  <section id="catalog" class="tab-content">
     <div class="catalog-tabs">
-  <button onclick="showCategory('tractors')">Трактори</button>
-  <button onclick="showCategory('combines')">Комбайни</button>
-  <button onclick="showCategory('trailers')">Причепи</button>
-  <button onclick="showCategory('attachments')">Причепні пристрої</button>
-  <button onclick="showCategory('buses')">Автобуси</button>
-  <button onclick="showCategory('tanks')">Танки</button>
-</div>
+      <button onclick="showCategory('tractors')">Трактори</button>
+      <button onclick="showCategory('combines')">Комбайни</button>
+      <button onclick="showCategory('trailers')">Причепи</button>
+      <button onclick="showCategory('attachments')">Причіпні пристрої</button>
+      <button onclick="showCategory('buses')">Автобуси</button>
+      <button onclick="showCategory('tanks')">Танки</button>
+    </div>
 
-<div id="tractors" class="catalog-category active-category">
-  <!-- Тут розміщуєш всі картки з тракторами -->
-  <div class="product-card"> <img alt="Модель трактора К 701" src="images/к_700-removebg-preview.png"/> <h3> Модель трактора К 701 </h3> <p> Масштаб: 1:43 </p> <p> Матеріал: PETG </p> <p> Ціна: <strong> 800 грн </strong> | Не зібрана: <strong> 600 грн </strong> </p> </div> <div class="product-card"> <img alt="Модель трактора К 701(синій)" src="images/к700синій.png"/> <h3> Модель трактора К 701 </h3> <p> Масштаб: 1:43 </p> <p> Матеріал: PETG </p> <p> Ціна: <strong> 800 грн </strong> | Не зібрана: <strong> 600 грн </strong> </p> </div> <div class="product-card"> <img alt="Модель трактора ХТЗ Т‑150 К" src="images/т150-removebg-preview.png"/> <h3> Модель трактора ХТЗ Т‑150 К </h3> <p> Масштаб: 1:43 </p> <p> Матеріал: PETG </p> <p> Ціна: <strong> 800 грн </strong> | Не зібрана: <strong> 600 грн </strong> </p> </div> 
-</div>
-<div id="combines" class="catalog-category">
-  <!-- Тут картки з комбайнами -->
-  <div class="product-card"> <img alt="Модель трактора К 701" src="images/к_700-removebg-preview.png"/> <h3> Модель трактора К 701 </h3> <p> Масштаб: 1:43 </p> <p> Матеріал: PETG </p> <p> Ціна: <strong> 800 грн </strong> | Не зібрана: <strong> 600 грн </strong> </p> </div> <div class="product-card"> <img alt="Модель трактора К 701(синій)" src="images/к700синій.png"/> <h3> Модель трактора К 701 </h3> <p> Масштаб: 1:43 </p> <p> Матеріал: PETG </p> <p> Ціна: <strong> 800 грн </strong> | Не зібрана: <strong> 600 грн </strong> </p> </div> <div class="product-card"> <img alt="Модель трактора ХТЗ Т‑150 К" src="images/т150-removebg-preview.png"/> <h3> Модель трактора ХТЗ Т‑150 К </h3> <p> Масштаб: 1:43 </p> <p> Матеріал: PETG </p> <p> Ціна: <strong> 800 грн </strong> | Не зібрана: <strong> 600 грн </strong> </p> </div> <div class="product-card"> <img alt="Модель трактора ХТЗ‑17221" src="images/17221-removebg-preview.png"/> <h3> Модель трактора ХТЗ‑17221 </h3> <p> Масштаб: 1:43 </p> <p> Матеріал: PETG </p> <p> Ціна: <strong> 850 грн </strong> | Не зібрана: <strong> 600 грн </strong> </p> </div>
-</div>
-<div id="trailers" class="catalog-category">
-  <!-- Тут причепи -->
-</div>
-<div id="attachments" class="catalog-category">
-  <!-- Тут причепні пристрої -->
-</div>
-<div id="buses" class="catalog-category">
-  <!-- Тут автобуси -->
-</div>
-<div id="tanks" class="catalog-category">
-  <!-- Тут танки -->
-</div>
+    <div id="tractors" class="catalog-category active-category">
+      <!-- Картки з тракторами -->
+    </div>
+    <div id="combines" class="catalog-category">
+      <!-- Картки з комбайнами -->
+    </div>
+    <div id="trailers" class="catalog-category">
+      <!-- Картки з причепами -->
+    </div>
+    <div id="attachments" class="catalog-category">
+      <!-- Картки з причіпними пристроями -->
+    </div>
+    <div id="buses" class="catalog-category">
+      <!-- Картки з автобусами -->
+    </div>
+    <div id="tanks" class="catalog-category">
+      <!-- Картки з танками -->
+    </div>
+  </section>
 
-<script>
-  function showCategory(categoryId) {
-    document.querySelectorAll('.catalog-category').forEach(div => div.classList.remove('active-category'));
-    document.getElementById(categoryId).classList.add('active-category');
-  }
-</script>
-  </main>
-
-  <section id="about" class="tab-section" style="display:none;">
+  <section id="about" class="tab-content">
     <div class="about-section">
       <h2>Про нас</h2>
-      <p>Ми виготовляємо моделі сільськогосподарської техніки за допомогою 3D‑друку з пластику <strong>PETG</strong> у масштабі <strong>1:43</strong>.</p>
-      <p>Фарбування не потрібне — ми використовуємо кольоровий пластик. Ви можете обрати доступний колір:</p>
-      <p><strong>Червоний, зелений, синій, білий, жовтий, помаранчевий, сірий, чорний, хакі, прозорий</strong>.</p>
+      <p>Ми виготовляємо моделі сільськогосподарської техніки за допомогою 3D-друку з пластику <strong>PETG</strong> у масштабі <strong>1:43</strong>.</p>
+      <p>Фарбування не потрібне — ми використовуємо кольоровий пластик. Ви можете обрати доступний колір:<br /><strong>Червоний, зелений, синій, білий, жовтий, помаранчевий, сірий, чорний, хакі, прозорий</strong>.</p>
+      <p>Всі моделі доступні у двох варіантах:</p>
       <ul>
         <li><strong>Зібрані</strong> — дорожчі, готові до демонстрації</li>
-        <li><strong>Розібрані</strong> — дешевші, для самостійного складання</li>
+        <li><strong>Розібрані</strong> — дешевші, для самостійного складання (потрібно прибрати підтримки)</li>
       </ul>
       <p><strong>Працюємо офіційно — ФОП Сентіщев О.О.</strong></p>
     </div>
   </section>
 
-  <footer id="contacts" class="tab-section" style="display:none;">
-    <div class="footer">
+  <section id="contacts" class="tab-content">
+    <footer class="footer">
       <p>Зв’язок: <a href="mailto:osentisev0@gmail.com">osentisev0@gmail.com</a> | Тел: +380 96 501 5297</p>
-      <p><a href="https://t.me/alex3dp" target="_blank">Telegram‑група</a> | <a href="https://www.tiktok.com/@lex_3d4?_r=1&_t=ZM-92Fr6T23tSi" target="_blank">TikTok</a></p>
+      <p><a href="https://t.me/alex3dp" target="_blank">Telegram‑група</a> | <a href="https://www.tiktok.com/@lex_3d4?_r=1&amp;_t=ZM-92Fr6T23tSi" target="_blank">TikTok</a></p>
       <p>© 2026 ФОП Сентіщев О.О. Всі права захищено.</p>
-    </div>
-  </footer>
+    </footer>
+  </section>
+
+  <script>
+    function showTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(section => {
+        section.classList.remove('active-tab');
+      });
+      document.getElementById(tabId).classList.add('active-tab');
+    }
+
+    function showCategory(categoryId) {
+      document.querySelectorAll('.catalog-category').forEach(div => div.classList.remove('active-category'));
+      document.getElementById(categoryId).classList.add('active-category');
+    }
+  </script>
 </body>
 </html>

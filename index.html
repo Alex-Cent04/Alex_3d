@@ -2,10 +2,10 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Alex 3D Models</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style_final.css" />
 </head>
 <body>
   <nav class="navbar">
@@ -18,41 +18,50 @@
   </nav>
 
   <section id="home" class="tab active">
-    <h1>Головна</h1>
-    <p>Тут буде банер, новини, новинки, конкурс.</p>
+    <h1>Ласкаво просимо!</h1>
+    <p>Банер, новини, новинки, конкурс.</p>
   </section>
 
   <section id="about" class="tab">
-    <h1>Про нас</h1>
-    <p>Інформація про компанію, кольори, масштаби, ФОП.</p>
+    <h2>Про нас</h2>
+    <p>Ми виготовляємо моделі сільськогосподарської техніки з 3D‑друку. Кольори: червоний, синій, зелений, білий та інші. Масштаб: 1:43. Працюємо офіційно — ФОП Сентіщев О.О.</p>
   </section>
 
   <section id="catalog" class="tab">
-    <h1>Категорії</h1>
-    <div class="catalog-nav">
+    <h2>Категорії</h2>
+    <div class="catalog-tabs">
       <button onclick="showCategory('tractors')">Трактори</button>
       <button onclick="showCategory('combines')">Комбайни</button>
       <button onclick="showCategory('trailers')">Причепи</button>
+      <button onclick="showCategory('attachments')">Причіпні пристрої</button>
+      <button onclick="showCategory('buses')">Автобуси</button>
+      <button onclick="showCategory('tanks')">Танки</button>
     </div>
-    <div id="tractors" class="category active">[Трактори]</div>
-    <div id="combines" class="category">[Комбайни]</div>
-    <div id="trailers" class="category">[Причепи]</div>
-    <a href="https://docs.google.com" target="_blank" class="order-btn">Оформити замовлення</a>
+    <div class="catalog-content">
+      <div id="tractors" class="category active">[Тут будуть трактори]</div>
+      <div id="combines" class="category">[Тут будуть комбайни]</div>
+      <div id="trailers" class="category">[Тут будуть причепи]</div>
+      <div id="attachments" class="category">[Тут будуть причіпні пристрої]</div>
+      <div id="buses" class="category">[Тут будуть автобуси]</div>
+      <div id="tanks" class="category">[Тут будуть танки]</div>
+    </div>
+    <a class="order-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSefb3jfz7Q1SULBn4MrR6eHET8fHfmB35yGddly2uTD9gTnbA/viewform" target="_blank">Оформити замовлення</a>
   </section>
 
   <section id="contacts" class="tab">
-    <h1>Контакти</h1>
-    <p>Telegram, TikTok, email, телефон.</p>
+    <h2>Контакти</h2>
+    <p>Email: osentisev0@gmail.com</p>
+    <p>Телефон: +380 96 501 5297</p>
+    <p><a href="https://t.me/alex3dp" target="_blank">Telegram</a> | <a href="https://www.tiktok.com/@lex_3d4?_r=1&_t=ZM-92Fr6T23tSi" target="_blank">TikTok</a></p>
   </section>
 
   <script>
     function showTab(tabId) {
-      document.querySelectorAll('.tab').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
       document.getElementById(tabId).classList.add('active');
     }
-
     function showCategory(catId) {
-      document.querySelectorAll('.category').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.category').forEach(c => c.classList.remove('active'));
       document.getElementById(catId).classList.add('active');
     }
   </script>

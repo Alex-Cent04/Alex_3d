@@ -1,23 +1,4 @@
 body {
-padding: 2rem;
-}
-
-
-.tab-content.active {
-display: block;
-}
-
-
-.banner-img {
-display: block;
-max-width: 90%;
-margin: 0 auto 1.5rem;
-}
-
-
-.home-content ul, .home-content ol {
-margin-left: 2rem;
-}
 
 
 .home-images {

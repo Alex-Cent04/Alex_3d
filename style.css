@@ -1,163 +1,121 @@
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', sans-serif;
-}
-
 body {
-    background-color: #f9f9fb;
-    color: #333;
-    line-height: 1.6;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f5f7fa;
+  color: #333;
 }
 
 nav.navbar {
-    background-color: #004080;
-    padding: 1rem;
-    text-align: center;
+  background: #00509e;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
 }
 
 nav.navbar ul {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
 }
 
 nav.navbar a {
-    color: #fff;
-    text-decoration: none;
-    padding: 0.6rem 1rem;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  transition: background 0.3s ease;
+  border-radius: 4px;
 }
 
-nav.navbar a:hover,
-nav.navbar a.active {
-    background-color: #0066cc;
+nav.navbar a:hover {
+  background: #003f7d;
 }
 
-section {
-    padding: 2rem;
-    display: none;
+.tabs-nav {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+  flex-wrap: wrap;
 }
 
-section.active {
-    display: block;
+.tabs-nav button {
+  background: #eee;
+  border: none;
+  padding: 0.7rem 1.2rem;
+  margin: 0.3rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s;
 }
 
-h1, h2 {
-    color: #003366;
+.tabs-nav button:hover,
+.tabs-nav button.active {
+  background: #00509e;
+  color: #fff;
 }
 
-.banner-img {
-    width: 100%;
-    max-width: 900px;
-    border-radius: 10px;
-    margin: 1.5rem auto;
-    display: block;
+.tab-content {
+  display: none;
+  padding: 1.5rem;
 }
 
-.products-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1.5rem;
-    margin-top: 1rem;
+.tab-content.active {
+  display: block;
 }
 
 .product-card {
-    background-color: #fff;
-    border-radius: 8px;
-    width: 260px;
-    padding: 1rem;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    text-align: center;
-    transition: transform 0.3s ease;
-}
-
-.product-card:hover {
-    transform: translateY(-5px);
+  background: #fff;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  max-width: 300px;
+  text-align: center;
+  display: inline-block;
+  vertical-align: top;
 }
 
 .product-card img {
-    width: 100%;
-    height: auto;
-    border-radius: 6px;
-    margin-bottom: 1rem;
-}
-
-.product-card h3 {
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-}
-
-.product-card p {
-    font-size: 0.95rem;
-    margin: 0.3rem 0;
-}
-
-.category-title {
-    width: 100%;
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    border-bottom: 3px solid #004080;
-    padding-bottom: 0.5rem;
-    text-align: center;
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
 }
 
 .order-btn {
-    background-color: #f29f05;
-    color: #fff;
-    padding: 0.8rem 1.2rem;
-    font-size: 1rem;
-    border: none;
-    border-radius: 6px;
-    text-decoration: none;
-    display: inline-block;
-    margin: 1.5rem auto 0;
-    transition: background 0.3s ease;
+  background: #f29f05;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  margin: 1rem;
 }
 
 .order-btn:hover {
-    background-color: #d98804;
-}
-
-.about-section,
-.footer {
-    background-color: #eef4ff;
-    text-align: center;
-}
-
-.footer {
-    padding: 1rem;
-    background-color: #003366;
-    color: #fff;
-    font-size: 0.9rem;
-}
-
-.footer a {
-    color: #ffcc00;
-    text-decoration: none;
-}
-
-.footer a:hover {
-    text-decoration: underline;
+  background: #d98804;
 }
 
 @media (max-width: 768px) {
-    .products-container {
-        flex-direction: column;
-        align-items: center;
-    }
+  .tabs-nav {
+    flex-direction: column;
+    align-items: center;
+  }
 
-    nav.navbar ul {
-        flex-direction: column;
-    }
+  .product-card {
+    width: 90%;
+  }
 
-    .product-card {
-        width: 90%;
-    }
+  nav.navbar ul {
+    flex-direction: column;
+    align-items: center;
+  }
 }

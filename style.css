@@ -1,175 +1,52 @@
-/* Загальні стилі */
+
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f5f7fa;
+  font-family: sans-serif;
   margin: 0;
-  padding: 0;
+  background: #f5f5f5;
   color: #333;
 }
-
-h1, h2 {
-  color: #003f7d;
-  text-align: center;
-}
-
-/* Навігація */
 .navbar {
-  background-color: #00509e;
+  background: #222;
   padding: 1rem;
 }
-
 .navbar ul {
   list-style: none;
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+  gap: 1rem;
   margin: 0;
   padding: 0;
 }
-
-.navbar li {
-  margin: 0 15px;
-}
-
 .navbar a {
-  color: #fff;
+  color: white;
   text-decoration: none;
   font-weight: bold;
 }
-
-.navbar a:hover {
-  text-decoration: underline;
+.tab {
+  display: none;
+  padding: 2rem;
 }
-
-/* Банер */
-.banner-img {
-  max-width: 100%;
-  height: auto;
+.tab.active {
   display: block;
-  margin: 1rem auto;
 }
-
-/* Головна */
-.home-content {
-  text-align: center;
-  padding: 1rem;
-}
-
-.home-images {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
+.catalog-nav {
   margin-bottom: 1rem;
 }
-
-.home-images img {
-  width: 150px;
-  height: auto;
-  border-radius: 8px;
+.catalog-nav button {
+  margin-right: 1rem;
 }
-
-/* Про нас */
-.about-section {
-  background-color: #eef4ff;
-  padding: 2rem;
-  margin: 1rem auto;
-  max-width: 900px;
-  border-radius: 8px;
-}
-
-/* Категорії */
-.catalog-nav {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-  padding: 1.5rem;
-  background-color: #dde9f9;
-}
-
-.catalog-tab {
-  padding: 0.6rem 1.2rem;
-  background: #00509e;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.catalog-tab:hover {
-  background: #003f7d;
-}
-
-.catalog-tab.active {
-  background: #f29f05;
-  color: #000;
-}
-
-.catalog-content {
-  padding: 2rem 1rem;
-  background-color: #fff;
-  border-radius: 8px;
-}
-
-.category-content {
+.category {
   display: none;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
 }
-
-.category-content.active {
-  display: flex;
+.category.active {
+  display: block;
 }
-
-/* Кнопка замовлення */
 .order-btn {
-  background-color: #f29f05;
+  display: inline-block;
+  margin-top: 2rem;
+  background: #f29f05;
   color: #fff;
   padding: 0.8rem 1.4rem;
-  border: none;
+  text-decoration: none;
   border-radius: 5px;
-  text-decoration: none;
-  font-size: 1rem;
-  transition: background 0.3s ease;
-}
-
-.order-btn:hover {
-  background-color: #d98804;
-}
-
-/* Футер */
-.footer {
-  background: #003f7d;
-  color: #fff;
-  text-align: center;
-  padding: 1rem;
-}
-
-.footer a {
-  color: #fdd835;
-  text-decoration: none;
-}
-
-.footer a:hover {
-  text-decoration: underline;
-}
-
-/* Адаптив */
-@media (max-width: 768px) {
-  .navbar ul {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .catalog-nav {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .home-images {
-    flex-direction: column;
-  }
 }

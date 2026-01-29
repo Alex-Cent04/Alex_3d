@@ -147,3 +147,4 @@ body {
 }
 .product-card { background: #fff; border-radius: 8px; width: 260px; padding: 1rem; box-shadow: 0 4px 8px rgba(0,0,0,0.1); text-align: center; } .product-card img { width: 100%; height: auto; border-radius: 6px; margin-bottom: 1rem; } .product-card h3 { font-size: 1.2rem; margin-bottom: 0.5rem; } .product-card p { font-size: 0.95rem; margin: 0.3rem 0; }
 .product-card { width: 90%; margin-bottom: 1.5rem; }
+@media (max-width: 768px) { .products-container { flex-direction: column; align-items: center; padding: 1rem; }

@@ -1,29 +1,48 @@
 <!DOCTYPE html>
 <html lang="uk">
- <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>
-   Каталог моделей техніки
-  </title>
-  <link href="style.css" rel="stylesheet"/>
- </head>
- <body>
-  <header class="header">
-   <h1>
-    Каталог моделей техніки
-   </h1>
-   <p>
-    3D-друковані моделі в масштабі 1:43 з пластику PETG
-   </p>
-   <a class="order-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSefb3jfz7Q1SULBn4MrR6eHET8fHfmB35yGddly2uTD9gTnbA/viewform" target="_blank">
-    Замовити через форму
-   </a>
-  </header>
-  <main class="products-container">
-   <h2 class="category-title">
-    Трактори
-   </h2>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Каталог моделей техніки</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Навігація -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="#home">Головна</a></li>
+      <li><a href="#about">Про нас</a></li>
+      <li><a href="#products">Категорії</a></li>
+      <li><a href="#contacts">Контакти</a></li>
+    </ul>
+  </nav>
+
+  <!-- Головна -->
+  <section class="home" id="home">
+    <h1>Ласкаво просимо!</h1>
+    <img src="images/banner-placeholder.jpg" alt="Банер" class="banner-img" />
+    <div class="home-content">
+      <h2>Новинки незабаром</h2>
+      <ul>
+        <li>Нива СК5 — у продажі з Нового року</li>
+        <li>Комбайн РКС-6 — готовий до запуску</li>
+        <li>Нові автобуси в масштабі 1:43</li>
+      </ul>
+      <h2>Конкурс завершено!</h2>
+      <p>Вітаємо переможців:</p>
+      <ol>
+        <li>Іваненко Петро — модель К-700</li>
+        <li>Шевчук Марія — модель ПРТ-10</li>
+        <li>Олександр Білик — модель Богдан А092</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Категорії -->
+  <main class="products-container" id="products">
+    <h2 class="category-title">Трактори</h2>
+     </h2>
    <div class="product-card">
     <img alt="Модель трактора К 701" src="images/к_700-removebg-preview.png"/>
     <h3>
@@ -149,37 +168,15 @@
     <p>
      Ціна:
      <strong>
-      2000 грн
-     </strong>
-     | Не зібрана:
-     <strong>
-      1500 грн
-     </strong>
-    </p>
-   </div>
-   <div class="product-card">
-    <img alt="Модель комбайна РКС‑6 без трактора" src="images/ркс-removebg-preview.png"/>
-    <h3>
-     Модель комбайна РКС‑6 (без трактора)
-    </h3>
-    <p>
-     Масштаб: 1:43
-    </p>
-    <p>
-     Матеріал: PETG
-    </p>
-   <p>
-     Ціна:
-     <strong>
-      1500 грн
-     </strong>
-     | Не зібрана:
-     <strong>
       1000 грн
      </strong>
+     | Не зібрана:
+     <strong>
+      800 грн
+     </strong>
     </p>
    </div>
-   <div class="product-card">
+    <div class="product-card">
     <img alt="Модель трактора МТЗ‑892" src="images/мтз892-removebg-preview.png"/>
     <h3>
      Модель трактора МТЗ‑892
@@ -247,9 +244,30 @@
      </strong>
     </p>
    </div>
-   <h2 class="category-title">
-    Комбайни
-   </h2>
+
+    <h2 class="category-title">Комбайни</h2>
+    <div class="product-card">
+    <img alt="Модель комбайна РКС‑6 без трактора" src="images/ркс-removebg-preview.png"/>
+    <h3>
+     Модель комбайна РКС‑6 (без трактора)
+    </h3>
+    <p>
+     Масштаб: 1:43
+    </p>
+    <p>
+     Матеріал: PETG
+    </p>
+   <p>
+     Ціна:
+     <strong>
+      1500 грн
+     </strong>
+     | Не зібрана:
+     <strong>
+      1000 грн
+     </strong>
+    </p>
+   </div>
    <div class="product-card">
     <img alt="Модель комбайна Нива СК5" src="нива.png"/>
     <h3>
@@ -289,10 +307,9 @@
      </strong>
     </p>
    </div>
-   <h2 class="category-title">
-    Причепи
-   </h2>
-   <div class="product-card">
+
+    <h2 class="category-title">Причепи</h2>
+    <div class="product-card">
     <img alt="Модель причепа ММЗ 771Б (2ПТС‑9)" src="images/птс9-removebg-preview.png"/>
     <h3>
      Модель причепа ММЗ 771Б (2ПТС‑9)
@@ -380,10 +397,9 @@
      </strong>
     </p>
    </div>
-   <h2 class="category-title">
-    Причепні пристрої
-   </h2>
-   <div class="product-card">
+
+    <h2 class="category-title">Причепні пристрої</h2>
+    <div class="product-card">
     <img alt="Модель розкидача мінеральних добрив МВУ‑8" src="images/мву-removebg-preview.png"/>
     <h3>
      Модель розкидача мінеральних добрив МВУ‑8
@@ -472,11 +488,8 @@
      </strong>
     </p>
    </div>
-   
-   <h2 class="category-title">
-    Автобуси
-   </h2>
-   <div class="product-card">
+    <h2 class="category-title">Автобуси</h2>
+    <div class="product-card">
     <img alt="Модель автобуса БАЗ А079 Еталон" src="images/еталон_43-removebg-preview.png"/>
     <h3>
      Модель автобуса БАЗ А079 Еталон
@@ -558,10 +571,9 @@
      </strong>
     </p>
    </div>
-   <h2 class="category-title">
-    Танки
-   </h2>
-   <div class="product-card">
+   
+    <h2 class="category-title">Танки</h2>
+     <div class="product-card">
     <img alt="Модель ангара з танком на вибір" src="images/ангар-removebg-preview.png"/>
     <h3>
      Модель ангара з танком на вибір
@@ -605,73 +617,33 @@
      </strong>
     </p>
    </div>
+
+   
   </main>
-  <section class="about-section">
-   <h2>
-    Про нас
-   </h2>
-   <p>
-    Ми виготовляємо моделі сільськогосподарської техніки за допомогою 3D‑друку з пластику
-    <strong>
-     PETG
-    </strong>
-    у масштабі
-    <strong>
-     1:43
-    </strong>
-    .
-   </p>
-   <p>
-    Фарбування не потрібне — ми використовуємо кольоровий пластик. Ви можете обрати доступний колір:
-    <br/>
-    <strong>
-     Червоний, зелений, синій, білий, жовтий, помаранчевий, сірий, чорний, хакі, прозорий
-    </strong>
-    .
-   </p>
-   <p>
-    Всі моделі доступні у двох варіантах:
+
+  <!-- Про нас -->
+  <section class="about-section" id="about">
+    <h2>Про нас</h2>
+    <p>Ми виготовляємо моделі сільськогосподарської техніки за допомогою 3D‑друку з пластику <strong>PETG</strong> у масштабі <strong>1:43</strong>.</p>
+    <p>Фарбування не потрібне — ми використовуємо кольоровий пластик. Ви можете обрати доступний колір:
+      <br><strong>Червоний, зелений, синій, білий, жовтий, помаранчевий, сірий, чорний, хакі, прозорий</strong>.
+    </p>
     <ul>
-     <li>
-      <strong>
-       Зібрані
-      </strong>
-      — дорожчі, готові до демонстрації
-     </li>
-     <li>
-      <strong>
-       Розібрані
-      </strong>
-      — дешевші, для самостійного складання (потрібно прибрати підтримки)
-     </li>
+      <li><strong>Зібрані</strong> — дорожчі, готові до демонстрації</li>
+      <li><strong>Розібрані</strong> — дешевші, для самостійного складання (потрібно прибрати підтримки)</li>
     </ul>
-   </p>
-   <p>
-    <strong>
-     Працюємо офіційно — ФОП Сентіщев О.О.
-    </strong>
-   </p>
+    <p><strong>Працюємо офіційно — ФОП Сентіщев О.О.</strong></p>
   </section>
-  <footer class="footer">
-   <p>
-    Зв’язок:
-    <a href="mailto:osentisev0@gmail.com">
-     osentisev0@gmail.com
-    </a>
-    | Тел: +380 96 501 5297
-   </p>
-   <p>
-    <a href="https://t.me/alex3dp" target="_blank">
-     Telegram‑група
-    </a>
-    |
-    <a href="https://www.tiktok.com/@lex_3d4?_r=1&amp;_t=ZM-92Fr6T23tSi" target="_blank">
-     TikTok
-    </a>
-   </p>
-   <p>
-    © 2026 ФОП Сентіщев О.О. Всі права захищено.
-   </p>
+
+  <!-- Контакти -->
+  <footer class="footer" id="contacts">
+    <p>Зв’язок: <a href="mailto:osentisev0@gmail.com">osentisev0@gmail.com</a> | Тел: +380 96 501 5297</p>
+    <p>
+      <a href="https://t.me/alex3dp" target="_blank">Telegram‑група</a> |
+      <a href="https://www.tiktok.com/@lex_3d4?_r=1&_t=ZM-92Fr6T23tSi" target="_blank">TikTok</a>
+    </p>
+    <p>© 2026 ФОП Сентіщев О.О. Всі права захищено.</p>
   </footer>
- </body>
+
+</body>
 </html>

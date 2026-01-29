@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="uk">
 <head>
@@ -7,115 +8,52 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Навігація -->
   <nav class="navbar">
     <ul>
-      <li><a href="#home">Головна</a></li>
-      <li><a href="#about">Про нас</a></li>
-      <li><a href="#catalog">Категорії</a></li>
-      <li><a href="#contacts">Контакти</a></li>
+      <li><a href="#" onclick="showTab('home')">Головна</a></li>
+      <li><a href="#" onclick="showTab('about')">Про нас</a></li>
+      <li><a href="#" onclick="showTab('catalog')">Категорії</a></li>
+      <li><a href="#" onclick="showTab('contacts')">Контакти</a></li>
     </ul>
   </nav>
 
-  <!-- Головна -->
-  <section id="home" class="tab-content active">
-    <h1>Ласкаво просимо!</h1>
-    <img src="images/banner-placeholder.jpg" alt="Банер" class="banner-img" />
-    <div class="home-content">
-      <h2>Новинки незабаром</h2>
-      <ul>
-        <li>Нива СК5 — у продажі з Нового року</li>
-        <li>Комбайн РКС-6 — готовий до запуску</li>
-        <li>Нові автобуси в масштабі 1:43</li>
-      </ul>
-      <div class="home-images">
-        <img src="images/preview1.jpg" alt="Новинка 1">
-        <img src="images/preview2.jpg" alt="Новинка 2">
-      </div>
-      <h2>Конкурс завершено!</h2>
-      <p>Вітаємо переможців:</p>
-      <ol>
-        <li>Іваненко Петро — модель К-700</li>
-        <li>Шевчук Марія — модель ПРТ-10</li>
-        <li>Олександр Білик — модель Богдан А092</li>
-      </ol>
-    </div>
+  <section id="home" class="tab active">
+    <h1>Головна</h1>
+    <p>Тут буде банер, новини, новинки, конкурс.</p>
   </section>
 
-  <!-- Про нас -->
-  <section id="about" class="tab-content">
-    <div class="about-section">
-      <h2>Про нас</h2>
-      <p>Ми виготовляємо моделі сільськогосподарської техніки за допомогою 3D‑друку з пластику PETG у масштабі 1:43.</p>
-      <p>Фарбування не потрібне — ми використовуємо кольоровий пластик. Ви можете обрати доступний колір:</p>
-      <p><strong>Червоний, зелений, синій, білий, жовтий, помаранчевий, сірий, чорний, хакі, прозорий</strong>.</p>
-      <ul>
-        <li><strong>Зібрані</strong> — дорожчі, готові до демонстрації</li>
-        <li><strong>Розібрані</strong> — дешевші, для самостійного складання (потрібно прибрати підтримки)</li>
-      </ul>
-      <p><strong>Працюємо офіційно — ФОП Сентіщев О.О.</strong></p>
-    </div>
+  <section id="about" class="tab">
+    <h1>Про нас</h1>
+    <p>Інформація про компанію, кольори, масштаби, ФОП.</p>
   </section>
 
-  <!-- Каталог -->
-  <section id="catalog" class="tab-content">
+  <section id="catalog" class="tab">
+    <h1>Категорії</h1>
     <div class="catalog-nav">
-      <button class="catalog-tab" onclick="showCategory('tractors')">Трактори</button>
-      <button class="catalog-tab" onclick="showCategory('combines')">Комбайни</button>
-      <button class="catalog-tab" onclick="showCategory('trailers')">Причепи</button>
-      <button class="catalog-tab" onclick="showCategory('attachments')">Причіпні пристрої</button>
-      <button class="catalog-tab" onclick="showCategory('buses')">Автобуси</button>
-      <button class="catalog-tab" onclick="showCategory('tanks')">Танки</button>
-      <a class="order-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSefb3jfz7Q1SULBn4MrR6eHET8fHfmB35yGddly2uTD9gTnbA/viewform" target="_blank">Оформити замовлення</a>
+      <button onclick="showCategory('tractors')">Трактори</button>
+      <button onclick="showCategory('combines')">Комбайни</button>
+      <button onclick="showCategory('trailers')">Причепи</button>
     </div>
-    <div class="catalog-content">
-      <div id="tractors" class="category-content active">[Тут вставити моделі тракторів]</div>
-      <div id="combines" class="category-content">[Тут вставити моделі комбайнів]</div>
-      <div id="trailers" class="category-content">[Тут вставити моделі причепів]</div>
-      <div id="attachments" class="category-content">[Тут вставити причіпні пристрої]</div>
-      <div id="buses" class="category-content">[Тут вставити моделі автобусів]</div>
-      <div id="tanks" class="category-content">[Тут вставити моделі танків]</div>
-    </div>
+    <div id="tractors" class="category active">[Трактори]</div>
+    <div id="combines" class="category">[Комбайни]</div>
+    <div id="trailers" class="category">[Причепи]</div>
+    <a href="https://docs.google.com" target="_blank" class="order-btn">Оформити замовлення</a>
   </section>
 
-  <!-- Контакти -->
-  <footer id="contacts" class="footer">
-    <p>Зв’язок: <a href="mailto:osentisev0@gmail.com">osentisev0@gmail.com</a> | Тел: +380 96 501 5297</p>
-    <p>
-      <a href="https://t.me/alex3dp" target="_blank">Telegram‑група</a> |
-      <a href="https://www.tiktok.com/@lex_3d4?_r=1&_t=ZM-92Fr6T23tSi" target="_blank">TikTok</a>
-    </p>
-    <p>© 2026 ФОП Сентіщев О.О. Всі права захищено.</p>
-  </footer>
+  <section id="contacts" class="tab">
+    <h1>Контакти</h1>
+    <p>Telegram, TikTok, email, телефон.</p>
+  </section>
 
-  <!-- JavaScript -->
   <script>
-    const navLinks = document.querySelectorAll('.navbar a');
-    const tabContents = document.querySelectorAll('.tab-content');
-
-    function activateTab(id) {
-      tabContents.forEach(tab => tab.classList.remove('active'));
-      document.getElementById(id).classList.add('active');
+    function showTab(tabId) {
+      document.querySelectorAll('.tab').forEach(el => el.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
     }
 
-    navLinks.forEach(link => {
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
-        const id = this.getAttribute('href').substring(1);
-        activateTab(id);
-      });
-    });
-
-    document.addEventListener('DOMContentLoaded', () => {
-      activateTab('home');
-    });
-
-    function showCategory(categoryId) {
-      document.querySelectorAll('.category-content').forEach(div => div.classList.remove('active'));
-      document.getElementById(categoryId).classList.add('active');
-
-      document.querySelectorAll('.catalog-tab').forEach(btn => btn.classList.remove('active'));
-      document.querySelector(`.catalog-tab[onclick*="${categoryId}"]`).classList.add('active');
+    function showCategory(catId) {
+      document.querySelectorAll('.category').forEach(el => el.classList.remove('active'));
+      document.getElementById(catId).classList.add('active');
     }
   </script>
 </body>

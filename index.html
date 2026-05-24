@@ -61,6 +61,33 @@
     </div>
     <div id="tractors" class="catalog-category active-category">
       <!-- Картки з тракторами -->
+
+    <div class="product-card"
+    		data-name="Модель трактора МТЗ-82"
+    		data-image="images/mtz_82.png">
+    
+    		<img src="images/mtz_82_1.png" alt="Модель трактора МТЗ-82">
+    
+    		<h3>Модель трактора МТЗ-82</h3>
+    
+    		<p>Матеріал: PETG</p>
+    
+    		<label>Оберіть масштаб:</label>
+    		<select class="scale-select">
+    			<option value="1:43" data-assembled="700" data-unassembled="600">1:43</option>
+    			<option value="1:34" data-assembled="1200" data-unassembled="1000">1:34</option>
+    			<option value="1:16" data-assembled="3000" data-unassembled="2500">1:16</option>
+    		</select>
+    
+    		<p>
+    			Ціна: <strong class="assembled-price">700 грн</strong> |
+    			Не зібрана: <strong class="unassembled-price">600 грн</strong>
+    		</p>
+    
+    		<button onclick="addSelectedToCart(this, 'Зібрана модель')">Додати зібрану</button>
+    		<button onclick="addSelectedToCart(this, 'Розібрана модель')">Додати розібрану</button>
+    	</div>
+      
       <div class="product-card"> <img alt="Модель трактора МТЗ-892 (блакитний)" src="images/mtz_892.png"/> <h3> Модель трактора МТЗ-892(блакитний) </h3> <p> Масштаб: 1:43 </p> <p> Матеріал: PETG </p> <p> Ціна: <strong> 700 грн </strong> | Не зібрана: <strong> 600 грн </strong> </p> </div> 
       <div class="product-card"> <img alt="Модель трактора МТЗ-82.1 (блакитний)" src="images/mtz_82_1.png"/> <h3> Модель трактора МТЗ-82.1(блакитний) </h3> <p> Масштаб: 1:43 </p> <p> Матеріал: PETG </p> <p> Ціна: <strong> 700 грн </strong> | Не зібрана: <strong> 600 грн </strong> </p> </div> 
       <div class="product-card"> <img alt="Модель трактора МТЗ-82.1 (зелений)" src="images/mtz_82_1_green.png"/> <h3> Модель трактора МТЗ-82.1(зелений) </h3> <p> Масштаб: 1:43 </p> <p> Матеріал: PETG </p> <p> Ціна: <strong> 700 грн </strong> | Не зібрана: <strong> 600 грн </strong> </p> </div> 
@@ -142,185 +169,67 @@
     </footer>
   </section>
 
-  <script>
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+ <script>
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-  function showTab(tabId) {
-    document.querySelectorAll('.tab-content').forEach(section => {
-      section.classList.remove('active-tab');
+function saveCart() {
+  localStorage.setItem("cart", JSON.stringify(cart));
+  updateCartCount();
+}
+
+function updateCartCount() {
+  const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+  document.getElementById("cart-count").textContent = count;
+}
+
+document.addEventListener("change", function(e) {
+  if (e.target.classList.contains("scale-select")) {
+    const card = e.target.closest(".product-card");
+    const selected = e.target.options[e.target.selectedIndex];
+
+    card.querySelector(".assembled-price").textContent =
+      selected.dataset.assembled + " грн";
+
+    card.querySelector(".unassembled-price").textContent =
+      selected.dataset.unassembled + " грн";
+  }
+});
+
+function addSelectedToCart(button, type) {
+  const card = button.closest(".product-card");
+  const select = card.querySelector(".scale-select");
+  const selected = select.options[select.selectedIndex];
+
+  const name = card.dataset.name;
+  const image = card.dataset.image;
+  const scale = selected.value;
+
+  const price = type === "Зібрана модель"
+    ? Number(selected.dataset.assembled)
+    : Number(selected.dataset.unassembled);
+
+  const existing = cart.find(item =>
+    item.name === name &&
+    item.scale === scale &&
+    item.type === type
+  );
+
+  if (existing) {
+    existing.quantity++;
+  } else {
+    cart.push({
+      name,
+      image,
+      scale,
+      type,
+      price,
+      quantity: 1
     });
-    document.getElementById(tabId).classList.add('active-tab');
   }
 
-  function showCategory(categoryId) {
-    document.querySelectorAll('.catalog-category').forEach(div => {
-      div.classList.remove('active-category');
-    });
-    document.getElementById(categoryId).classList.add('active-category');
-  }
-
-  function saveCart() {
-    localStorage.setItem("cart", JSON.stringify(cart));
-    updateCartCount();
-  }
-
-  function updateCartCount() {
-    const count = cart.reduce((sum, item) => sum + item.quantity, 0);
-    document.getElementById("cart-count").textContent = count;
-  }
-
-  function addToCart(name, price, type) {
-    const existing = cart.find(item => item.name === name && item.type === type);
-
-    if (existing) {
-      existing.quantity++;
-    } else {
-      cart.push({
-        name: name,
-        price: price,
-        type: type,
-        quantity: 1
-      });
-    }
-
-    saveCart();
-    alert("Товар додано в кошик!");
-  }
-
-  function openCart() {
-    renderCart();
-    document.getElementById("cart-modal").style.display = "flex";
-  }
-
-  function closeCart() {
-    document.getElementById("cart-modal").style.display = "none";
-  }
-
-  function renderCart() {
-    const cartItems = document.getElementById("cart-items");
-    const cartTotal = document.getElementById("cart-total");
-
-    cartItems.innerHTML = "";
-    let total = 0;
-
-    if (cart.length === 0) {
-      cartItems.innerHTML = "<p>Кошик порожній</p>";
-      cartTotal.textContent = 0;
-      return;
-    }
-
-    cart.forEach((item, index) => {
-      const itemTotal = item.price * item.quantity;
-      total += itemTotal;
-
-      cartItems.innerHTML += `
-        <div class="cart-item">
-          <strong>${item.name}</strong>
-          <p>${item.type}</p>
-          <p>${item.price} грн × ${item.quantity} = ${itemTotal} грн</p>
-          <button onclick="changeQuantity(${index}, -1)">−</button>
-          <button onclick="changeQuantity(${index}, 1)">+</button>
-          <button onclick="removeFromCart(${index})">Видалити</button>
-        </div>
-      `;
-    });
-
-    cartTotal.textContent = total;
-  }
-
-  function changeQuantity(index, amount) {
-    cart[index].quantity += amount;
-
-    if (cart[index].quantity <= 0) {
-      cart.splice(index, 1);
-    }
-
-    saveCart();
-    renderCart();
-  }
-
-  function removeFromCart(index) {
-    cart.splice(index, 1);
-    saveCart();
-    renderCart();
-  }
-
-  function checkout() {
-    const name = document.getElementById("customer-name").value;
-    const phone = document.getElementById("customer-phone").value;
-    const city = document.getElementById("customer-city").value;
-    const post = document.getElementById("customer-post").value;
-    const comment = document.getElementById("customer-comment").value;
-
-    if (!name || !phone || !city || !post) {
-      alert("Будь ласка, заповніть ім’я, телефон, місто та відділення Нової пошти.");
-      return;
-    }
-
-    if (cart.length === 0) {
-      alert("Кошик порожній.");
-      return;
-    }
-
-    let orderText = "Нове замовлення:%0A%0A";
-
-    cart.forEach(item => {
-      orderText += `${item.name}%0A`;
-      orderText += `Варіант: ${item.type}%0A`;
-      orderText += `Кількість: ${item.quantity}%0A`;
-      orderText += `Ціна: ${item.price} грн%0A%0A`;
-    });
-
-    const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-
-    orderText += `Разом: ${total} грн%0A%0A`;
-    orderText += `Ім’я: ${name}%0A`;
-    orderText += `Телефон: ${phone}%0A`;
-    orderText += `Місто: ${city}%0A`;
-    orderText += `Нова пошта: ${post}%0A`;
-    orderText += `Коментар: ${comment}`;
-
-    window.open(`https://t.me/alex3dp?text=${orderText}`, "_blank");
-
-    cart = [];
-    saveCart();
-    renderCart();
-  }
-
-  document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll(".product-card").forEach(card => {
-      const title = card.querySelector("h3")?.innerText.trim();
-      const priceText = card.innerText;
-
-      const prices = [...priceText.matchAll(/(\d+)\s*грн/g)].map(p => Number(p[1]));
-
-      if (title && prices.length >= 1) {
-        const assembledPrice = prices[0];
-        const unassembledPrice = prices[1];
-
-        const buttons = document.createElement("div");
-        buttons.className = "product-buttons";
-
-        buttons.innerHTML = `
-          <button onclick="addToCart('${title}', ${assembledPrice}, 'Зібрана модель')">
-            Додати зібрану
-          </button>
-        `;
-
-        if (unassembledPrice) {
-          buttons.innerHTML += `
-            <button onclick="addToCart('${title}', ${unassembledPrice}, 'Розібрана модель')">
-              Додати розібрану
-            </button>
-          `;
-        }
-
-        card.appendChild(buttons);
-      }
-    });
-
-    updateCartCount();
-  });
+  saveCart();
+  alert("Товар додано в кошик!");
+}
 </script>
 
 <div id="cart-modal" class="cart-modal">

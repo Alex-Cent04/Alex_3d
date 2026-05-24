@@ -41,7 +41,7 @@
     <header class="header">
       <h1>Каталог моделей техніки</h1>
       <p>3D-друковані моделі в масштабі 1:43 з пластику PETG</p>
-      <a class="order-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSefb3jfz7Q1SULBn4MrR6eHET8fHfmB35yGddly2uTD9gTnbA/viewform" target="_blank">Замовити через форму</a>
+      <button class="order-btn" onclick="openCart()">🛒 Кошик (<span id="cart-count">0</span>)</button>
     </header>
     <div class="catalog-tabs">
       <button onclick="showCategory('auto')">Ваше авто по фото</button>
@@ -143,17 +143,206 @@
   </section>
 
   <script>
-    function showTab(tabId) {
-      document.querySelectorAll('.tab-content').forEach(section => {
-        section.classList.remove('active-tab');
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  function showTab(tabId) {
+    document.querySelectorAll('.tab-content').forEach(section => {
+      section.classList.remove('active-tab');
+    });
+    document.getElementById(tabId).classList.add('active-tab');
+  }
+
+  function showCategory(categoryId) {
+    document.querySelectorAll('.catalog-category').forEach(div => {
+      div.classList.remove('active-category');
+    });
+    document.getElementById(categoryId).classList.add('active-category');
+  }
+
+  function saveCart() {
+    localStorage.setItem("cart", JSON.stringify(cart));
+    updateCartCount();
+  }
+
+  function updateCartCount() {
+    const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+    document.getElementById("cart-count").textContent = count;
+  }
+
+  function addToCart(name, price, type) {
+    const existing = cart.find(item => item.name === name && item.type === type);
+
+    if (existing) {
+      existing.quantity++;
+    } else {
+      cart.push({
+        name: name,
+        price: price,
+        type: type,
+        quantity: 1
       });
-      document.getElementById(tabId).classList.add('active-tab');
     }
 
-    function showCategory(categoryId) {
-      document.querySelectorAll('.catalog-category').forEach(div => div.classList.remove('active-category'));
-      document.getElementById(categoryId).classList.add('active-category');
+    saveCart();
+    alert("Товар додано в кошик!");
+  }
+
+  function openCart() {
+    renderCart();
+    document.getElementById("cart-modal").style.display = "flex";
+  }
+
+  function closeCart() {
+    document.getElementById("cart-modal").style.display = "none";
+  }
+
+  function renderCart() {
+    const cartItems = document.getElementById("cart-items");
+    const cartTotal = document.getElementById("cart-total");
+
+    cartItems.innerHTML = "";
+    let total = 0;
+
+    if (cart.length === 0) {
+      cartItems.innerHTML = "<p>Кошик порожній</p>";
+      cartTotal.textContent = 0;
+      return;
     }
-  </script>
+
+    cart.forEach((item, index) => {
+      const itemTotal = item.price * item.quantity;
+      total += itemTotal;
+
+      cartItems.innerHTML += `
+        <div class="cart-item">
+          <strong>${item.name}</strong>
+          <p>${item.type}</p>
+          <p>${item.price} грн × ${item.quantity} = ${itemTotal} грн</p>
+          <button onclick="changeQuantity(${index}, -1)">−</button>
+          <button onclick="changeQuantity(${index}, 1)">+</button>
+          <button onclick="removeFromCart(${index})">Видалити</button>
+        </div>
+      `;
+    });
+
+    cartTotal.textContent = total;
+  }
+
+  function changeQuantity(index, amount) {
+    cart[index].quantity += amount;
+
+    if (cart[index].quantity <= 0) {
+      cart.splice(index, 1);
+    }
+
+    saveCart();
+    renderCart();
+  }
+
+  function removeFromCart(index) {
+    cart.splice(index, 1);
+    saveCart();
+    renderCart();
+  }
+
+  function checkout() {
+    const name = document.getElementById("customer-name").value;
+    const phone = document.getElementById("customer-phone").value;
+    const city = document.getElementById("customer-city").value;
+    const post = document.getElementById("customer-post").value;
+    const comment = document.getElementById("customer-comment").value;
+
+    if (!name || !phone || !city || !post) {
+      alert("Будь ласка, заповніть ім’я, телефон, місто та відділення Нової пошти.");
+      return;
+    }
+
+    if (cart.length === 0) {
+      alert("Кошик порожній.");
+      return;
+    }
+
+    let orderText = "Нове замовлення:%0A%0A";
+
+    cart.forEach(item => {
+      orderText += `${item.name}%0A`;
+      orderText += `Варіант: ${item.type}%0A`;
+      orderText += `Кількість: ${item.quantity}%0A`;
+      orderText += `Ціна: ${item.price} грн%0A%0A`;
+    });
+
+    const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+
+    orderText += `Разом: ${total} грн%0A%0A`;
+    orderText += `Ім’я: ${name}%0A`;
+    orderText += `Телефон: ${phone}%0A`;
+    orderText += `Місто: ${city}%0A`;
+    orderText += `Нова пошта: ${post}%0A`;
+    orderText += `Коментар: ${comment}`;
+
+    window.open(`https://t.me/alex3dp?text=${orderText}`, "_blank");
+
+    cart = [];
+    saveCart();
+    renderCart();
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".product-card").forEach(card => {
+      const title = card.querySelector("h3")?.innerText.trim();
+      const priceText = card.innerText;
+
+      const prices = [...priceText.matchAll(/(\d+)\s*грн/g)].map(p => Number(p[1]));
+
+      if (title && prices.length >= 1) {
+        const assembledPrice = prices[0];
+        const unassembledPrice = prices[1];
+
+        const buttons = document.createElement("div");
+        buttons.className = "product-buttons";
+
+        buttons.innerHTML = `
+          <button onclick="addToCart('${title}', ${assembledPrice}, 'Зібрана модель')">
+            Додати зібрану
+          </button>
+        `;
+
+        if (unassembledPrice) {
+          buttons.innerHTML += `
+            <button onclick="addToCart('${title}', ${unassembledPrice}, 'Розібрана модель')">
+              Додати розібрану
+            </button>
+          `;
+        }
+
+        card.appendChild(buttons);
+      }
+    });
+
+    updateCartCount();
+  });
+</script>
+
+<div id="cart-modal" class="cart-modal">
+  <div class="cart-box">
+    <button class="cart-close" onclick="closeCart()">×</button>
+    <h2>Ваш кошик</h2>
+
+    <div id="cart-items"></div>
+
+    <h3>Разом: <span id="cart-total">0</span> грн</h3>
+
+    <h3>Оформлення замовлення</h3>
+
+    <input id="customer-name" type="text" placeholder="Ваше ім’я">
+    <input id="customer-phone" type="tel" placeholder="Телефон">
+    <input id="customer-city" type="text" placeholder="Місто">
+    <input id="customer-post" type="text" placeholder="Відділення Нової пошти">
+    <textarea id="customer-comment" placeholder="Коментар до замовлення"></textarea>
+
+    <button class="checkout-btn" onclick="checkout()">Оформити замовлення</button>
+  </div>
+</div>
+  
 </body>
 </html>

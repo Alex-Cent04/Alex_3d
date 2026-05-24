@@ -63,27 +63,21 @@
       <!-- Картки з тракторами -->
 
     <div class="product-card"
-    		data-name="Модель трактора МТЗ-82"
-    		data-image="images/mtz_82.png">
-    
-    		<img src="images/mtz_82_1.png" alt="Модель трактора МТЗ-82">
-    
-    		<h3>Модель трактора МТЗ-82</h3>
-    
+    		data-name="Модель трактора МТЗ-892(блакитний)"
+    		data-image="images/mtz_892.png">
+    		<img src="images/mtz_892.png" alt="Модель трактора МТЗ-82">
+    		<h3>Модель трактора МТЗ-892(блакитний)</h3>
     		<p>Матеріал: PETG</p>
-    
     		<label>Оберіть масштаб:</label>
     		<select class="scale-select">
     			<option value="1:43" data-assembled="700" data-unassembled="600">1:43</option>
     			<option value="1:35" data-assembled="1200" data-unassembled="1000">1:35</option>
     			<option value="1:16" data-assembled="3000" data-unassembled="2500">1:16</option>
     		</select>
-    
     		<p>
     			Ціна: <strong class="assembled-price">700 грн</strong> |
     			Не зібрана: <strong class="unassembled-price">600 грн</strong>
     		</p>
-    
     		<button onclick="addSelectedToCart(this, 'Зібрана модель')">Додати зібрану</button>
     		<button onclick="addSelectedToCart(this, 'Розібрана модель')">Додати розібрану</button>
     	</div>
@@ -209,7 +203,7 @@
 
 <script>
 const GOOGLE_SCRIPT_URL = 
-  "https://script.google.com/macros/s/AKfycbzx7AuiY7tNphOFJ6eyvySEkpU4PX49TnybUc-p83jBNledK8BJAY7wkAORC-y5t-VS/exec"; // сюди вставиш URL Google Apps Script після налаштування таблиці
+  "https://script.google.com/macros/s/AKfycbxgyBZoeWmpQncKgJy5H0FWbdE5JCpy-whHFIl1Y8K4tXei_d3P73bmstw9EFpJWtkm/exec"; // сюди вставиш URL Google Apps Script після налаштування таблиці
 const SITE_URL = "https://alex-cent04.github.io/Alex_3d/";
 
 let cart = JSON.parse(localStorage.getItem("cart")) || [];

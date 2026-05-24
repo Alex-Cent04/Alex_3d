@@ -75,7 +75,7 @@
     		<label>Оберіть масштаб:</label>
     		<select class="scale-select">
     			<option value="1:43" data-assembled="700" data-unassembled="600">1:43</option>
-    			<option value="1:34" data-assembled="1200" data-unassembled="1000">1:34</option>
+    			<option value="1:35" data-assembled="1200" data-unassembled="1000">1:35</option>
     			<option value="1:16" data-assembled="3000" data-unassembled="2500">1:16</option>
     		</select>
     
@@ -181,7 +181,7 @@
 
     <h3>Оформлення замовлення</h3>
 
-    <input id="customer-name" type="text" placeholder="Ваше ім’я">
+    <input id="customer-name" type="text" placeholder="Ваше ПІБ">
     <input id="customer-phone" type="tel" placeholder="Телефон">
     <input id="customer-city" type="text" placeholder="Місто">
     <input id="customer-post" type="text" placeholder="Відділення Нової пошти">
@@ -189,8 +189,7 @@
 
     <div class="checkout-warning">
       <p>
-        Оплата здійснюється після підтвердження замовлення, надсилання фото/відео готової моделі
-        та погодження з покупцем. Відправка здійснюється після 100% передоплати на рахунок ФОП.
+        Увага! З приводу оплати. Ми беремо замовлення в обробку, після того, як модель буде надрукована та зібрана ми надсилаємо відео звіт на той месенджер який ви вкажете далі. Після цього ви надсилаєте повну суму замовлення на рахунок ФОП і ми відправляємо вам замовлення. З післясплатою не працюємо. Натискаючи кнопку "Я ознайомлений" ви підтверджуєте готовність робити замовлення на даних умовах. 
       </p>
 
       <label>
@@ -200,7 +199,7 @@
 
       <label>
         <input type="checkbox" id="personal-agree">
-        Я даю згоду на обробку персональних даних для оформлення та відправлення замовлення.
+        Я даю згоду на обробку персональних даних.
       </label>
     </div>
 
@@ -209,7 +208,7 @@
 </div>
 
 <script>
-const GOOGLE_SCRIPT_URL = ""; // сюди вставиш URL Google Apps Script після налаштування таблиці
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxjYLivWxSoXhwqDf6BV61UbGDuJq0slZtqBCc_5DSa7mCdB-oYbmHA-yVt2Z27sR__/exec"; // сюди вставиш URL Google Apps Script після налаштування таблиці
 const SITE_URL = "https://alex-cent04.github.io/Alex_3d/";
 
 let cart = JSON.parse(localStorage.getItem("cart")) || [];

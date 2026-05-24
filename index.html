@@ -169,8 +169,64 @@
     </footer>
   </section>
 
- <script>
+
+<div id="cart-modal" class="cart-modal">
+  <div class="cart-box">
+    <button class="cart-close" onclick="closeCart()">×</button>
+    <h2>Ваш кошик</h2>
+
+    <div id="cart-items"></div>
+
+    <h3>Разом: <span id="cart-total">0</span> грн</h3>
+
+    <h3>Оформлення замовлення</h3>
+
+    <input id="customer-name" type="text" placeholder="Ваше ім’я">
+    <input id="customer-phone" type="tel" placeholder="Телефон">
+    <input id="customer-city" type="text" placeholder="Місто">
+    <input id="customer-post" type="text" placeholder="Відділення Нової пошти">
+    <textarea id="customer-comment" placeholder="Коментар до замовлення"></textarea>
+
+    <div class="checkout-warning">
+      <p>
+        Оплата здійснюється після підтвердження замовлення, надсилання фото/відео готової моделі
+        та погодження з покупцем. Відправка здійснюється після 100% передоплати на рахунок ФОП.
+      </p>
+
+      <label>
+        <input type="checkbox" id="payment-agree">
+        Я ознайомлений(а) з умовами оплати та оформлення замовлення.
+      </label>
+
+      <label>
+        <input type="checkbox" id="personal-agree">
+        Я даю згоду на обробку персональних даних для оформлення та відправлення замовлення.
+      </label>
+    </div>
+
+    <button class="checkout-btn" onclick="checkout()">Оформити замовлення</button>
+  </div>
+</div>
+
+<script>
+const GOOGLE_SCRIPT_URL = ""; // сюди вставиш URL Google Apps Script після налаштування таблиці
+const SITE_URL = "https://alex-cent04.github.io/Alex_3d/";
+
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+function showTab(tabId) {
+  document.querySelectorAll('.tab-content').forEach(section => {
+    section.classList.remove('active-tab');
+  });
+  document.getElementById(tabId).classList.add('active-tab');
+}
+
+function showCategory(categoryId) {
+  document.querySelectorAll('.catalog-category').forEach(div => {
+    div.classList.remove('active-category');
+  });
+  document.getElementById(categoryId).classList.add('active-category');
+}
 
 function saveCart() {
   localStorage.setItem("cart", JSON.stringify(cart));
@@ -178,8 +234,16 @@ function saveCart() {
 }
 
 function updateCartCount() {
+  const counter = document.getElementById("cart-count");
+  if (!counter) return;
   const count = cart.reduce((sum, item) => sum + item.quantity, 0);
-  document.getElementById("cart-count").textContent = count;
+  counter.textContent = count;
+}
+
+function getFullImageUrl(imagePath) {
+  if (!imagePath) return "";
+  if (imagePath.startsWith("http")) return imagePath;
+  return SITE_URL + imagePath.replace(/^\/+/, "");
 }
 
 document.addEventListener("change", function(e) {
@@ -187,11 +251,8 @@ document.addEventListener("change", function(e) {
     const card = e.target.closest(".product-card");
     const selected = e.target.options[e.target.selectedIndex];
 
-    card.querySelector(".assembled-price").textContent =
-      selected.dataset.assembled + " грн";
-
-    card.querySelector(".unassembled-price").textContent =
-      selected.dataset.unassembled + " грн";
+    card.querySelector(".assembled-price").textContent = selected.dataset.assembled + " грн";
+    card.querySelector(".unassembled-price").textContent = selected.dataset.unassembled + " грн";
   }
 });
 
@@ -200,14 +261,18 @@ function addSelectedToCart(button, type) {
   const select = card.querySelector(".scale-select");
   const selected = select.options[select.selectedIndex];
 
-  const name = card.dataset.name;
-  const image = card.dataset.image;
+  const name = card.dataset.name || card.querySelector("h3")?.innerText.trim();
+  const image = getFullImageUrl(card.dataset.image || card.querySelector("img")?.getAttribute("src"));
   const scale = selected.value;
 
   const price = type === "Зібрана модель"
     ? Number(selected.dataset.assembled)
     : Number(selected.dataset.unassembled);
 
+  addToCart(name, image, scale, type, price);
+}
+
+function addToCart(name, image, scale, type, price) {
   const existing = cart.find(item =>
     item.name === name &&
     item.scale === scale &&
@@ -230,28 +295,187 @@ function addSelectedToCart(button, type) {
   saveCart();
   alert("Товар додано в кошик!");
 }
+
+function openCart() {
+  renderCart();
+  document.getElementById("cart-modal").style.display = "flex";
+}
+
+function closeCart() {
+  document.getElementById("cart-modal").style.display = "none";
+}
+
+function renderCart() {
+  const cartItems = document.getElementById("cart-items");
+  const cartTotal = document.getElementById("cart-total");
+
+  cartItems.innerHTML = "";
+  let total = 0;
+
+  if (cart.length === 0) {
+    cartItems.innerHTML = "<p>Кошик порожній</p>";
+    cartTotal.textContent = 0;
+    return;
+  }
+
+  cart.forEach((item, index) => {
+    const itemTotal = item.price * item.quantity;
+    total += itemTotal;
+
+    cartItems.innerHTML += `
+      <div class="cart-item">
+        <img src="${item.image}" alt="${item.name}" class="cart-img">
+
+        <div class="cart-item-info">
+          <strong>${item.name}</strong>
+          <p>Масштаб: ${item.scale}</p>
+          <p>${item.type}</p>
+          <p>${item.price} грн × ${item.quantity} = ${itemTotal} грн</p>
+
+          <button onclick="changeQuantity(${index}, -1)">−</button>
+          <button onclick="changeQuantity(${index}, 1)">+</button>
+          <button onclick="removeFromCart(${index})">Видалити</button>
+        </div>
+      </div>
+    `;
+  });
+
+  cartTotal.textContent = total;
+}
+
+function changeQuantity(index, amount) {
+  cart[index].quantity += amount;
+
+  if (cart[index].quantity <= 0) {
+    cart.splice(index, 1);
+  }
+
+  saveCart();
+  renderCart();
+}
+
+function removeFromCart(index) {
+  cart.splice(index, 1);
+  saveCart();
+  renderCart();
+}
+
+async function checkout() {
+  const name = document.getElementById("customer-name").value.trim();
+  const phone = document.getElementById("customer-phone").value.trim();
+  const city = document.getElementById("customer-city").value.trim();
+  const post = document.getElementById("customer-post").value.trim();
+  const comment = document.getElementById("customer-comment").value.trim();
+  const paymentAgree = document.getElementById("payment-agree").checked;
+  const personalAgree = document.getElementById("personal-agree").checked;
+
+  if (!name || !phone || !city || !post) {
+    alert("Будь ласка, заповніть ім’я, телефон, місто та відділення Нової пошти.");
+    return;
+  }
+
+  if (!paymentAgree || !personalAgree) {
+    alert("Потрібно погодитися з умовами оплати та обробкою персональних даних.");
+    return;
+  }
+
+  if (cart.length === 0) {
+    alert("Кошик порожній.");
+    return;
+  }
+
+  const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+
+  const order = {
+    date: new Date().toLocaleString("uk-UA"),
+    customer: {
+      name,
+      phone,
+      city,
+      post,
+      comment
+    },
+    items: cart,
+    total,
+    paymentAgree,
+    personalAgree
+  };
+
+  if (!GOOGLE_SCRIPT_URL) {
+    console.log("Замовлення для Google Sheets:", order);
+    alert("Замовлення сформовано, але Google Sheets ще не підключено. Встав URL Google Apps Script у змінну GOOGLE_SCRIPT_URL.");
+    return;
+  }
+
+  try {
+    await fetch(GOOGLE_SCRIPT_URL, {
+      method: "POST",
+      mode: "no-cors",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(order)
+    });
+
+    alert("Дякуємо! Замовлення оформлено.");
+    cart = [];
+    saveCart();
+    renderCart();
+    closeCart();
+  } catch (error) {
+    alert("Помилка відправлення замовлення. Спробуйте ще раз або зв’яжіться з нами напряму.");
+    console.error(error);
+  }
+}
+
+function prepareDefaultProductCards() {
+  document.querySelectorAll(".product-card").forEach(card => {
+    if (card.querySelector(".scale-select")) return;
+    if (card.querySelector(".product-buttons")) return;
+
+    const title = card.querySelector("h3")?.innerText.trim();
+    const imagePath = card.querySelector("img")?.getAttribute("src") || "";
+    const text = card.innerText;
+    const prices = [...text.matchAll(/(\d+)\s*грн/g)].map(match => Number(match[1]));
+    const scaleMatch = text.match(/Масштаб:\s*([^\n]+)/i);
+    const scale = scaleMatch ? scaleMatch[1].trim() : "Не вказано";
+
+    if (!title || prices.length === 0) return;
+
+    const assembledPrice = prices[0];
+    const unassembledPrice = prices[1];
+    const image = getFullImageUrl(imagePath);
+
+    const buttons = document.createElement("div");
+    buttons.className = "product-buttons";
+
+    buttons.innerHTML = `
+      <button type="button">Додати зібрану</button>
+    `;
+
+    buttons.children[0].addEventListener("click", () => {
+      addToCart(title, image, scale, "Зібрана модель", assembledPrice);
+    });
+
+    if (unassembledPrice) {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.textContent = "Додати розібрану";
+      btn.addEventListener("click", () => {
+        addToCart(title, image, scale, "Розібрана модель", unassembledPrice);
+      });
+      buttons.appendChild(btn);
+    }
+
+    card.appendChild(buttons);
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  prepareDefaultProductCards();
+  updateCartCount();
+});
 </script>
 
-<div id="cart-modal" class="cart-modal">
-  <div class="cart-box">
-    <button class="cart-close" onclick="closeCart()">×</button>
-    <h2>Ваш кошик</h2>
-
-    <div id="cart-items"></div>
-
-    <h3>Разом: <span id="cart-total">0</span> грн</h3>
-
-    <h3>Оформлення замовлення</h3>
-
-    <input id="customer-name" type="text" placeholder="Ваше ім’я">
-    <input id="customer-phone" type="tel" placeholder="Телефон">
-    <input id="customer-city" type="text" placeholder="Місто">
-    <input id="customer-post" type="text" placeholder="Відділення Нової пошти">
-    <textarea id="customer-comment" placeholder="Коментар до замовлення"></textarea>
-
-    <button class="checkout-btn" onclick="checkout()">Оформити замовлення</button>
-  </div>
-</div>
-  
 </body>
 </html>

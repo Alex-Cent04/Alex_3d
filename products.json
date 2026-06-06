@@ -60,48 +60,14 @@
       "Дах"
     ],
     "options": [
-      {
-        "id": "windows",
-        "title": "Скло / вікна",
-        "type": "select",
-        "choices": [
-          {
-            "name": "Без фарбування",
-            "price": 0
-          },
-          {
-            "name": "Вікна чорним кольором",
-            "price": 100
-          }
-        ]
-      },
-      {
-        "id": "grille",
-        "title": "Решітка радіатора",
-        "type": "select",
-        "choices": [
-          {
-            "name": "Стандартна",
-            "price": 0
-          },
-          {
-            "name": "Чорна деталізована",
-            "price": 50
-          }
-        ]
-      },
+     
       {
         "id": "mirrors",
-        "title": "Дзеркала",
+        "title": "Остеклення кабіни",
         "type": "checkbox",
-        "price": 30
+        "price": 100
       },
-      {
-        "id": "lights",
-        "title": "Фарбовані фари",
-        "type": "checkbox",
-        "price": 30
-      }
+      
     ]
   },
   {

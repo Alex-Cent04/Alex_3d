@@ -174,11 +174,13 @@ function updateDetailPrice() {
   const selectedScale = scaleSelect.options[scaleSelect.selectedIndex];
   const type = typeSelect.value;
 
-  const price = type === "assembled"
-    ? selectedScale.dataset.assembled
-    : selectedScale.dataset.unassembled;
+  const basePrice = type === "assembled"
+    ? Number(selectedScale.dataset.assembled)
+    : Number(selectedScale.dataset.unassembled);
 
-  document.getElementById("detail-price").textContent = price;
+  const { optionsTotal } = getSelectedOptions();
+
+  document.getElementById("detail-price").textContent = basePrice + optionsTotal;
 }
 
 function addConfiguredToCart() {
@@ -190,14 +192,19 @@ function addConfiguredToCart() {
   const scale = selectedScale.value;
   const type = typeSelect.value === "assembled" ? "Зібрана модель" : "Розібрана модель";
 
-  const price = typeSelect.value === "assembled"
+  const basePrice = typeSelect.value === "assembled"
     ? Number(selectedScale.dataset.assembled)
     : Number(selectedScale.dataset.unassembled);
+
+  const { selectedOptions, optionsTotal } = getSelectedOptions();
+
+  const finalPrice = basePrice + optionsTotal;
 
   const existing = cart.find(item =>
     item.name === currentProduct.name &&
     item.scale === scale &&
-    item.type === type
+    item.type === type &&
+    JSON.stringify(item.options) === JSON.stringify(selectedOptions)
   );
 
   if (existing) {
@@ -208,13 +215,14 @@ function addConfiguredToCart() {
       image: currentProduct.image,
       scale,
       type,
-      price,
+      options: selectedOptions,
+      price: finalPrice,
       quantity: 1
     });
   }
 
   localStorage.setItem("cart", JSON.stringify(cart));
-  alert("Товар додано в кошик!");
+  alert("Товар з опціями додано в кошик!");
 }
 
 document.getElementById("detail-scale").addEventListener("change", updateDetailPrice);

@@ -83,6 +83,90 @@ async function loadProductDetails() {
   updateDetailPrice();
 }
 
+function renderProductOptions() {
+  const optionsBox = document.getElementById("product-options");
+  optionsBox.innerHTML = "";
+
+  if (!currentProduct.options || currentProduct.options.length === 0) {
+    return;
+  }
+
+  optionsBox.innerHTML = "<h3>Додаткові опції</h3>";
+
+  currentProduct.options.forEach(option => {
+    const wrapper = document.createElement("div");
+    wrapper.className = "option-block";
+
+    if (option.type === "select") {
+      const choices = option.choices.map(choice => `
+        <option value="${choice.name}" data-price="${choice.price}">
+          ${choice.name}${choice.price > 0 ? " +" + choice.price + " грн" : ""}
+        </option>
+      `).join("");
+
+      wrapper.innerHTML = `
+        <label>${option.title}</label>
+        <select class="product-option" data-title="${option.title}">
+          ${choices}
+        </select>
+      `;
+    }
+
+    if (option.type === "checkbox") {
+      wrapper.innerHTML = `
+        <label class="checkbox-option">
+          <input 
+            type="checkbox" 
+            class="product-option-checkbox" 
+            data-title="${option.title}" 
+            data-price="${option.price}">
+          ${option.title} +${option.price} грн
+        </label>
+      `;
+    }
+
+    optionsBox.appendChild(wrapper);
+  });
+
+  document.querySelectorAll(".product-option, .product-option-checkbox").forEach(input => {
+    input.addEventListener("change", updateDetailPrice);
+  });
+}
+
+function getSelectedOptions() {
+  const selectedOptions = [];
+  let optionsTotal = 0;
+
+  document.querySelectorAll(".product-option").forEach(select => {
+    const selected = select.options[select.selectedIndex];
+
+    selectedOptions.push({
+      title: select.dataset.title,
+      value: selected.value,
+      price: Number(selected.dataset.price)
+    });
+
+    optionsTotal += Number(selected.dataset.price);
+  });
+
+  document.querySelectorAll(".product-option-checkbox").forEach(checkbox => {
+    if (checkbox.checked) {
+      selectedOptions.push({
+        title: checkbox.dataset.title,
+        value: "Так",
+        price: Number(checkbox.dataset.price)
+      });
+
+      optionsTotal += Number(checkbox.dataset.price);
+    }
+  });
+
+  return {
+    selectedOptions,
+    optionsTotal
+  };
+}
+  
 function updateDetailPrice() {
   const scaleSelect = document.getElementById("detail-scale");
   const typeSelect = document.getElementById("detail-type");

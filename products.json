@@ -26,6 +26,39 @@
         "unassembled": 2500
       }
     ],
+
+"colorVariants": [
+  {
+    "name": "Блакитний",
+    "image": "images/mtz_892.png",
+    "price": 0
+  },
+  {
+    "name": "Червоний",
+    "image": "images/mtz_892_red.png",
+    "price": 0
+  },
+  {
+    "name": "Зелений",
+    "image": "images/mtz_892_green.png",
+    "price": 0
+  },
+  {
+    "name": "Індивідуальні кольори",
+    "image": "images/mtz_892.png",
+    "price": 200
+  }
+],
+"customColorParts": [
+  "Капот",
+  "Кабіна",
+  "Крила",
+  "Диски",
+  "Рама",
+  "Решітка радіатора",
+  "Дах"
+]
+    
     "options": [
       {
         "id": "color",

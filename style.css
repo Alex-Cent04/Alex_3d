@@ -475,3 +475,18 @@ body { font-family: Arial, sans-serif; background-color: #f7f7f7; margin: 0; pad
   }
 }
 
+.details-btn {
+  background: #00509e;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 8px;
+  width: 100%;
+}
+
+.details-btn:hover {
+  background: #003f7d;
+}

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Детальніше про модель</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav-tabs">
+  <button onclick="location.href='index.html'">Головна</button>
+  <button onclick="location.href='index.html#catalog'">Каталог</button>
+</nav>
+
+<main class="product-detail-page">
+  <div class="product-detail-card">
+    <img id="product-image" class="detail-image" src="" alt="">
+
+    <div class="detail-info">
+      <h1 id="product-name"></h1>
+      <p><strong>Матеріал:</strong> <span id="product-material"></span></p>
+      <p id="product-description"></p>
+
+      <label>Оберіть масштаб:</label>
+      <select id="detail-scale"></select>
+
+      <label>Варіант:</label>
+      <select id="detail-type">
+        <option value="assembled">Зібрана модель</option>
+        <option value="unassembled">Розібрана модель</option>
+      </select>
+
+      <h2>Ціна: <span id="detail-price">0</span> грн</h2>
+
+      <button class="checkout-btn" onclick="addConfiguredToCart()">Додати в кошик</button>
+    </div>
+  </div>
+</main>
+
+<script>
+const SITE_URL = "https://alex-cent04.github.io/Alex_3d/";
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+let currentProduct = null;
+
+function getProductIdFromUrl() {
+  const params = new URLSearchParams(window.location.search);
+  return params.get("id");
+}
+
+async function loadProductDetails() {
+  const productId = getProductIdFromUrl();
+
+  const response = await fetch("products.json");
+  const products = await response.json();
+
+  currentProduct = products.find(item => item.id === productId);
+
+  if (!currentProduct) {
+    document.querySelector("main").innerHTML = "<h2>Товар не знайдено</h2>";
+    return;
+  }
+
+  document.getElementById("product-image").src = currentProduct.image;
+  document.getElementById("product-name").textContent = currentProduct.name;
+  document.getElementById("product-material").textContent = currentProduct.material;
+  document.getElementById("product-description").textContent = currentProduct.description;
+
+  const scaleSelect = document.getElementById("detail-scale");
+  scaleSelect.innerHTML = "";
+
+  currentProduct.scales.forEach(item => {
+    scaleSelect.innerHTML += `
+      <option 
+        value="${item.scale}" 
+        data-assembled="${item.assembled}" 
+        data-unassembled="${item.unassembled}">
+        ${item.scale}
+      </option>
+    `;
+  });
+
+  updateDetailPrice();
+}
+
+function updateDetailPrice() {
+  const scaleSelect = document.getElementById("detail-scale");
+  const typeSelect = document.getElementById("detail-type");
+
+  const selectedScale = scaleSelect.options[scaleSelect.selectedIndex];
+  const type = typeSelect.value;
+
+  const price = type === "assembled"
+    ? selectedScale.dataset.assembled
+    : selectedScale.dataset.unassembled;
+
+  document.getElementById("detail-price").textContent = price;
+}
+
+function addConfiguredToCart() {
+  const scaleSelect = document.getElementById("detail-scale");
+  const typeSelect = document.getElementById("detail-type");
+
+  const selectedScale = scaleSelect.options[scaleSelect.selectedIndex];
+
+  const scale = selectedScale.value;
+  const type = typeSelect.value === "assembled" ? "Зібрана модель" : "Розібрана модель";
+
+  const price = typeSelect.value === "assembled"
+    ? Number(selectedScale.dataset.assembled)
+    : Number(selectedScale.dataset.unassembled);
+
+  const existing = cart.find(item =>
+    item.name === currentProduct.name &&
+    item.scale === scale &&
+    item.type === type
+  );
+
+  if (existing) {
+    existing.quantity++;
+  } else {
+    cart.push({
+      name: currentProduct.name,
+      image: currentProduct.image,
+      scale,
+      type,
+      price,
+      quantity: 1
+    });
+  }
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+  alert("Товар додано в кошик!");
+}
+
+document.getElementById("detail-scale").addEventListener("change", updateDetailPrice);
+document.getElementById("detail-type").addEventListener("change", updateDetailPrice);
+
+loadProductDetails();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+[
+  {
+    "id": "mtz-892-blue",
+    "category": "tractors",
+    "name": "Модель трактора МТЗ-892 (блакитний)",
+    "image": "images/mtz_892.png",
+    "material": "PETG",
+    "description": "Модель трактора МТЗ-892. Доступна у зібраному та розібраному варіанті.",
+    "scales": [
+      {
+        "scale": "1:43",
+        "assembled": 700,
+        "unassembled": 600
+      },
+      {
+        "scale": "1:35",
+        "assembled": 1200,
+        "unassembled": 1000
+      },
+      {
+        "scale": "1:16",
+        "assembled": 3000,
+        "unassembled": 2500
+      }
+    ]
+  },
+  {
+    "id": "htz-t150k-blue",
+    "category": "tractors",
+    "name": "Модель трактора ХТЗ Т-150К",
+    "image": "images/т150-removebg-preview.png",
+    "material": "PETG",
+    "description": "Модель трактора ХТЗ Т-150К у масштабі 1:43.",
+    "scales": [
+      {
+        "scale": "1:43",
+        "assembled": 800,
+        "unassembled": 600
+      }
+    ]
+  },
+  {
+    "id": "niva-sk5",
+    "category": "combines",
+    "name": "Модель комбайна Нива СК-5",
+    "image": "images/нива.png",
+    "material": "PETG",
+    "description": "Модель комбайна Нива СК-5 у масштабі 1:43.",
+    "scales": [
+      {
+        "scale": "1:43",
+        "assembled": 1400,
+        "unassembled": 1000
+      }
+    ]
+  },
+  {
+    "id": "bdt-7",
+    "category": "attachments",
+    "name": "Модель дискової борони БДТ-7",
+    "image": "images/БДТ-7-removebg-preview.png",
+    "material": "PETG",
+    "description": "Модель дискової борони БДТ-7.",
+    "scales": [
+      {
+        "scale": "1:43",
+        "assembled": 1000,
+        "unassembled": 800
+      }
+    ]
+  }
+]

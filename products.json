@@ -4,8 +4,11 @@
     "category": "tractors",
     "name": "Модель трактора МТЗ-892 (блакитний)",
     "image": "images/mtz_892.png",
+    "images": [
+      "images/mtz_892.png"
+    ],
     "material": "PETG",
-    "description": "Модель трактора МТЗ-892. Доступна у зібраному та розібраному варіанті.",
+    "description": "Модель трактора МТЗ-892 з PETG пластику. Доступна у зібраному та розібраному варіанті.",
     "scales": [
       {
         "scale": "1:43",
@@ -22,6 +25,77 @@
         "assembled": 3000,
         "unassembled": 2500
       }
+    ],
+    "options": [
+      {
+        "id": "color",
+        "title": "Колір моделі",
+        "type": "select",
+        "choices": [
+          {
+            "name": "Блакитний",
+            "price": 0
+          },
+          {
+            "name": "Червоний",
+            "price": 0
+          },
+          {
+            "name": "Зелений",
+            "price": 0
+          },
+          {
+            "name": "Сірий",
+            "price": 0
+          },
+          {
+            "name": "Чорний",
+            "price": 0
+          }
+        ]
+      },
+      {
+        "id": "windows",
+        "title": "Скло / вікна",
+        "type": "select",
+        "choices": [
+          {
+            "name": "Без фарбування",
+            "price": 0
+          },
+          {
+            "name": "Вікна чорним кольором",
+            "price": 100
+          }
+        ]
+      },
+      {
+        "id": "grille",
+        "title": "Решітка радіатора",
+        "type": "select",
+        "choices": [
+          {
+            "name": "Стандартна",
+            "price": 0
+          },
+          {
+            "name": "Чорна деталізована",
+            "price": 50
+          }
+        ]
+      },
+      {
+        "id": "mirrors",
+        "title": "Дзеркала",
+        "type": "checkbox",
+        "price": 30
+      },
+      {
+        "id": "lights",
+        "title": "Фарбовані фари",
+        "type": "checkbox",
+        "price": 30
+      }
     ]
   },
   {
@@ -29,6 +103,9 @@
     "category": "tractors",
     "name": "Модель трактора ХТЗ Т-150К",
     "image": "images/т150-removebg-preview.png",
+    "images": [
+      "images/т150-removebg-preview.png"
+    ],
     "material": "PETG",
     "description": "Модель трактора ХТЗ Т-150К у масштабі 1:43.",
     "scales": [
@@ -37,6 +114,58 @@
         "assembled": 800,
         "unassembled": 600
       }
+    ],
+    "options": [
+      {
+        "id": "color",
+        "title": "Колір моделі",
+        "type": "select",
+        "choices": [
+          {
+            "name": "Синій",
+            "price": 0
+          },
+          {
+            "name": "Червоний",
+            "price": 0
+          },
+          {
+            "name": "Зелений",
+            "price": 0
+          },
+          {
+            "name": "Сірий",
+            "price": 0
+          }
+        ]
+      },
+      {
+        "id": "windows",
+        "title": "Скло / вікна",
+        "type": "select",
+        "choices": [
+          {
+            "name": "Без фарбування",
+            "price": 0
+          },
+          {
+            "name": "Вікна чорним кольором",
+            "price": 100
+          }
+        ]
+      },
+      {
+        "id": "mirrors",
+        "title": "Дзеркала",
+        "type": "checkbox",
+        "price": 30
+      },
+      {
+        "id": "lights",
+        "title": "Фарбовані фари",
+        "type": "checkbox",
+        "price": 30
+      }
     ]
   },
   {
@@ -44,6 +173,9 @@
     "category": "combines",
     "name": "Модель комбайна Нива СК-5",
     "image": "images/нива.png",
+    "images": [
+      "images/нива.png"
+    ],
     "material": "PETG",
     "description": "Модель комбайна Нива СК-5 у масштабі 1:43.",
     "scales": [
@@ -52,6 +184,20 @@
         "assembled": 1400,
         "unassembled": 1000
       }
+    ],
+    "options": [
+      {
+        "id": "windows",
+        "title": "Скло чорним кольором",
+        "type": "checkbox",
+        "price": 100
+      },
+      {
+        "id": "lights",
+        "title": "Фарбовані фари",
+        "type": "checkbox",
+        "price": 30
+      }
     ]
   },
   {
@@ -59,6 +205,9 @@
     "category": "attachments",
     "name": "Модель дискової борони БДТ-7",
     "image": "images/БДТ-7-removebg-preview.png",
+    "images": [
+      "images/БДТ-7-removebg-preview.png"
+    ],
     "material": "PETG",
     "description": "Модель дискової борони БДТ-7.",
     "scales": [
@@ -66,7 +215,13 @@
         "scale": "1:43",
         "assembled": 1000,
         "unassembled": 800
+      },
+      {
+        "scale": "1:24",
+        "assembled": 1300,
+        "unassembled": 1000
       }
-    ]
+    ],
+    "options": []
   }
 ]

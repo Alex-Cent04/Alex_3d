@@ -499,8 +499,85 @@ function prepareDefaultProductCards() {
   });
 }
 
+
+async function loadProductsFromJson() {
+  const container = document.getElementById("json-products");
+  if (!container) return;
+
+  try {
+    const response = await fetch("products.json");
+    const products = await response.json();
+
+    container.innerHTML = "";
+
+    products.forEach(product => {
+      const firstScale = product.scales[0];
+
+      const card = document.createElement("div");
+      card.className = "product-card";
+      card.dataset.name = product.name;
+      card.dataset.image = product.image;
+      card.dataset.id = product.id;
+
+      const scaleOptions = product.scales.map(item => `
+        <option 
+          value="${item.scale}" 
+          data-assembled="${item.assembled}" 
+          data-unassembled="${item.unassembled}">
+          ${item.scale}
+        </option>
+      `).join("");
+
+      card.innerHTML = `
+        <img src="${product.image}" alt="${product.name}">
+        <h3>${product.name}</h3>
+        <p>Матеріал: ${product.material}</p>
+
+        <label>Оберіть масштаб:</label>
+        <select class="scale-select">
+          ${scaleOptions}
+        </select>
+
+        <p>
+          Ціна: <strong class="assembled-price">${firstScale.assembled} грн</strong> |
+          Не зібрана: <strong class="unassembled-price">${firstScale.unassembled} грн</strong>
+        </p>
+
+        <button onclick="addSelectedToCart(this, 'Зібрана модель')">Додати зібрану</button>
+        <button onclick="addSelectedToCart(this, 'Розібрана модель')">Додати розібрану</button>
+        <button class="details-btn" onclick="openProductDetails('${product.id}')">Детальніше</button>
+      `;
+
+      container.appendChild(card);
+    });
+
+  } catch (error) {
+    console.error("Помилка завантаження products.json:", error);
+  }
+}
+
+async function openProductDetails(productId) {
+  const response = await fetch("products.json");
+  const products = await response.json();
+
+  const product = products.find(item => item.id === productId);
+
+  if (!product) {
+    alert("Товар не знайдено");
+    return;
+  }
+
+  localStorage.setItem("selectedProduct", JSON.stringify(product));
+  window.location.href = "product.html?id=" + product.id;
+}
+
+
+
+
+  
 document.addEventListener("DOMContentLoaded", () => {
   prepareDefaultProductCards();
+  loadProductsFromJson();
   updateCartCount();
 });
 </script>

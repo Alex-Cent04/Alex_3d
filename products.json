@@ -5,7 +5,9 @@
     "name": "Модель трактора МТЗ-892 (блакитний)",
     "image": "images/mtz_892.png",
     "images": [
-      "images/mtz_892.png"
+      "images/mtz_892.png",
+      "images/mtz_892_red.png",
+      "images/mtz_892_green.png"
     ],
     "material": "PETG",
     "description": "Модель трактора МТЗ-892 з PETG пластику. Доступна у зібраному та розібраному варіанті.",
@@ -26,67 +28,38 @@
         "unassembled": 2500
       }
     ],
-
-"colorVariants": [
-  {
-    "name": "Блакитний",
-    "image": "images/mtz_892.png",
-    "price": 0
-  },
-  {
-    "name": "Червоний",
-    "image": "images/mtz_892_red.png",
-    "price": 0
-  },
-  {
-    "name": "Зелений",
-    "image": "images/mtz_892_green.png",
-    "price": 0
-  },
-  {
-    "name": "Індивідуальні кольори",
-    "image": "images/mtz_892.png",
-    "price": 200
-  }
-],
-"customColorParts": [
-  "Капот",
-  "Кабіна",
-  "Крила",
-  "Диски",
-  "Рама",
-  "Решітка радіатора",
-  "Дах"
-]
-    
-    "options": [
+    "colorVariants": [
       {
-        "id": "color",
-        "title": "Колір моделі",
-        "type": "select",
-        "choices": [
-          {
-            "name": "Блакитний",
-            "price": 0
-          },
-          {
-            "name": "Червоний",
-            "price": 0
-          },
-          {
-            "name": "Зелений",
-            "price": 0
-          },
-          {
-            "name": "Сірий",
-            "price": 0
-          },
-          {
-            "name": "Чорний",
-            "price": 0
-          }
-        ]
+        "name": "Блакитний",
+        "image": "images/mtz_892.png",
+        "price": 0
       },
+      {
+        "name": "Червоний",
+        "image": "images/mtz_892_red.png",
+        "price": 0
+      },
+      {
+        "name": "Зелений",
+        "image": "images/mtz_892_green.png",
+        "price": 0
+      },
+      {
+        "name": "Індивідуальні кольори",
+        "image": "images/mtz_892.png",
+        "price": 200
+      }
+    ],
+    "customColorParts": [
+      "Капот",
+      "Кабіна",
+      "Крила",
+      "Диски",
+      "Рама",
+      "Решітка радіатора",
+      "Дах"
+    ],
+    "options": [
       {
         "id": "windows",
         "title": "Скло / вікна",
@@ -148,30 +121,38 @@
         "unassembled": 600
       }
     ],
-    "options": [
+    "colorVariants": [
       {
-        "id": "color",
-        "title": "Колір моделі",
-        "type": "select",
-        "choices": [
-          {
-            "name": "Синій",
-            "price": 0
-          },
-          {
-            "name": "Червоний",
-            "price": 0
-          },
-          {
-            "name": "Зелений",
-            "price": 0
-          },
-          {
-            "name": "Сірий",
-            "price": 0
-          }
-        ]
+        "name": "Синій",
+        "image": "images/т150-removebg-preview.png",
+        "price": 0
       },
+      {
+        "name": "Червоний",
+        "image": "images/150_red.png",
+        "price": 0
+      },
+      {
+        "name": "Зелений",
+        "image": "images/150_green.png",
+        "price": 0
+      },
+      {
+        "name": "Індивідуальні кольори",
+        "image": "images/т150-removebg-preview.png",
+        "price": 200
+      }
+    ],
+    "customColorParts": [
+      "Капот",
+      "Кабіна",
+      "Крила",
+      "Диски",
+      "Рама",
+      "Решітка радіатора",
+      "Дах"
+    ],
+    "options": [
       {
         "id": "windows",
         "title": "Скло / вікна",

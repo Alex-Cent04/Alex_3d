@@ -483,7 +483,7 @@
     "image": "images/niva_red.png",
     "images": [
       "images/niva_fullgreen.png",
-      "images/niva_blue.png",
+      "images/niva_blue.jpg",
       "images/niva_green.png",
       "images/niva_pomar.png",
       "images/niva_fullred.png",
@@ -517,7 +517,7 @@
     "colorVariants": [
       
       {
-        "name": "Червоний",
+        "name": "Стандарт",
        "image": "images/niva_red.jpg",
         "price": 0
       },
@@ -527,12 +527,12 @@
         "price": 0
       },
        {
-        "name": "Хакі",
+        "name": "Червоний",
         "image": "images/niva_fullred.png",
         "price": 0
       },
        {
-        "name": "Жовтий",
+        "name": "Еффект_зелений",
         "image": "images/niva_fullgreen.png",
         "price": 0
       },
@@ -543,7 +543,7 @@
       },
        {
         "name": "Синій",
-        "image": "images/niva_blue.png",
+        "image": "images/niva_blue.jpg",
         "price": 0
       },
       {

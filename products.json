@@ -117,7 +117,7 @@
       },
       {
         "name": "Зелений",
-        "image": "images/1umz_green.png",
+        "image": "images/1umz_green.jpg",
         "price": 0
       },
        {
@@ -165,6 +165,112 @@
       }
     ]
   },
+
+
+ {
+    "id": "K-701",
+    "category": "tractors",
+    "name": "Модель трактора К-701",
+    "image": "images/700_yellow.png",
+    "images": [
+      "images/700_yellow.png",
+      "images/700_blue.png",
+      "images/700_green.png",
+      "images/700_pomar.png",
+      "images/700_haki.png",
+      "images/700_red.png"
+      
+    ],
+    "material": "PETG",
+    "description": "Модель трактора ЮМЗ-6АКЛ з PETG пластику. Доступна у зібраному та розібраному варіанті.",
+    "scales": [
+      {
+        "scale": "1:43",
+        "assembled": 800,
+        "unassembled": 600
+      },
+      {
+        "scale": "1:35",
+        "assembled": 1300,
+        "unassembled": 800
+      },
+      {
+        "scale": "1:24",
+        "assembled": 1500,
+        "unassembled": 1000
+      },
+      {
+        "scale": "1:16",
+        "assembled": 3000,
+        "unassembled": 2500
+      }
+    ],
+    "colorVariants": [
+      
+      {
+        "name": "Червоний",
+       "image": "images/700_red.png",
+        "price": 0
+      },
+      {
+        "name": "Зелений",
+        "image": "images/700_green.png",
+        "price": 0
+      },
+       {
+        "name": "Хакі",
+        "image": "images/700_haki.png",
+        "price": 0
+      },
+       {
+        "name": "Жовтий",
+        "image": "images/700_yellow.png",
+        "price": 0
+      },
+      {
+        "name": "Помаранчевий",
+        "image": "images/700_pomar.png",
+        "price": 0
+      },
+       {
+        "name": "Синій",
+        "image": "images/700_blue.png",
+        "price": 0
+      },
+      {
+        "name": "Індивідуальні кольори",
+        "image": "images/1umz_biryz.png",
+        "price": 200
+      }
+    ],
+    "customColorParts": [
+      "Капот",
+      "Кабіна",
+      "Крила",
+      "Диски",
+      "Рама",
+      "Решітка радіатора",
+      "Дах"
+    ],
+    "options": [
+     
+      {
+        "id": "mirrors",
+        "title": "Остеклення кабіни",
+        "type": "checkbox",
+        "price": 100
+      },
+
+       {
+        "id": "karkas",
+        "title": "Захисний каркас(на фото чорні труби)",
+        "type": "checkbox",
+        "price": 100
+      }
+    ]
+  },
+
+
   
   {
     "id": "htz-t150k-blue",

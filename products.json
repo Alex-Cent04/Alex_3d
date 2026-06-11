@@ -71,6 +71,130 @@
   },
 
 
+
+{
+    "id": "MTZ-80(82)",
+    "category": "tractors",
+    "name": "Модель трактора МТЗ-80(82)",
+    "image": "images/80_light_blue.png",
+    "images": [
+      "images/80_biryz.png",
+      "images/80_blue.png",
+      "images/80_green.jpg",
+      "images/80_light_blue.png",
+      "images/80_pomar.png",
+      "images/80_red.png",
+      "images/80_grey.png",
+      "images/80_import.png",
+      "images/80_black.png"
+    ],
+    "material": "PETG",
+    "description": "Модель трактора МТЗ-80(82) з PETG пластику. Доступна у зібраному та розібраному варіанті.",
+    "scales": [
+      {
+        "scale": "1:43",
+        "assembled": 700,
+        "unassembled": 600
+      },
+      {
+        "scale": "1:35",
+        "assembled": 1200,
+        "unassembled": 1000
+      },
+      {
+        "scale": "1:16",
+        "assembled": 3000,
+        "unassembled": 2500
+      }
+    ],
+    "colorVariants": [
+      {
+        "name": "Блакитний",
+        "image": "images/80_light_blue.png",
+        "price": 0
+      },
+      {
+        "name": "Червоний",
+       "image": "images/80_red.png",
+        "price": 0
+      },
+      {
+        "name": "Зелений",
+        "image": "images/80_green.png",
+        "price": 0
+      },
+       {
+        "name": "Бірюзовий",
+        "image": "images/80_biryz.png",
+        "price": 0
+      },
+       {
+        "name": "Чорний",
+        "image": "images/80_black.png",
+        "price": 0
+      },
+      {
+        "name": "Помаранчевий",
+        "image": "images/80_pomar.png",
+        "price": 0
+      },
+       {
+        "name": "Синій",
+        "image": "images/80_blue.png",
+        "price": 0
+      },
+
+      {
+        "name": "Сірий",
+        "image": "images/80_grey.png",
+        "price": 0
+      },
+      {
+        "name": "Експортна версія",
+        "image": "images/80_import.png",
+        "price": 0
+      },
+      {
+        "name": "Індивідуальні кольори",
+        "image": "images/80_import.png",
+        "price": 200
+      }
+    ],
+    "customColorParts": [
+      "Капот",
+      "Кабіна",
+      "Крила",
+      "Диски",
+      "Рама",
+      "Решітка радіатора",
+      "Дах"
+    ],
+    "options": [
+     
+      {
+        "id": "mirrors",
+        "title": "Остеклення кабіни",
+        "type": "checkbox",
+        "price": 100
+      },
+      {
+        "id": "ved_most",
+        "title": "МТЗ-82 (модифікація з переднім ведучим мостом)",
+        "type": "checkbox",
+        "price": 0
+      },
+       {
+        "id": "ne_ved_most",
+        "title": "МТЗ-80 (модифікація без переднього ведучого мосту)",
+        "type": "checkbox",
+        "price": 0
+      }
+      
+    ]
+  },
+
+
+  
   {
     "id": "UMZ-6AKL",
     "category": "tractors",

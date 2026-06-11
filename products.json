@@ -474,38 +474,108 @@
       }
     ]
   },
-  {
-    "id": "niva-sk5",
+
+
+ {
+    "id": "niva_sk5",
     "category": "combines",
-    "name": "Модель комбайна Нива СК-5",
-    "image": "images/нива.png",
+    "name": "Модель комбайна Нива-СК5",
+    "image": "images/niva_red.png",
     "images": [
-      "images/нива.png"
+      "images/niva_fullgreen.png",
+      "images/niva_blue.png",
+      "images/niva_green.png",
+      "images/niva_pomar.png",
+      "images/niva_fullred.png",
+      "images/niva_red.jpg"
+      
     ],
     "material": "PETG",
-    "description": "Модель комбайна Нива СК-5 у масштабі 1:43.",
+    "description": "Модель комбайна Нива-СК-5 з PETG пластику. Доступна у зібраному та розібраному варіанті.",
     "scales": [
       {
         "scale": "1:43",
         "assembled": 1400,
         "unassembled": 1000
-      }
-    ],
-    "options": [
-      {
-        "id": "windows",
-        "title": "Скло чорним кольором",
-        "type": "checkbox",
-        "price": 100
       },
       {
-        "id": "lights",
-        "title": "Фарбовані фари",
-        "type": "checkbox",
-        "price": 30
+        "scale": "1:35",
+        "assembled": 1800,
+        "unassembled": 1400
+      },
+      {
+        "scale": "1:24",
+        "assembled": 2200,
+        "unassembled": 1800
+      },
+      {
+        "scale": "1:16",
+        "assembled": 3000,
+        "unassembled": 2500
       }
+    ],
+    "colorVariants": [
+      
+      {
+        "name": "Червоний",
+       "image": "images/niva_red.jpg",
+        "price": 0
+      },
+      {
+        "name": "Зелений",
+        "image": "images/niva_green.png",
+        "price": 0
+      },
+       {
+        "name": "Хакі",
+        "image": "images/niva_fullred.png",
+        "price": 0
+      },
+       {
+        "name": "Жовтий",
+        "image": "images/niva_fullgreen.png",
+        "price": 0
+      },
+      {
+        "name": "Помаранчевий",
+        "image": "images/niva_pomar.png",
+        "price": 0
+      },
+       {
+        "name": "Синій",
+        "image": "images/niva_blue.png",
+        "price": 0
+      },
+      {
+        "name": "Індивідуальні кольори",
+        "image": "images/niva_red.png",
+        "price": 200
+      }
+    ],
+    "customColorParts": [
+      "Кабіна",
+      "Бункер",
+      "Диски",
+      "Рама",
+      "жатка",
+      "Дах"
+    ],
+    "options": [
+     
+      {
+        "id": "mirrors",
+        "title": "Остеклення кабіни",
+        "type": "checkbox",
+        "price": 100
+      }
+
+       
     ]
   },
+
+
+  
+ 
   {
     "id": "bdt-7",
     "category": "attachments",

@@ -80,7 +80,7 @@
     "images": [
       "images/80_biryz.png",
       "images/80_blue.png",
-      "images/80_green.jpg",
+      "images/80_green.png",
       "images/80_light_blue.png",
       "images/80_pomar.png",
       "images/80_red.png",
@@ -302,7 +302,7 @@
       "images/700_green.png",
       "images/700_pomar.png",
       "images/700_haki.png",
-      "images/700_red.png"
+      "images/700_red.jpg"
       
     ],
     "material": "PETG",

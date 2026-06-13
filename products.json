@@ -12,67 +12,22 @@
     "material": "PETG",
     "description": "Модель трактора МТЗ-892 з PETG пластику. Доступна у зібраному та розібраному варіанті.",
     "scales": [
-      {
-        "scale": "1:43",
-        "assembled": 700,
-        "unassembled": 600
-      },
-      {
-        "scale": "1:35",
-        "assembled": 1200,
-        "unassembled": 1000
-      },
-      {
-        "scale": "1:16",
-        "assembled": 3000,
-        "unassembled": 2500
-      }
+      { "scale": "1:43", "assembled": 700, "unassembled": 600 },
+      { "scale": "1:35", "assembled": 1200, "unassembled": 1000 },
+      { "scale": "1:16", "assembled": 3000, "unassembled": 2500 }
     ],
     "colorVariants": [
-      {
-        "name": "Блакитний",
-        "image": "images/mtz_892.png",
-        "price": 0
-      },
-      {
-        "name": "Червоний",
-        "image": "images/mtz_892_red.png",
-        "price": 0
-      },
-      {
-        "name": "Зелений",
-        "image": "images/mtz_892_green.png",
-        "price": 0
-      },
-      {
-        "name": "Індивідуальні кольори",
-        "image": "images/mtz_892.png",
-        "price": 200
-      }
+      { "name": "Блакитний", "image": "images/mtz_892.png", "price": 0 },
+      { "name": "Червоний", "image": "images/mtz_892_red.png", "price": 0 },
+      { "name": "Зелений", "image": "images/mtz_892_green.png", "price": 0 },
+      { "name": "Індивідуальні кольори", "image": "images/mtz_892.png", "price": 200 }
     ],
-    "customColorParts": [
-      "Капот",
-      "Кабіна",
-      "Крила",
-      "Диски",
-      "Рама",
-      "Решітка радіатора",
-      "Дах"
-    ],
+    "customColorParts": ["Капот", "Кабіна", "Крила", "Диски", "Рама", "Решітка радіатора", "Дах"],
     "options": [
-     
-      {
-        "id": "mirrors",
-        "title": "Остеклення кабіни",
-        "type": "checkbox",
-        "price": 100
-      }
+      { "id": "mirrors", "title": "Остеклення кабіни", "type": "checkbox", "price": 100 }
     ]
   },
-
-
-
-{
+  {
     "id": "MTZ-80(82)",
     "category": "tractors",
     "name": "Модель трактора МТЗ-80(82)",
@@ -91,110 +46,29 @@
     "material": "PETG",
     "description": "Модель трактора МТЗ-80(82) з PETG пластику. Доступна у зібраному та розібраному варіанті.",
     "scales": [
-      {
-        "scale": "1:43",
-        "assembled": 700,
-        "unassembled": 600
-      },
-      {
-        "scale": "1:35",
-        "assembled": 1200,
-        "unassembled": 1000
-      },
-      {
-        "scale": "1:16",
-        "assembled": 3000,
-        "unassembled": 2500
-      }
+      { "scale": "1:43", "assembled": 700, "unassembled": 600 },
+      { "scale": "1:35", "assembled": 1200, "unassembled": 1000 },
+      { "scale": "1:16", "assembled": 3000, "unassembled": 2500 }
     ],
     "colorVariants": [
-      {
-        "name": "Блакитний",
-        "image": "images/80_light_blue.png",
-        "price": 0
-      },
-      {
-        "name": "Червоний",
-       "image": "images/80_red.png",
-        "price": 0
-      },
-      {
-        "name": "Зелений",
-        "image": "images/80_green.png",
-        "price": 0
-      },
-       {
-        "name": "Бірюзовий",
-        "image": "images/80_biryz.png",
-        "price": 0
-      },
-       {
-        "name": "Чорний",
-        "image": "images/80_black.png",
-        "price": 0
-      },
-      {
-        "name": "Помаранчевий",
-        "image": "images/80_pomar.png",
-        "price": 0
-      },
-       {
-        "name": "Синій",
-        "image": "images/80_blue.png",
-        "price": 0
-      },
-
-      {
-        "name": "Сірий",
-        "image": "images/80_grey.png",
-        "price": 0
-      },
-      {
-        "name": "Експортна версія",
-        "image": "images/80_import.png",
-        "price": 0
-      },
-      {
-        "name": "Індивідуальні кольори",
-        "image": "images/80_import.png",
-        "price": 200
-      }
+      { "name": "Блакитний", "image": "images/80_light_blue.png", "price": 0 },
+      { "name": "Червоний", "image": "images/80_red.png", "price": 0 },
+      { "name": "Зелений", "image": "images/80_green.png", "price": 0 },
+      { "name": "Бірюзовий", "image": "images/80_biryz.png", "price": 0 },
+      { "name": "Чорний", "image": "images/80_black.png", "price": 0 },
+      { "name": "Помаранчевий", "image": "images/80_pomar.png", "price": 0 },
+      { "name": "Синій", "image": "images/80_blue.png", "price": 0 },
+      { "name": "Сірий", "image": "images/80_grey.png", "price": 0 },
+      { "name": "Експортна версія", "image": "images/80_import.png", "price": 0 },
+      { "name": "Індивідуальні кольори", "image": "images/80_import.png", "price": 200 }
     ],
-    "customColorParts": [
-      "Капот",
-      "Кабіна",
-      "Крила",
-      "Диски",
-      "Рама",
-      "Решітка радіатора",
-      "Дах"
-    ],
+    "customColorParts": ["Капот", "Кабіна", "Крила", "Диски", "Рама", "Решітка радіатора", "Дах"],
     "options": [
-     
-      {
-        "id": "mirrors",
-        "title": "Остеклення кабіни",
-        "type": "checkbox",
-        "price": 100
-      },
-      {
-        "id": "ved_most",
-        "title": "МТЗ-82 (модифікація з переднім ведучим мостом)",
-        "type": "checkbox",
-        "price": 0
-      },
-       {
-        "id": "ne_ved_most",
-        "title": "МТЗ-80 (модифікація без переднього ведучого мосту)",
-        "type": "checkbox",
-        "price": 0
-      }
-      
+      { "id": "mirrors", "title": "Остеклення кабіни", "type": "checkbox", "price": 100 },
+      { "id": "ved_most", "title": "МТЗ-82 (модифікація з переднім ведучим мостом)", "type": "checkbox", "price": 0 },
+      { "id": "ne_ved_most", "title": "МТЗ-80 (модифікація без переднього ведучого мосту)", "type": "checkbox", "price": 0 }
     ]
   },
-
-
-  
   {
     "id": "UMZ-6AKL",
     "category": "tractors",
@@ -212,86 +86,26 @@
     "material": "PETG",
     "description": "Модель трактора ЮМЗ-6АКЛ з PETG пластику. Доступна у зібраному та розібраному варіанті.",
     "scales": [
-      {
-        "scale": "1:43",
-        "assembled": 700,
-        "unassembled": 600
-      },
-      {
-        "scale": "1:35",
-        "assembled": 1200,
-        "unassembled": 1000
-      },
-      {
-        "scale": "1:16",
-        "assembled": 3000,
-        "unassembled": 2500
-      }
+      { "scale": "1:43", "assembled": 700, "unassembled": 600 },
+      { "scale": "1:35", "assembled": 1200, "unassembled": 1000 },
+      { "scale": "1:16", "assembled": 3000, "unassembled": 2500 }
     ],
     "colorVariants": [
-      {
-        "name": "Блакитний",
-        "image": "images/1umz_light_blue.png",
-        "price": 0
-      },
-      {
-        "name": "Червоний",
-       "image": "images/1umz_red.png",
-        "price": 0
-      },
-      {
-        "name": "Зелений",
-        "image": "images/1umz_green.jpg",
-        "price": 0
-      },
-       {
-        "name": "Бірюзовий",
-        "image": "images/1umz_biryz.png",
-        "price": 0
-      },
-       {
-        "name": "Жовтий",
-        "image": "images/1umz_yellow.png",
-        "price": 0
-      },
-      {
-        "name": "Помаранчевий",
-        "image": "images/1umz_pomar.png",
-        "price": 0
-      },
-       {
-        "name": "Синій",
-        "image": "images/1umz_blue.png",
-        "price": 0
-      },
-      {
-        "name": "Індивідуальні кольори",
-        "image": "images/1umz_biryz.png",
-        "price": 200
-      }
+      { "name": "Блакитний", "image": "images/1umz_light_blue.png", "price": 0 },
+      { "name": "Червоний", "image": "images/1umz_red.png", "price": 0 },
+      { "name": "Зелений", "image": "images/1umz_green.jpg", "price": 0 },
+      { "name": "Бірюзовий", "image": "images/1umz_biryz.png", "price": 0 },
+      { "name": "Жовтий", "image": "images/1umz_yellow.png", "price": 0 },
+      { "name": "Помаранчевий", "image": "images/1umz_pomar.png", "price": 0 },
+      { "name": "Синій", "image": "images/1umz_blue.png", "price": 0 },
+      { "name": "Індивідуальні кольори", "image": "images/1umz_biryz.png", "price": 200 }
     ],
-    "customColorParts": [
-      "Капот",
-      "Кабіна",
-      "Крила",
-      "Диски",
-      "Рама",
-      "Решітка радіатора",
-      "Дах"
-    ],
+    "customColorParts": ["Капот", "Кабіна", "Крила", "Диски", "Рама", "Решітка радіатора", "Дах"],
     "options": [
-     
-      {
-        "id": "mirrors",
-        "title": "Остеклення кабіни",
-        "type": "checkbox",
-        "price": 100
-      }
+      { "id": "mirrors", "title": "Остеклення кабіни", "type": "checkbox", "price": 100 }
     ]
   },
-
-
- {
+  {
     "id": "K-701",
     "category": "tractors",
     "name": "Модель трактора К-701",
@@ -303,180 +117,63 @@
       "images/700_pomar.png",
       "images/700_haki.png",
       "images/700_red.jpg"
-      
     ],
     "material": "PETG",
     "description": "Модель трактора К-701 з PETG пластику. Доступна у зібраному та розібраному варіанті.",
     "scales": [
-      {
-        "scale": "1:43",
-        "assembled": 800,
-        "unassembled": 600
-      },
-      {
-        "scale": "1:35",
-        "assembled": 1300,
-        "unassembled": 800
-      },
-      {
-        "scale": "1:24",
-        "assembled": 1500,
-        "unassembled": 1000
-      },
-      {
-        "scale": "1:16",
-        "assembled": 3000,
-        "unassembled": 2500
-      }
+      { "scale": "1:43", "assembled": 800, "unassembled": 600 },
+      { "scale": "1:35", "assembled": 1300, "unassembled": 800 },
+      { "scale": "1:24", "assembled": 1500, "unassembled": 1000 },
+      { "scale": "1:16", "assembled": 3000, "unassembled": 2500 }
     ],
     "colorVariants": [
-      
-      {
-        "name": "Червоний",
-       "image": "images/700_red.jpg",
-        "price": 0
-      },
-      {
-        "name": "Зелений",
-        "image": "images/700_green.png",
-        "price": 0
-      },
-       {
-        "name": "Хакі",
-        "image": "images/700_haki.png",
-        "price": 0
-      },
-       {
-        "name": "Жовтий",
-        "image": "images/700_yellow.png",
-        "price": 0
-      },
-      {
-        "name": "Помаранчевий",
-        "image": "images/700_pomar.png",
-        "price": 0
-      },
-       {
-        "name": "Синій",
-        "image": "images/700_blue.png",
-        "price": 0
-      },
-      {
-        "name": "Індивідуальні кольори",
-        "image": "images/700_yellow.png",
-        "price": 200
-      }
+      { "name": "Червоний", "image": "images/700_red.jpg", "price": 0 },
+      { "name": "Зелений", "image": "images/700_green.png", "price": 0 },
+      { "name": "Хакі", "image": "images/700_haki.png", "price": 0 },
+      { "name": "Жовтий", "image": "images/700_yellow.png", "price": 0 },
+      { "name": "Помаранчевий", "image": "images/700_pomar.png", "price": 0 },
+      { "name": "Синій", "image": "images/700_blue.png", "price": 0 },
+      { "name": "Індивідуальні кольори", "image": "images/700_yellow.png", "price": 200 }
     ],
-    "customColorParts": [
-      "Капот",
-      "Кабіна",
-      "Крила",
-      "Диски",
-      "Рама",
-      "Решітка радіатора",
-      "Дах"
-    ],
+    "customColorParts": ["Капот", "Кабіна", "Крила", "Диски", "Рама", "Решітка радіатора", "Дах"],
     "options": [
-     
-      {
-        "id": "mirrors",
-        "title": "Остеклення кабіни",
-        "type": "checkbox",
-        "price": 100
-      },
-
-       {
-        "id": "karkas",
-        "title": "Захисний каркас(на фото чорні труби)",
-        "type": "checkbox",
-        "price": 100
-      }
+      { "id": "mirrors", "title": "Остеклення кабіни", "type": "checkbox", "price": 100 },
+      { "id": "karkas", "title": "Захисний каркас(на фото чорні труби)", "type": "checkbox", "price": 100 }
     ]
   },
-
-
-  
   {
     "id": "htz-t150k-blue",
     "category": "tractors",
     "name": "Модель трактора ХТЗ Т-150К",
     "image": "images/т150-removebg-preview.png",
-    "images": [
-      "images/т150-removebg-preview.png"
-    ],
+    "images": ["images/т150-removebg-preview.png"],
     "material": "PETG",
     "description": "Модель трактора ХТЗ Т-150К у масштабі 1:43.",
     "scales": [
-      {
-        "scale": "1:43",
-        "assembled": 800,
-        "unassembled": 600
-      }
+      { "scale": "1:43", "assembled": 800, "unassembled": 600 }
     ],
     "colorVariants": [
-      {
-        "name": "Синій",
-        "image": "images/т150-removebg-preview.png",
-        "price": 0
-      },
-      {
-        "name": "Червоний",
-        "image": "images/150_red.png",
-        "price": 0
-      },
-      {
-        "name": "Зелений",
-        "image": "images/150_green.png",
-        "price": 0
-      },
-      {
-        "name": "Індивідуальні кольори",
-        "image": "images/т150-removebg-preview.png",
-        "price": 200
-      }
+      { "name": "Синій", "image": "images/т150-removebg-preview.png", "price": 0 },
+      { "name": "Червоний", "image": "images/150_red.png", "price": 0 },
+      { "name": "Зелений", "image": "images/150_green.png", "price": 0 },
+      { "name": "Індивідуальні кольори", "image": "images/т150-removebg-preview.png", "price": 200 }
     ],
-    "customColorParts": [
-      "Капот",
-      "Кабіна",
-      "Крила",
-      "Диски",
-      "Рама",
-      "Решітка радіатора",
-      "Дах"
-    ],
+    "customColorParts": ["Капот", "Кабіна", "Крила", "Диски", "Рама", "Решітка радіатора", "Дах"],
     "options": [
       {
         "id": "windows",
         "title": "Скло / вікна",
         "type": "select",
         "choices": [
-          {
-            "name": "Без фарбування",
-            "price": 0
-          },
-          {
-            "name": "Вікна чорним кольором",
-            "price": 100
-          }
+          { "name": "Без фарбування", "price": 0 },
+          { "name": "Вікна чорним кольором", "price": 100 }
         ]
       },
-      {
-        "id": "mirrors",
-        "title": "Дзеркала",
-        "type": "checkbox",
-        "price": 30
-      },
-      {
-        "id": "lights",
-        "title": "Фарбовані фари",
-        "type": "checkbox",
-        "price": 30
-      }
+      { "id": "mirrors", "title": "Дзеркала", "type": "checkbox", "price": 30 },
+      { "id": "lights", "title": "Фарбовані фари", "type": "checkbox", "price": 30 }
     ]
   },
-
-
- {
+  {
     "id": "niva_sk5",
     "category": "combines",
     "name": "Модель комбайна Нива-СК5",
@@ -488,94 +185,29 @@
       "images/niva_pomar.png",
       "images/niva_fullred.png",
       "images/niva_red.png"
-      
     ],
     "material": "PETG",
     "description": "Модель комбайна Нива-СК-5 з PETG пластику. Доступна у зібраному та розібраному варіанті.",
     "scales": [
-      {
-        "scale": "1:43",
-        "assembled": 1400,
-        "unassembled": 1000
-      },
-      {
-        "scale": "1:35",
-        "assembled": 1800,
-        "unassembled": 1400
-      },
-      {
-        "scale": "1:24",
-        "assembled": 2200,
-        "unassembled": 1800
-      },
-      {
-        "scale": "1:16",
-        "assembled": 3000,
-        "unassembled": 2500
-      }
+      { "scale": "1:43", "assembled": 1400, "unassembled": 1000 },
+      { "scale": "1:35", "assembled": 1800, "unassembled": 1400 },
+      { "scale": "1:24", "assembled": 2200, "unassembled": 1800 },
+      { "scale": "1:16", "assembled": 3000, "unassembled": 2500 }
     ],
     "colorVariants": [
-      
-      {
-        "name": "Стандарт",
-       "image": "images/niva_red.png",
-        "price": 0
-      },
-      {
-        "name": "Зелений",
-        "image": "images/niva_green.png",
-        "price": 0
-      },
-       {
-        "name": "Червоний",
-        "image": "images/niva_fullred.png",
-        "price": 0
-      },
-       {
-        "name": "Еффект_зелений",
-        "image": "images/niva_fullgreen.png",
-        "price": 0
-      },
-      {
-        "name": "Помаранчевий",
-        "image": "images/niva_pomar.png",
-        "price": 0
-      },
-       {
-        "name": "Синій",
-        "image": "images/niva_blue.jpg",
-        "price": 0
-      },
-      {
-        "name": "Індивідуальні кольори",
-        "image": "images/niva_red.png",
-        "price": 200
-      }
+      { "name": "Стандарт", "image": "images/niva_red.png", "price": 0 },
+      { "name": "Зелений", "image": "images/niva_green.png", "price": 0 },
+      { "name": "Червоний", "image": "images/niva_fullred.png", "price": 0 },
+      { "name": "Еффект_зелений", "image": "images/niva_fullgreen.png", "price": 0 },
+      { "name": "Помаранчевий", "image": "images/niva_pomar.png", "price": 0 },
+      { "name": "Синій", "image": "images/niva_blue.jpg", "price": 0 },
+      { "name": "Індивідуальні кольори", "image": "images/niva_red.png", "price": 200 }
     ],
-    "customColorParts": [
-      "Кабіна",
-      "Бункер",
-      "Диски",
-      "Рама",
-      "жатка",
-      "Дах"
-    ],
+    "customColorParts": ["Кабіна", "Бункер", "Диски", "Рама", "жатка", "Дах"],
     "options": [
-     
-      {
-        "id": "mirrors",
-        "title": "Остеклення кабіни",
-        "type": "checkbox",
-        "price": 100
-      }
-
-       
+      { "id": "mirrors", "title": "Остеклення кабіни", "type": "checkbox", "price": 100 }
     ]
   },
-
-
-  
- 
   {
     "id": "bdt-7",
     "category": "attachments",
@@ -586,65 +218,22 @@
       "images/bdt_blue.png",
       "images/bdt_pomar.png",
       "images/bdt_red.png"
-      
     ],
     "material": "PETG",
     "description": "Модель дискової борони БДТ-7 з PETG пластику. Доступна у зібраному та розібраному варіанті.",
     "scales": [
-      {
-        "scale": "1:43",
-        "assembled": 1000,
-        "unassembled": 800
-      },
-      {
-        "scale": "1:35",
-        "assembled": 1200,
-        "unassembled": 1000
-      },
-      {
-        "scale": "1:24",
-        "assembled": 1500,
-        "unassembled": 1200
-      },
-      {
-        "scale": "1:16",
-        "assembled": 2000,
-        "unassembled": 1500
-      }
+      { "scale": "1:43", "assembled": 1000, "unassembled": 800 },
+      { "scale": "1:35", "assembled": 1200, "unassembled": 1000 },
+      { "scale": "1:24", "assembled": 1500, "unassembled": 1200 },
+      { "scale": "1:16", "assembled": 2000, "unassembled": 1500 }
     ],
     "colorVariants": [
-      
-      {
-        "name": "Червоний",
-       "image": "images/bdt_red.png",
-        "price": 0
-      },
-      {
-        "name": "Зелений",
-        "image": "images/bdt_green.png",
-        "price": 0
-      },
-  
-      {
-        "name": "Помаранчевий",
-        "image": "images/bdt_pomar.png",
-        "price": 0
-      },
-       {
-        "name": "Синій",
-        "image": "images/bdt_blue.png",
-        "price": 0
-      },
-      {
-        "name": "Індивідуальні кольори",
-        "image": "images/bdt_red.png",
-        "price": 200
-      }
+      { "name": "Червоний", "image": "images/bdt_red.png", "price": 0 },
+      { "name": "Зелений", "image": "images/bdt_green.png", "price": 0 },
+      { "name": "Помаранчевий", "image": "images/bdt_pomar.png", "price": 0 },
+      { "name": "Синій", "image": "images/bdt_blue.png", "price": 0 },
+      { "name": "Індивідуальні кольори", "image": "images/bdt_red.png", "price": 200 }
     ],
-    "customColorParts": [
-      "Рама",
-      "Диски",
-      "Борона"
-    ]
+    "customColorParts": ["Рама", "Диски", "Борона"]
   }
 ]

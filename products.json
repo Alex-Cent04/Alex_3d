@@ -518,7 +518,7 @@
       
       {
         "name": "Стандарт",
-       "image": "images/niva_red.jpg",
+       "image": "images/niva_red.png",
         "price": 0
       },
       {
@@ -580,12 +580,16 @@
     "id": "bdt-7",
     "category": "attachments",
     "name": "Модель дискової борони БДТ-7",
-    "image": "images/БДТ-7-removebg-preview.png",
+    "image": "images/bdt_red.png",
     "images": [
-      "images/БДТ-7-removebg-preview.png"
+      "images/bdt_green.png",
+      "images/bdt_blue.png",
+      "images/bdt_pomar.png",
+      "images/bdt_red.png"
+      
     ],
     "material": "PETG",
-    "description": "Модель дискової борони БДТ-7.",
+    "description": "Модель дискової борони БДТ-7 з PETG пластику. Доступна у зібраному та розібраному варіанті.",
     "scales": [
       {
         "scale": "1:43",
@@ -593,11 +597,60 @@
         "unassembled": 800
       },
       {
-        "scale": "1:24",
-        "assembled": 1300,
+        "scale": "1:35",
+        "assembled": 1200,
         "unassembled": 1000
+      },
+      {
+        "scale": "1:24",
+        "assembled": 1500,
+        "unassembled": 1200
+      },
+      {
+        "scale": "1:16",
+        "assembled": 2000,
+        "unassembled": 1500
       }
     ],
-    "options": []
-  }
+    "colorVariants": [
+      
+      {
+        "name": "Червоний",
+       "image": "images/bdt_red.png",
+        "price": 0
+      },
+      {
+        "name": "Зелений",
+        "image": "images/bdt_green.png",
+        "price": 0
+      },
+  
+      {
+        "name": "Помаранчевий",
+        "image": "images/bdt_pomar.png",
+        "price": 0
+      },
+       {
+        "name": "Синій",
+        "image": "images/bdt_blue.png",
+        "price": 0
+      },
+      {
+        "name": "Індивідуальні кольори",
+        "image": "images/bdt_red.png",
+        "price": 200
+      }
+    ],
+    "customColorParts": [
+      "Рама",
+      "Диски",
+      "Борона"
+    ],
+    
+     
+     
+
+       
+    ]
+  },
 ]

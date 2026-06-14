@@ -235,5 +235,207 @@
       { "name": "Індивідуальні кольори", "image": "images/bdt_red.png", "price": 200 }
     ],
     "customColorParts": ["Рама", "Диски", "Борона"]
+  },
+  {
+    "id": "2pts-4",
+    "category": "trailers",
+    "name": "Причеп 2ПТС4",
+    "image": "images/2pts4_orange.png",
+    "images": [
+      "images/2pts4_orange.png",
+      "images/2pts4_red.png",
+      "images/2pts4_green.png",
+      "images/2pts4_blue.png",
+      "images/2pts4_haki.png",
+      "images/2pts4_grey.png"
+    ],
+    "material": "PETG",
+    "description": "Модель сільськогосподарського причепа 2ПТС4 з PETG пластику. Доступна у зібраному та розібраному варіанті.",
+    "scales": [
+      { "scale": "1:43", "assembled": 600, "unassembled": 450 },
+      { "scale": "1:35", "assembled": 900, "unassembled": 700 },
+      { "scale": "1:16", "assembled": 2200, "unassembled": 1800 }
+    ],
+    "colorVariants": [
+      { "name": "Помаранчевий", "image": "images/2pts4_orange.png", "price": 0 },
+      { "name": "Червоний", "image": "images/2pts4_red.png", "price": 0 },
+      { "name": "Зелений", "image": "images/2pts4_green.png", "price": 0 },
+      { "name": "Синій", "image": "images/2pts4_blue.png", "price": 0 },
+      { "name": "Хакі", "image": "images/2pts4_haki.png", "price": 0 },
+      { "name": "Сірий", "image": "images/2pts4_grey.png", "price": 0 }
+    ],
+    "customColorParts": ["Задній борт", "Передній борт", "Лівий борт", "Правий борт", "Рама", "Диски"]
+    
+  },
+  {
+    "id": "2pts-9",
+    "category": "trailers",
+    "name": "Причеп 2ПТС9",
+    "image": "images/2pts9_grey.png",
+    "images": [
+      "images/2pts9_grey.png",
+      "images/2pts9_red.png",
+      "images/2pts9_haki.png",
+      "images/2pts9_orange.png",
+      "images/2pts9_green.png",
+      "images/2pts9_blue.png",
+      "images/2pts9_red_b.png",
+      "images/2pts9_haki_b.png",
+      "images/2pts9_orange_b.png",
+      "images/2pts9_green_b.png",
+      "images/2pts9_blue_b.png"
+    ],
+    "material": "PETG",
+    "description": "Модель сільськогосподарського причепа 2ПТС9 з PETG пластику.",
+    "scales": [
+      { "scale": "1:43", "assembled": 800, "unassembled": 600 },
+      { "scale": "1:35", "assembled": 1100, "unassembled": 900 },
+      { "scale": "1:16", "assembled": 2500, "unassembled": 2000 }
+    ],
+    "colorVariants": [
+      { "name": "Сірий", "image": "images/2pts9_grey.png", "price": 0 },
+      { "name": "Червоний", "image": "images/2pts9_red.png", "price": 0 },
+      { "name": "Зелений", "image": "images/2pts9_green.png", "price": 0 },
+      { "name": "Помаранчевий", "image": "images/2pts9_orange.png", "price": 0 },
+      { "name": "Хакі", "image": "images/2pts9_haki.png", "price": 0 },
+      { "name": "Синій", "image": "images/2pts9_blue.png", "price": 0 },
+      { "name": "Червоний(сірий верхній борт)", "image": "images/2pts9_red_b.png", "price": 0 },
+      { "name": "Зелений(сірий верхній борт)", "image": "images/2pts9_green_b.png", "price": 0 },
+      { "name": "Помаранчевий(сірий верхній борт)", "image": "images/2pts9_orange_b.png", "price": 0 },
+      { "name": "Хакі(сірий верхній борт)", "image": "images/2pts9_haki_b.png", "price": 0 },
+      { "name": "Синій(сірий верхній борт)", "image": "images/2pts9_blue_b.png", "price": 0 },
+    ],
+    "customColorParts": ["Кузов1","Кузов2", "Рама", "Диски"],
+    "options": [
+      { "id": "moving_side", "title": "Верхній борт", "type": "checkbox", "price": 50 }
+    ]
+  },
+  {
+    "id": "2pts-12",
+    "category": "trailers",
+    "name": "Причеп 2ПТС12",
+    "image": "images/2pts12_grey.png",
+    "images": [
+      "images/2pts12_grey.png",
+      "images/2pts12_red.png",
+      "images/2pts12_green.png",
+      "images/2pts12_orange.png",
+      "images/2pts12_haki.png",
+      "images/2pts12_blue.png",
+      "images/2pts12_grey_b.png",
+      "images/2pts12_red_b.png",
+      "images/2pts12_green_b.png",
+      "images/2pts12_orange_b.png",
+      "images/2pts12_haki_b.png",
+      "images/2pts12_blue_b.png"
+    ],
+    "material": "PETG",
+    "description": "Модель сільськогосподарського причепа 2ПТС12 з PETG пластику.",
+    "scales": [
+      { "scale": "1:43", "assembled": 900, "unassembled": 700 },
+      { "scale": "1:35", "assembled": 1200, "unassembled": 1000 },
+      { "scale": "1:16", "assembled": 2800, "unassembled": 2300 }
+    ],
+    "colorVariants": [
+      { "name": "Сірий", "image": "images/2pts12_grey.png", "price": 0 },
+      { "name": "Червоний", "image": "images/2pts12_red.png", "price": 0 },
+      { "name": "Зелений", "image": "images/2pts12_green.png", "price": 0 },
+      { "name": "Помаранчевий", "image": "images/2pts12_orange.png", "price": 0 },
+      { "name": "Хакі", "image": "images/2pts12_haki.png", "price": 0 },
+      { "name": "Синій", "image": "images/2pts12_blue.png", "price": 0 },
+      { "name": "Червоний(сірий верхній борт)", "image": "images/2pts12_red_b.png", "price": 0 },
+      { "name": "Зелений(сірий верхній борт)", "image": "images/2pts12_green_b.png", "price": 0 },
+      { "name": "Помаранчевий(сірий верхній борт)", "image": "images/2pts12_orange_b.png", "price": 0 },
+      { "name": "Хакі(сірий верхній борт)", "image": "images/2pts12_haki_b.png", "price": 0 },
+      { "name": "Синій(сірий верхній борт)", "image": "images/2pts12_blue_b.png", "price": 0 }
+    ],
+    "customColorParts": ["Кузов1","Кузов2", "Рама", "Диски"],
+    "options": [
+      { "id": "moving_side", "title": "Верхній борт", "type": "checkbox", "price": 50 }
+    ]
+  },
+  {
+    "id": "mvu-8",
+    "category": "attachments",
+    "name": "Модель машини для внесення добрив МВУ-8",
+    "image": "images/mvu8_green.png",
+    "images": [
+      "images/mvu8_full_green.png",
+      "images/mvu8_green.png",
+      "images/mvu8_full_red.png",
+      "images/mvu8_red.png",
+      "images/mvu8_blue.png",
+      "images/mvu8_orange.png",
+      "images/mvu8_grey.png"
+    ],
+    "material": "PETG",
+    "description": "Модель причіпного розкидача мінеральних добрив МВУ-8 з PETG пластику.",
+    "scales": [
+      { "scale": "1:43", "assembled": 800, "unassembled": 600 },
+      { "scale": "1:35", "assembled": 1000, "unassembled": 800 },
+      { "scale": "1:16", "assembled": 2600, "unassembled": 2100 }
+    ],
+    "colorVariants": [
+      { "name": "Зелений", "image": "images/mvu8_full_green.png", "price": 0 },
+      { "name": "Зелений з чорною рамою", "image": "images/mvu8_green.png", "price": 0 },
+      { "name": "Червоний", "image": "images/mvu8_full_red.png", "price": 0 },
+      { "name": "Червоний з чорною рамою", "image": "images/mvu8_red.png", "price": 0 },
+      { "name": "Синій", "image": "images/mvu8_blue.png", "price": 0 },
+      { "name": "Помаранчевий", "image": "images/mvu8_orange.png", "price": 0 },
+      { "name": "Сірий", "image": "images/mvu8_grey.png", "price": 0 }
+    ],
+    "customColorParts": ["Бункер", "Рама", "Диски"],
+    
+  },
+  {
+    "id": "mazhara-2pts-45",
+    "category": "trailers",
+    "name": "Причеп 2ПТС-45 'Мажара'",
+    "image": "images/mazhara_red.png",
+    "images": [
+      "images/mazhara_red.png",
+      "images/mazhara_orange.png",
+      "images/mazhara_grey.png",
+      "images/mazhara_redwhite.png",
+      "images/mazhara_greyred.png"
+    ],
+    "material": "PETG",
+    "description": "Модель причепа 2ПТС-45 'Мажара'.",
+    "scales": [
+      { "scale": "1:43", "assembled": 800, "unassembled": 600 },
+      { "scale": "1:35", "assembled": 1000, "unassembled": 800 }
+    ],
+    "colorVariants": [
+      { "name": "Червоний", "image": "images/mazhara_red.png", "price": 0 },
+      { "name": "Помаранчевий", "image": "images/mazhara_orange.png", "price": 0 },
+      { "name": "Сірий", "image": "images/mazhara_grey.png", "price": 0 },
+      { "name": "Низ червоний, верх білий", "image": "images/mazhara_redwhite.png", "price": 0 },
+      { "name": "Низ сірий, верх червоний", "image": "images/mazhara_greyred.png", "price": 0 }
+    ],
+    "customColorParts": ["Кузов", "Рама", "Диски"]
+  },
+  {
+    "id": "mazhara-hay-2pts-45",
+    "category": "trailers",
+    "name": "Причеп 2ПТС-45 'Мажара' для сіна",
+    "image": "images/mazhara_hay_red.png",
+    "images": [
+      "images/mazhara_hay_red.png",
+      "images/mazhara_hay_grey.png",
+      "images/mazhara_hay_orange.png"
+    ],
+    "material": "PETG",
+    "description": "Спеціалізована модель причепа 2ПТС-45 'Мажара' для перевезення сіна.",
+    "scales": [
+      { "scale": "1:43", "assembled": 700, "unassembled": 500 },
+      { "scale": "1:35", "assembled": 900, "unassembled": 700 }
+    ],
+    "colorVariants": [
+      { "name": "Червоний", "image": "images/mazhara_hay_red.png", "price": 0 },
+      { "name": "Сірий", "image": "images/mazhara_hay_grey.png", "price": 0 },
+      { "name": "Помаранчевий", "image": "images/mazhara_hay_orange.png", "price": 0 },
+    ],
+    "customColorParts": ["Кузов", "Борти", "Рама"],
+    
   }
 ]

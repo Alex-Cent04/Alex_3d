@@ -384,7 +384,7 @@
       { "name": "Помаранчевий", "image": "images/mvu8_orange.png", "price": 0 },
       { "name": "Сірий", "image": "images/mvu8_grey.png", "price": 0 }
     ],
-    "customColorParts": ["Бункер", "Рама", "Диски"],
+    "customColorParts": ["Бункер", "Рама", "Диски"]
     
   },
   {
@@ -435,7 +435,7 @@
       { "name": "Сірий", "image": "images/mazhara_hay_grey.png", "price": 0 },
       { "name": "Помаранчевий", "image": "images/mazhara_hay_orange.png", "price": 0 }
     ],
-    "customColorParts": ["Кузов", "Борти", "Рама"],
+    "customColorParts": ["Кузов", "Борти", "Рама"]
     
   }
 ]

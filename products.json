@@ -303,7 +303,7 @@
       { "name": "Зелений(сірий верхній борт)", "image": "images/2pts9_green_b.png", "price": 0 },
       { "name": "Помаранчевий(сірий верхній борт)", "image": "images/2pts9_orange_b.png", "price": 0 },
       { "name": "Хакі(сірий верхній борт)", "image": "images/2pts9_haki_b.png", "price": 0 },
-      { "name": "Синій(сірий верхній борт)", "image": "images/2pts9_blue_b.png", "price": 0 },
+      { "name": "Синій(сірий верхній борт)", "image": "images/2pts9_blue_b.png", "price": 0 }
     ],
     "customColorParts": ["Кузов1","Кузов2", "Рама", "Диски"],
     "options": [
@@ -433,7 +433,7 @@
     "colorVariants": [
       { "name": "Червоний", "image": "images/mazhara_hay_red.png", "price": 0 },
       { "name": "Сірий", "image": "images/mazhara_hay_grey.png", "price": 0 },
-      { "name": "Помаранчевий", "image": "images/mazhara_hay_orange.png", "price": 0 },
+      { "name": "Помаранчевий", "image": "images/mazhara_hay_orange.png", "price": 0 }
     ],
     "customColorParts": ["Кузов", "Борти", "Рама"],
     

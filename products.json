@@ -252,7 +252,7 @@
     "material": "PETG",
     "description": "Модель сільськогосподарського причепа 2ПТС4 з PETG пластику. Доступна у зібраному та розібраному варіанті.",
     "scales": [
-      { "scale": "1:43", "assembled": 600, "unassembled": 450 },
+      { "scale": "1:43", "assembled": 600, "unassembled": 500 },
       { "scale": "1:35", "assembled": 900, "unassembled": 700 },
       { "scale": "1:16", "assembled": 2200, "unassembled": 1800 }
     ],
@@ -314,15 +314,15 @@
     "id": "2pts-12",
     "category": "trailers",
     "name": "Причеп 2ПТС12",
-    "image": "images/2pts12_grey.png",
+    "image": "images/2pts12_grey.jpg",
     "images": [
-      "images/2pts12_grey.png",
+      "images/2pts12_grey.jpg",
       "images/2pts12_red.png",
       "images/2pts12_green.png",
       "images/2pts12_orange.png",
       "images/2pts12_haki.png",
       "images/2pts12_blue.png",
-      "images/2pts12_grey_b.png",
+      "images/2pts12_grey.jpg",
       "images/2pts12_red_b.png",
       "images/2pts12_green_b.png",
       "images/2pts12_orange_b.png",
@@ -330,14 +330,14 @@
       "images/2pts12_blue_b.png"
     ],
     "material": "PETG",
-    "description": "Модель сільськогосподарського причепа 2ПТС12 з PETG пластику.",
+    "description": "Модель сільськогосподарського причепа 3ПТС12 з PETG пластику.",
     "scales": [
       { "scale": "1:43", "assembled": 900, "unassembled": 700 },
       { "scale": "1:35", "assembled": 1200, "unassembled": 1000 },
       { "scale": "1:16", "assembled": 2800, "unassembled": 2300 }
     ],
     "colorVariants": [
-      { "name": "Сірий", "image": "images/2pts12_grey.png", "price": 0 },
+      { "name": "Сірий", "image": "images/2pts12_grey.jpg", "price": 0 },
       { "name": "Червоний", "image": "images/2pts12_red.png", "price": 0 },
       { "name": "Зелений", "image": "images/2pts12_green.png", "price": 0 },
       { "name": "Помаранчевий", "image": "images/2pts12_orange.png", "price": 0 },

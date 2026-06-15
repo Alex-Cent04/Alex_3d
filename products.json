@@ -437,5 +437,51 @@
     ],
     "customColorParts": ["Кузов", "Борти", "Рама"]
     
+  },
+  {
+    "id": "mgt-10",
+    "category": "attachments",
+    "name": "Модель цистерни для перевезення рідини МЖТ-10",
+    "image": "images/mgt10_green.png",
+    "images": [
+      "images/mgt10_green.png",
+      "images/mgt10_red.jpg"
+    ],
+    "material": "PETG",
+    "description": "Модель цистерни для перевезення рідини МЖТ-10 з PETG пластику.",
+    "scales": [
+      { "scale": "1:43", "assembled": 800, "unassembled": 600 },
+      { "scale": "1:35", "assembled": 1000, "unassembled": 800 },
+      { "scale": "1:16", "assembled": 2600, "unassembled": 2100 }
+    ],
+    "colorVariants": [
+      { "name": "Зелений", "image": "images/mgt10_green.png", "price": 0 },
+      { "name": "Червоний", "image": "images/mgt10_red.jpg", "price": 0 }
+    ],
+    "customColorParts": ["Бочка", "Рама", "Диски"]
+    
+  },
+  {
+    "id": "mgt-16",
+    "category": "attachments",
+    "name": "Модель цистерни для перевезення рідини МЖТ-16",
+    "image": "images/mgt16_green.png",
+    "images": [
+      "images/mgt16_green.png",
+      "images/mgt16_red.jpg"
+    ],
+    "material": "PETG",
+    "description": "Модель цистерни для перевезення рідини МЖТ-16 з PETG пластику.",
+    "scales": [
+      { "scale": "1:43", "assembled": 800, "unassembled": 600 },
+      { "scale": "1:35", "assembled": 1000, "unassembled": 800 },
+      { "scale": "1:16", "assembled": 2600, "unassembled": 2100 }
+    ],
+    "colorVariants": [
+      { "name": "Зелений", "image": "images/mgt16_green.png", "price": 0 },
+      { "name": "Червоний", "image": "images/mgt16_red.jpg", "price": 0 }
+    ],
+    "customColorParts": ["Бочка", "Рама", "Диски"]
+    
   }
 ]

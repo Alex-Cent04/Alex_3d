@@ -473,9 +473,9 @@
     "material": "PETG",
     "description": "Модель цистерни для перевезення рідини МЖТ-16 з PETG пластику.",
     "scales": [
-      { "scale": "1:43", "assembled": 800, "unassembled": 600 },
-      { "scale": "1:35", "assembled": 1000, "unassembled": 800 },
-      { "scale": "1:16", "assembled": 2600, "unassembled": 2100 }
+      { "scale": "1:43", "assembled": 1000, "unassembled": 800 },
+      { "scale": "1:35", "assembled": 1200, "unassembled": 1000 },
+      { "scale": "1:16", "assembled": 2000, "unassembled": 1500 }
     ],
     "colorVariants": [
       { "name": "Зелений", "image": "images/mgt16_green.png", "price": 0 },

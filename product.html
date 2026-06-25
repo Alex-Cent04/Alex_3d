@@ -53,6 +53,34 @@
     <h2>Ваш кошик</h2>
     <div id="cart-items"></div>
     <h3>Разом: <span id="cart-total">0</span> грн</h3>
+
+    <h3>Оформлення замовлення</h3>
+
+    <input id="customer-name" type="text" placeholder="Ваше ПІБ">
+    <input id="customer-phone" type="tel" placeholder="Телефон">
+    <input id="customer-city" type="text" placeholder="Місто">
+    <input id="customer-post" type="text" placeholder="Відділення Нової пошти">
+    <textarea id="customer-comment" placeholder="Коментар до замовлення"></textarea>
+
+    <div class="checkout-warning">
+      <p>
+        Увага! Ми беремо замовлення в обробку. Після друку та складання моделі надсилаємо відеозвіт у месенджер. Після цього ви надсилаєте повну суму замовлення на рахунок ФОП, і ми відправляємо замовлення. З післяплатою не працюємо.
+      </p>
+
+      <label>
+        <input type="checkbox" id="payment-agree">
+        Я ознайомлений(а) з умовами оплати та оформлення замовлення.
+      </label>
+
+      <label>
+        <input type="checkbox" id="personal-agree">
+        Я даю згоду на обробку персональних даних.
+      </label>
+    </div>
+
+    <button class="checkout-btn" onclick="checkout()">
+      Оформити замовлення
+    </button>
   </div>
 </div>
 
@@ -491,7 +519,72 @@ function removeFromCart(index) {
   saveCart();
   renderCart();
 }
+async function checkout() {
+  const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxgyBZoeWmpQncKgJy5H0FWbdE5JCpy-whHFIl1Y8K4tXei_d3P73bmstw9EFpJWtkm/exec";
 
+  const name = document.getElementById("customer-name").value.trim();
+  const phone = document.getElementById("customer-phone").value.trim();
+  const city = document.getElementById("customer-city").value.trim();
+  const post = document.getElementById("customer-post").value.trim();
+  const comment = document.getElementById("customer-comment").value.trim();
+
+  const paymentAgree = document.getElementById("payment-agree").checked;
+  const personalAgree = document.getElementById("personal-agree").checked;
+
+  if (!name || !phone || !city || !post) {
+    alert("Будь ласка, заповніть ім’я, телефон, місто та відділення Нової пошти.");
+    return;
+  }
+
+  if (!paymentAgree || !personalAgree) {
+    alert("Потрібно погодитися з умовами оплати та обробкою персональних даних.");
+    return;
+  }
+
+  if (!cart.length) {
+    alert("Кошик порожній.");
+    return;
+  }
+
+  const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+
+  const order = {
+    date: new Date().toLocaleString("uk-UA"),
+    customer: {
+      name,
+      phone,
+      city,
+      post,
+      comment
+    },
+    items: cart,
+    total,
+    paymentAgree,
+    personalAgree
+  };
+
+  try {
+    await fetch(GOOGLE_SCRIPT_URL, {
+      method: "POST",
+      mode: "no-cors",
+      headers: {
+        "Content-Type": "text/plain;charset=utf-8"
+      },
+      body: JSON.stringify(order)
+    });
+
+    alert("Замовлення успішно оформлено!");
+
+    cart = [];
+    saveCart();
+    renderCart();
+    closeCart();
+
+  } catch (error) {
+    console.error(error);
+    alert("Помилка відправлення замовлення. Спробуйте ще раз або зв'яжіться з нами напряму.");
+  }
+}
 document.getElementById("detail-scale").addEventListener("change", updateDetailPrice);
 document.getElementById("detail-type").addEventListener("change", updateDetailPrice);
 

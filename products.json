@@ -208,6 +208,32 @@
       { "id": "mirrors", "title": "Остеклення кабіни", "type": "checkbox", "price": 100 }
     ]
   },
+   {
+    "id": "JohnDeere9640",
+    "category": "combines",
+    "name": "Модель комбайна John Deere 9640 WTS",
+    "image": "images/jd9640.png",
+    "images": [
+      "images/jd9640.png"
+      
+    ],
+    "material": "PETG",
+    "description": "Модель комбайна John Deere 9640 WTS з PETG пластику. Доступна у зібраному та розібраному варіанті.",
+    "scales": [
+      { "scale": "1:43", "assembled": 1400, "unassembled": 1000 },
+      { "scale": "1:35", "assembled": 1800, "unassembled": 1400 },
+      { "scale": "1:24", "assembled": 2200, "unassembled": 1800 },
+      { "scale": "1:16", "assembled": 3000, "unassembled": 2500 }
+    ],
+    "colorVariants": [
+      { "name": "Стандарт", "image": "images/jd9640.png", "price": 0 },
+      { "name": "Індивідуальні кольори", "image": "images/jd9640.png", "price": 200 }
+    ],
+    "customColorParts": ["Кабіна", "Бункер", "Диски", "Рама", "жатка", "Дах"],
+    "options": [
+      { "id": "mirrors", "title": "Остеклення кабіни", "type": "checkbox", "price": 100 }
+    ]
+  },
   {
     "id": "bdt-7",
     "category": "attachments",
@@ -262,7 +288,8 @@
       { "name": "Зелений", "image": "images/2pts4_green.png", "price": 0 },
       { "name": "Синій", "image": "images/2pts4_blue.png", "price": 0 },
       { "name": "Хакі", "image": "images/2pts4_haki.png", "price": 0 },
-      { "name": "Сірий", "image": "images/2pts4_grey.png", "price": 0 }
+      { "name": "Сірий", "image": "images/2pts4_grey.png", "price": 0 },
+      { "name": "Індивідуальні кольори", "image": "images/2pts4_grey.png", "price": 200 }
     ],
     "customColorParts": ["Задній борт", "Передній борт", "Лівий борт", "Правий борт", "Рама", "Диски"]
     
@@ -303,7 +330,8 @@
       { "name": "Зелений(сірий верхній борт)", "image": "images/2pts9_green_b.png", "price": 0 },
       { "name": "Помаранчевий(сірий верхній борт)", "image": "images/2pts9_orange_b.png", "price": 0 },
       { "name": "Хакі(сірий верхній борт)", "image": "images/2pts9_haki_b.png", "price": 0 },
-      { "name": "Синій(сірий верхній борт)", "image": "images/2pts9_blue_b.png", "price": 0 }
+      { "name": "Синій(сірий верхній борт)", "image": "images/2pts9_blue_b.png", "price": 0 },
+      { "name": "Індивідуальні кольори", "image": "images/2pts9_grey.png", "price": 200 }
     ],
     "customColorParts": ["Кузов1","Кузов2", "Рама", "Диски"],
     "options": [
@@ -347,7 +375,8 @@
       { "name": "Зелений(сірий верхній борт)", "image": "images/2pts12_green_b.png", "price": 0 },
       { "name": "Помаранчевий(сірий верхній борт)", "image": "images/2pts12_orange_b.png", "price": 0 },
       { "name": "Хакі(сірий верхній борт)", "image": "images/2pts12_haki_b.png", "price": 0 },
-      { "name": "Синій(сірий верхній борт)", "image": "images/2pts12_blue_b.png", "price": 0 }
+      { "name": "Синій(сірий верхній борт)", "image": "images/2pts12_blue_b.png", "price": 0 },
+      { "name": "Індивідуальні кольори", "image": "images/2pts12_grey.png", "price": 200 }
     ],
     "customColorParts": ["Кузов1","Кузов2", "Рама", "Диски"],
     "options": [
@@ -382,7 +411,8 @@
       { "name": "Червоний з чорною рамою", "image": "images/mvu8_red.png", "price": 0 },
       { "name": "Синій", "image": "images/mvu8_blue.png", "price": 0 },
       { "name": "Помаранчевий", "image": "images/mvu8_orange.png", "price": 0 },
-      { "name": "Сірий", "image": "images/mvu8_grey.png", "price": 0 }
+      { "name": "Сірий", "image": "images/mvu8_grey.png", "price": 0 },
+      { "name": "Індивідуальні кольори", "image": "images/mvu8_grey.png", "price": 200 }
     ],
     "customColorParts": ["Бункер", "Рама", "Диски"]
     
@@ -410,7 +440,8 @@
       { "name": "Помаранчевий", "image": "images/mazhara_orange.png", "price": 0 },
       { "name": "Сірий", "image": "images/mazhara_grey.png", "price": 0 },
       { "name": "Низ червоний, верх білий", "image": "images/mazhara_redwhite.png", "price": 0 },
-      { "name": "Низ сірий, верх червоний", "image": "images/mazhara_greyred.png", "price": 0 }
+      { "name": "Низ сірий, верх червоний", "image": "images/mazhara_greyred.png", "price": 0 },
+      { "name": "Індивідуальні кольори", "image": "images/mazhara_red.png", "price": 200 }
     ],
     "customColorParts": ["Кузов", "Рама", "Диски"]
   },
@@ -433,7 +464,31 @@
     "colorVariants": [
       { "name": "Червоний", "image": "images/mazhara_hay_red.png", "price": 0 },
       { "name": "Сірий", "image": "images/mazhara_hay_grey.png", "price": 0 },
-      { "name": "Помаранчевий", "image": "images/mazhara_hay_orange.png", "price": 0 }
+      { "name": "Помаранчевий", "image": "images/mazhara_hay_orange.png", "price": 0 },
+      { "name": "Індивідуальні кольори", "image": "images/mazhara_hay_red.png", "price": 200 }
+    ],
+    "customColorParts": ["Кузов", "Борти", "Рама"]
+    
+  },
+  {
+    "id": "mazhara-2pts-45",
+    "category": "trailers",
+    "name": "Причеп 2ПТС-45 'Мажара' (стара модель)",
+    "image": "images/pts45s.jpg",
+    "images": [
+      "images/pts45s.jpg"
+      
+    ],
+    "material": "PETG",
+    "description": "Стара модель причепа 2ПТС-45 'Мажара'.",
+    "scales": [
+      { "scale": "1:43", "assembled": 1500, "unassembled": 1000 },
+      { "scale": "1:35", "assembled": 1800, "unassembled": 1200 }
+    ],
+    "colorVariants": [
+      { "name": "Червоний", "image": "images/pts45s.jpg", "price": 0 },
+      { "name": "Індивідуальні кольори", "image": "images/pts45s.png", "price": 200 }
+     
     ],
     "customColorParts": ["Кузов", "Борти", "Рама"]
     
@@ -456,7 +511,8 @@
     ],
     "colorVariants": [
       { "name": "Зелений", "image": "images/mgt10_green.png", "price": 0 },
-      { "name": "Червоний", "image": "images/mgt10_red.jpg", "price": 0 }
+      { "name": "Червоний", "image": "images/mgt10_red.jpg", "price": 0 },
+      { "name": "Індивідуальні кольори", "image": "images/mgt_red.jpg", "price": 200 }
     ],
     "customColorParts": ["Бочка", "Рама", "Диски"]
     
@@ -479,7 +535,8 @@
     ],
     "colorVariants": [
       { "name": "Зелений", "image": "images/mgt16_green.png", "price": 0 },
-      { "name": "Червоний", "image": "images/mgt16_red.jpg", "price": 0 }
+      { "name": "Червоний", "image": "images/mgt16_red.jpg", "price": 0 },
+      { "name": "Індивідуальні кольори", "image": "images/mgt16_red.jpg", "price": 200 }
     ],
     "customColorParts": ["Бочка", "Рама", "Диски"]
     

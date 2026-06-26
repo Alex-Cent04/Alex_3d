@@ -146,19 +146,27 @@
     "category": "tractors",
     "name": "Модель трактора ХТЗ Т-150К",
     "image": "images/150_red.png",
-    "images": ["images/150_red.png"],
+    "images": [
+      "images/150_red.png",
+      "images/150_orange.png",
+      "images/150_grey.png",
+      "images/150_green.png",
+      "images/150_blue.jpg",
+      "images/150_biryz.jpg"
+    ],
+    
     "material": "PETG",
     "description": "Модель трактора ХТЗ Т-150К у масштабі 1:43.",
     "scales": [
       { "scale": "1:43", "assembled": 800, "unassembled": 600 }
     ],
     "colorVariants": [
-      { "name": "Синій", "image": "images/150_blue.png", "price": 0 },
+      { "name": "Синій", "image": "images/150_blue.jpg", "price": 0 },
       { "name": "Червоний", "image": "images/150_red.png", "price": 0 },
       { "name": "Зелений", "image": "images/150_green.png", "price": 0 },
-       { "name": "Бірюзовий", "image": "images/150_biryz.png", "price": 0 },
-      { "name": "Сірий", "image": "images/150_grey.jpg", "price": 0 },
-      { "name": "Помаранчевий", "image": "images/150_orange.jpg", "price": 0 },
+       { "name": "Бірюзовий", "image": "images/150_biryz.jpg", "price": 0 },
+      { "name": "Сірий", "image": "images/150_grey.png", "price": 0 },
+      { "name": "Помаранчевий", "image": "images/150_orange.png", "price": 0 },
       { "name": "Індивідуальні кольори", "image": "images/150_red.png", "price": 200 }
     ],
     "customColorParts": ["Капот", "Кабіна", "Крила", "Диски", "Рама", "Решітка радіатора", "Дах"],

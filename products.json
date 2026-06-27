@@ -280,6 +280,43 @@
       
     ]
   },
+
+{
+    "id": "htz-t156",
+    "category": "tractors",
+    "name": "Модель Фронтального навантажувача ХТЗ Т-156",
+    "image": "images/156_red.png",
+    "images": [
+      "images/156_red.png",
+      "images/156_orange.png",
+      "images/156_grey.png",
+      "images/156_green.png",
+      "images/156_yellow.png",
+      "images/156_blue.png",
+    ],
+    
+    "material": "PETG",
+    "description": "Модель Фронтального навантажувача ХТЗ Т-156 у масштабі 1:43.",
+    "scales": [
+      { "scale": "1:43", "assembled": 800, "unassembled": 600 }
+    ],
+    "colorVariants": [
+      { "name": "Синій", "image": "images/156_blue.png", "price": 0 },
+      { "name": "Червоний", "image": "images/156_red.png", "price": 0 },
+      { "name": "Зелений", "image": "images/156_green.png", "price": 0 },
+      { "name": "Сірий", "image": "images/156_grey.png", "price": 0 },
+      { "name": "Жовтий", "image": "images/156_yellow.png", "price": 0 },
+      { "name": "Помаранчевий", "image": "images/156_orange.png", "price": 0 },
+      { "name": "Індивідуальні кольори", "image": "images/156_red.png", "price": 100 }
+    ],
+    "customColorParts": ["Капот", "Кабіна", "Крила", "Диски", "Рама", "стріла","ковш","Решітка радіатора", "Дах"],
+       "options": [
+      { "id": "glas", "title": "Скло", "type": "checkbox", "price": 100 }
+      
+      
+    ]
+  },
+
   
   {
     "id": "htz-17221",

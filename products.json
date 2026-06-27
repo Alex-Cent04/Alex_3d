@@ -170,18 +170,39 @@
       { "name": "Індивідуальні кольори", "image": "images/150_red.png", "price": 200 }
     ],
     "customColorParts": ["Капот", "Кабіна", "Крила", "Диски", "Рама", "Решітка радіатора", "Дах"],
+       "options": [
+      { "id": "glas", "title": "Скло", "type": "checkbox", "price": 100 }
+      
+      
+    ]
+  },
+  
+  {
+    "id": "htz-17221",
+    "category": "tractors",
+    "name": "Модель трактора ХТЗ-17221",
+    "image": "images/17221_black.png",
+    "images": [
+      "images/17221_black.png"
+      
+    ],
+    
+    "material": "PETG",
+    "description": "Модель трактора ХТЗ-17221 у масштабі 1:43.",
+    "scales": [
+      { "scale": "1:43", "assembled": 850, "unassembled": 600 }
+    ],
+    "colorVariants": [
+      { "name": "Чорний", "image": "images/17221_black.png", "price": 0 },
+     
+      { "name": "Індивідуальні кольори", "image": "images/17221_black.png", "price": 200 }
+    ],
+    "customColorParts": ["Капот", "Кабіна", "Крила", "Диски", "Рама", "Решітка радіатора", "Дах"],
     "options": [
-      {
-        "id": "windows",
-        "title": "Скло / вікна",
-        "type": "select",
-        "choices": [
-          { "name": "Без фарбування", "price": 0 },
-          { "name": "Вікна чорним кольором", "price": 100 }
-        ]
-      },
-      { "id": "mirrors", "title": "Дзеркала", "type": "checkbox", "price": 30 },
-      { "id": "lights", "title": "Фарбовані фари", "type": "checkbox", "price": 30 }
+      
+      { "id": "glas", "title": "Скло", "type": "checkbox", "price": 100 }
+      
+      
     ]
   },
   {

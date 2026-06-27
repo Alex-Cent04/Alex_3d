@@ -82,12 +82,12 @@
     "colorVariants": [
       { "name": "Блакитний", "image": "images/mtz_82.png", "price": 0 },
       { "name": "Червоний", "image": "images/mtz_82_red.png", "price": 0 },
-      { "name": "Зелений", "image": "images/mtz_82_blue.png", "price": 0 },
-      { "name": "Блакитний", "image": "images/mtz_82_grey.png", "price": 0 },
-      { "name": "Червоний", "image": "images/mtz_82_orange.png", "price": 0 },
-      { "name": "Зелений", "image": "images/mtz_82_export.png", "price": 0 },
-      { "name": "Блакитний", "image": "images/mtz_82_biryz.png", "price": 0 },
-      { "name": "Червоний", "image": "images/mtz_82_green.png", "price": 0 },
+      { "name": "Синій", "image": "images/mtz_82_blue.png", "price": 0 },
+      { "name": "Сірий", "image": "images/mtz_82_grey.png", "price": 0 },
+      { "name": "Помаранчевий", "image": "images/mtz_82_orange.png", "price": 0 },
+      { "name": "Експортний", "image": "images/mtz_82_export.png", "price": 0 },
+      { "name": "Бірюзовий", "image": "images/mtz_82_biryz.png", "price": 0 },
+      { "name": "Зелений", "image": "images/mtz_82_green.png", "price": 0 },
     
       { "name": "Індивідуальні кольори", "image": "images/mtz_82.png", "price": 200 }
     ],

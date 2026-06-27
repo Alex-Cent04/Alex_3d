@@ -56,6 +56,46 @@
       { "id": "mirrors", "title": "Остеклення кабіни", "type": "checkbox", "price": 100 }
     ]
   },
+
+{
+    "id": "mtz-82-80",
+    "category": "tractors",
+    "name": "Модель трактора МТЗ-80(82) (велика кабіна)",
+    "image": "images/mtz_82.png",
+    "images": [
+      "images/mtz_82.png",
+      "images/mtz_82_red.png",
+      "images/mtz_82_blue.png",
+      "images/mtz_82_grey.png",
+      "images/mtz_82_orange.png",
+      "images/mtz_82_export.png",
+      "images/mtz_82_biryz.png",
+      "images/mtz_82_green.png"
+    ],
+    "material": "PETG",
+    "description": "Модель трактора МТЗ-80(82) (велика кабіна) з PETG пластику. Доступна у зібраному та розібраному варіанті.",
+    "scales": [
+      { "scale": "1:43", "assembled": 700, "unassembled": 600 },
+      { "scale": "1:35", "assembled": 1200, "unassembled": 1000 },
+      { "scale": "1:16", "assembled": 3000, "unassembled": 2500 }
+    ],
+    "colorVariants": [
+      { "name": "Блакитний", "image": "images/mtz_82.png", "price": 0 },
+      { "name": "Червоний", "image": "images/mtz_82_red.png", "price": 0 },
+      { "name": "Зелений", "image": "images/mtz_82_blue.png", "price": 0 },
+      { "name": "Блакитний", "image": "images/mtz_82_grey.png", "price": 0 },
+      { "name": "Червоний", "image": "images/mtz_82_orange.png", "price": 0 },
+      { "name": "Зелений", "image": "images/mtz_82_export.png", "price": 0 },
+      { "name": "Блакитний", "image": "images/mtz_82_biryz.png", "price": 0 },
+      { "name": "Червоний", "image": "images/mtz_82_green.png", "price": 0 },
+    
+      { "name": "Індивідуальні кольори", "image": "images/mtz_82.png", "price": 200 }
+    ],
+    "customColorParts": ["Капот", "Кабіна", "Крила", "Диски", "Рама", "Решітка радіатора", "Дах"],
+    "options": [
+      { "id": "mirrors", "title": "Остеклення кабіни", "type": "checkbox", "price": 100 }
+    ]
+  },
   
   {
     "id": "MTZ-80(82)",
@@ -74,7 +114,7 @@
       "images/80_black.png"
     ],
     "material": "PETG",
-    "description": "Модель трактора МТЗ-80(82) з PETG пластику. Доступна у зібраному та розібраному варіанті.",
+    "description": "Модель трактора МТЗ-80(82) (мала кабіна) з PETG пластику. Доступна у зібраному та розібраному варіанті.",
     "scales": [
       { "scale": "1:43", "assembled": 700, "unassembled": 600 },
       { "scale": "1:35", "assembled": 1200, "unassembled": 1000 },

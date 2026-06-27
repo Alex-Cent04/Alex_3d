@@ -629,6 +629,36 @@
     "customColorParts": ["Кузов", "Борти", "Рама"]
     
   },
+
+{
+    "id": "mgt-2",
+    "category": "attachments",
+    "name": "Модель цистерни для перевезення рідини МЖТ-2",
+    "image": "images/mgt2_green.png",
+    "images": [
+      "images/mgt2_green.png",
+      "images/mgt2_blue.png",
+      "images/mgt2_yellow.png",
+      "images/mgt2_red.png"
+    ],
+    "material": "PETG",
+    "description": "Модель цистерни для перевезення рідини МЖТ-2 з PETG пластику.",
+    "scales": [
+      { "scale": "1:43", "assembled": 500, "unassembled": 400 },
+      { "scale": "1:35", "assembled": 700, "unassembled": 600 }
+      
+    ],
+    "colorVariants": [
+      { "name": "Зелений", "image": "images/mgt2_green.png", "price": 0 },
+      { "name": "Червоний", "image": "images/mgt2_red.png", "price": 0 },
+      { "name": "Синій", "image": "images/mgt2_blue.png", "price": 0 },
+      { "name": "Жовтий", "image": "images/mgt2_yellow.png", "price": 0 },
+      { "name": "Індивідуальні кольори", "image": "images/mgt2_red.png", "price": 200 }
+    ],
+    "customColorParts": ["Бочка", "Рама", "Диски"]
+    
+  },
+  
   {
     "id": "mgt-10",
     "category": "attachments",
@@ -648,7 +678,7 @@
     "colorVariants": [
       { "name": "Зелений", "image": "images/mgt10_green.png", "price": 0 },
       { "name": "Червоний", "image": "images/mgt10_red.jpg", "price": 0 },
-      { "name": "Індивідуальні кольори", "image": "images/mgt_red.jpg", "price": 200 }
+      { "name": "Індивідуальні кольори", "image": "images/mgt10_red.jpg", "price": 200 }
     ],
     "customColorParts": ["Бочка", "Рама", "Диски"]
     
@@ -673,6 +703,32 @@
       { "name": "Зелений", "image": "images/mgt16_green.png", "price": 0 },
       { "name": "Червоний", "image": "images/mgt16_red.jpg", "price": 0 },
       { "name": "Індивідуальні кольори", "image": "images/mgt16_red.jpg", "price": 200 }
+    ],
+    "customColorParts": ["Бочка", "Рама", "Диски"]
+    
+  },
+  {
+    "id": "PRT-10",
+    "category": "attachments",
+    "name": "Модель гноєрозкидача ПРТ-10",
+    "image": "images/prt_red.png",
+    "images": [
+      "images/prt_green.png",
+      "images/prt_blue.png",
+      "images/prt_red.png"
+    ],
+    "material": "PETG",
+    "description": "Модель гноєрозкидача ПРТ-10 з PETG пластику.",
+    "scales": [
+      { "scale": "1:43", "assembled": 500, "unassembled": 400 },
+      { "scale": "1:35", "assembled": 700, "unassembled": 600 }
+      
+    ],
+    "colorVariants": [
+      { "name": "Зелений", "image": "images/mgt2_green.png", "price": 0 },
+      { "name": "Синій", "image": "images/mgt2_blue.png", "price": 0 },
+      { "name": "Червоний", "image": "images/mgt2_red.png", "price": 0 },
+      { "name": "Індивідуальні кольори", "image": "images/mgt_red.png", "price": 200 }
     ],
     "customColorParts": ["Бочка", "Рама", "Диски"]
     

@@ -27,10 +27,40 @@
       { "id": "mirrors", "title": "Остеклення кабіни", "type": "checkbox", "price": 100 }
     ]
   },
+
+ {
+    "id": "mtz-82.1-blue",
+    "category": "tractors",
+    "name": "Модель трактора МТЗ-82.1",
+    "image": "images/mtz_82_1.png",
+    "images": [
+      "images/mtz_82_1.png",
+      "images/mtz_82_1_red.png",
+      "images/mtz_82_1_green.png"
+    ],
+    "material": "PETG",
+    "description": "Модель трактора МТЗ-82.1 з PETG пластику. Доступна у зібраному та розібраному варіанті.",
+    "scales": [
+      { "scale": "1:43", "assembled": 700, "unassembled": 600 },
+      { "scale": "1:35", "assembled": 1200, "unassembled": 1000 },
+      { "scale": "1:16", "assembled": 3000, "unassembled": 2500 }
+    ],
+    "colorVariants": [
+      { "name": "Блакитний", "image": "images/mtz_82_1.png", "price": 0 },
+      { "name": "Червоний", "image": "images/mtz_82_1_red.png", "price": 0 },
+      { "name": "Зелений", "image": "images/mtz_82_1_green.png", "price": 0 },
+      { "name": "Індивідуальні кольори", "image": "images/mtz_82_1.png", "price": 200 }
+    ],
+    "customColorParts": ["Капот", "Кабіна", "Крила", "Диски", "Рама", "Решітка радіатора", "Дах"],
+    "options": [
+      { "id": "mirrors", "title": "Остеклення кабіни", "type": "checkbox", "price": 100 }
+    ]
+  },
+  
   {
     "id": "MTZ-80(82)",
     "category": "tractors",
-    "name": "Модель трактора МТЗ-80(82)",
+    "name": "Модель трактора МТЗ-80(82) (мала кабіна)",
     "image": "images/80_light_blue.png",
     "images": [
       "images/80_biryz.png",

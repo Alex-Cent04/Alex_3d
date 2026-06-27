@@ -105,6 +105,40 @@
       { "id": "mirrors", "title": "Остеклення кабіни", "type": "checkbox", "price": 100 }
     ]
   },
+
+{
+    "id": "LTZ-T40 АМ",
+    "category": "tractors",
+    "name": "Модель трактора ЛТЗ Т-40 АМ",
+    "image": "images/40_biryz.png",
+    "images": [
+      "images/40_biryz.png",
+      "images/40_red.png",
+      "images/40_light_blue.png",
+      "images/40_blue.png",
+      "images/40_green.png"
+    ],
+    "material": "PETG",
+    "description": "Модель трактора ЛТЗ Т-40 АМ з PETG пластику. Доступна у зібраному та розібраному варіанті.",
+    "scales": [
+      { "scale": "1:43", "assembled": 700, "unassembled": 600 },
+      { "scale": "1:35", "assembled": 1200, "unassembled": 1000 },
+      { "scale": "1:16", "assembled": 3000, "unassembled": 2500 }
+    ],
+    "colorVariants": [
+      { "name": "Бірюзовий", "image": "images/40_biryz.png", "price": 0 },
+      { "name": "Червоний", "image": "images/40_red.png", "price": 0 },
+      { "name": "Блакитний", "image": "images/40_light_blue.png", "price": 0 },
+      { "name": "Синій", "image": "images/40_blue.png", "price": 0 },
+      { "name": "Зелений", "image": "images/40_green.png", "price": 0 },
+      { "name": "Індивідуальні кольори", "image": "images/40_red.png", "price": 200 }
+    ],
+    "customColorParts": ["Капот", "Кабіна", "Крила", "Диски", "Рама", "Решітка радіатора", "Дах"],
+    "options": [
+      { "id": "mirrors", "title": "Остеклення кабіни", "type": "checkbox", "price": 100 }
+    ]
+  },
+  
   {
     "id": "K-701",
     "category": "tractors",

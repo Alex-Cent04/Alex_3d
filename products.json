@@ -831,6 +831,7 @@
     ],
     "colorVariants": [
       { "name": "Зелений", "image": "images/079_green.png", "price": 0 },
+      { "name": "Бірюзовий", "image": "images/079_biryz.png", "price": 0 },
       { "name": "Синій", "image": "images/079_blue.png", "price": 0 },
       { "name": "Червоний", "image": "images/079_red.png", "price": 0 },
       { "name": "Білий", "image": "images/079_white.png", "price": 0 },

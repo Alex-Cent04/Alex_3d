@@ -801,9 +801,46 @@
       { "name": "Блакитний", "image": "images/A092_light_blue.png", "price": 0 },
       { "name": "Хакі", "image": "images/A092_haki.png", "price": 0 },
       { "name": "Помаранчевий", "image": "images/A092_orange.png", "price": 0 },
-      { "name": "Індивідуальні кольори", "image": "images/mgt_red.png", "price": 200 }
+      { "name": "Індивідуальні кольори", "image": "images/A092_red.png", "price": 200 }
     ],
-    "customColorParts": ["Корпус", "", "Диски"]
+    "customColorParts": ["Корпус", "Диски"]
+    
+  },
+
+  {
+    "id": "Bohdan",
+    "category": "buses",
+    "name": "Модель міського автобуса БАЗ А079 Еталон",
+    "image": "images/079_ellow.png",
+    "images": [
+      "images/079_green.png",
+      "images/079_blue.png",
+      "images/079_red.png",
+      "images/079_white.png",
+      "images/079_ellow.png",
+      "images/079_light_blue.png",
+      "images/079_haki.png",
+      "images/079_orange.png"
+    ],
+    "material": "PETG",
+    "description": "Модель міського автобуса БАЗ А079 Еталон з PETG пластику.",
+    "scales": [
+      { "scale": "1:43", "assembled": 800, "unassembled": 600 },
+      { "scale": "1:35", "assembled": 1000, "unassembled": 800 }
+      
+    ],
+    "colorVariants": [
+      { "name": "Зелений", "image": "images/079_green.png", "price": 0 },
+      { "name": "Синій", "image": "images/079_blue.png", "price": 0 },
+      { "name": "Червоний", "image": "images/079_red.png", "price": 0 },
+      { "name": "Білий", "image": "images/079_white.png", "price": 0 },
+      { "name": "Жовтий", "image": "images/079_ellow.png", "price": 0 },
+      { "name": "Блакитний", "image": "images/079_light_blue.png", "price": 0 },
+      { "name": "Хакі", "image": "images/079_haki.png", "price": 0 },
+      { "name": "Помаранчевий", "image": "images/079_orange.png", "price": 0 },
+      { "name": "Індивідуальні кольори", "image": "images/079_red.png", "price": 200 }
+    ],
+    "customColorParts": ["Корпус", "Диски"]
     
   }
 ]

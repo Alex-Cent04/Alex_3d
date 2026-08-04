@@ -362,10 +362,10 @@
     "material": "PETG",
     "description": "Модель комбайна Нива-СК-5 з PETG пластику. Доступна у зібраному та розібраному варіанті.",
     "scales": [
-      { "scale": "1:43", "assembled": 1400, "unassembled": 1000 },
+      { "scale": "1:43", "assembled": 1500, "unassembled": 1000 },
       { "scale": "1:35", "assembled": 1800, "unassembled": 1400 },
-      { "scale": "1:24", "assembled": 2200, "unassembled": 1800 },
-      { "scale": "1:16", "assembled": 3000, "unassembled": 2500 }
+      { "scale": "1:24", "assembled": 3000, "unassembled": 2200 },
+      { "scale": "1:16", "assembled": 8000, "unassembled": 7500 }
     ],
     "colorVariants": [
       { "name": "Стандарт", "image": "images/niva_red.png", "price": 0 },

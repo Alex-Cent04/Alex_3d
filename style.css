@@ -17,3 +17,107 @@ body{font-family:Arial,sans-serif;background-color:#f7f7f7;margin:0;padding:0;co
 .color-variant-btn.active-color {
   background: #f29f05;
 }
+/* ===== TELEGRAM НА ГОЛОВНІЙ ===== */
+
+.telegram-promo {
+  max-width: 900px;
+  margin: 25px auto 5px;
+  padding: 24px 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+
+  background: linear-gradient(135deg, #229ED9, #00509e);
+  color: #fff;
+
+  border-radius: 16px;
+  box-shadow: 0 6px 18px #0003;
+}
+
+.telegram-promo-icon {
+  font-size: 58px;
+  flex-shrink: 0;
+}
+
+.telegram-promo-text {
+  text-align: left;
+}
+
+.telegram-promo-text h2 {
+  margin: 0 0 7px;
+  font-size: 25px;
+  color: #fff;
+}
+
+.telegram-promo-text p {
+  margin: 0 0 14px;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+.telegram-promo-btn {
+  display: inline-block;
+
+  background: #f29f05;
+  color: #fff;
+
+  padding: 12px 22px;
+
+  border-radius: 8px;
+
+  text-decoration: none;
+  font-weight: bold;
+
+  transition: all .25s;
+}
+
+.telegram-promo-btn:hover {
+  background: #d98804;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px #0003;
+}
+
+.telegram-promo-text small {
+  display: block;
+  margin-top: 9px;
+  opacity: .9;
+}
+
+/* Telegram на телефоні */
+
+@media(max-width:768px) {
+
+  .telegram-promo {
+    margin: 18px 15px 5px;
+    padding: 20px;
+
+    flex-direction: column;
+    gap: 10px;
+
+    text-align: center;
+  }
+
+  .telegram-promo-icon {
+    font-size: 45px;
+  }
+
+  .telegram-promo-text {
+    text-align: center;
+  }
+
+  .telegram-promo-text h2 {
+    font-size: 22px;
+  }
+
+  .telegram-promo-text p {
+    font-size: 15px;
+  }
+
+  .telegram-promo-btn {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+  }
+}

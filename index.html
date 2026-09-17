@@ -2,7 +2,13 @@
 <html lang="uk">
 <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Alex-3D | Каталог моделей техніки</title><link href="style.css" rel="stylesheet"></head>
 <body>
-<nav class="nav-tabs"><button onclick="showTab('home')">Головна</button><button onclick="showTab('catalog')">Каталог</button><button onclick="showTab('about')">Про нас</button><button onclick="showTab('contacts')">Контакти</button></nav>
+<nav class="nav-tabs">
+    <button onclick="showTab('home')">Головна</button>
+    <button onclick="showTab('catalog')">Каталог</button>
+    <button onclick="showTab('about')">Про нас</button>
+    <button onclick="showTab('reviews')">⭐ Відгуки</button>
+    <button onclick="showTab('contacts')">Контакти</button>
+</nav>
 <section id="home" class="tab-content active-tab">
     
     <header class="header home-header"><h1>Alex-3D</h1>
@@ -108,6 +114,111 @@
 
   <section class="about-final-cta"><span>МАЄТЕ МОДЕЛЬ НА ПРИМІТІ?</span><h2>Знайдіть свою техніку в каталозі Alex-3D</h2><p>Оберіть модель, масштаб, колір і доступну комплектацію на сторінці товару.</p><div><button class="about-primary-btn" onclick="showTab('catalog')">Відкрити каталог</button><a class="about-secondary-btn light-btn" href="https://t.me/alex3dp" target="_blank" rel="noopener">Запитати в Telegram</a></div><small>Працюємо офіційно — ФОП Сентіщев О.О.</small></section>
 </section>
+
+<section id="reviews" class="tab-content reviews-page">
+
+    <div class="reviews-hero">
+        <span class="section-eyebrow">ВІДГУКИ ПРО ALEX-3D</span>
+        <h1>Ваша модель уже у вас?</h1>
+        <p>
+            Поділіться враженнями про модель Alex-3D.
+            Ваш відгук допоможе іншим колекціонерам зробити свій вибір.
+        </p>
+    </div>
+
+    <div class="reviews-layout">
+
+        <div class="reviews-info">
+            <div class="reviews-stars">★★★★★</div>
+            <h2>Відгуки наших клієнтів</h2>
+            <p>
+                Тут з'являтимуться відгуки власників моделей Alex-3D
+                після перевірки та публікації.
+            </p>
+
+            <div id="published-reviews">
+                <div class="reviews-empty">
+                    <span>💬</span>
+                    <h3>Відгуки незабаром з'являться</h3>
+                    <p>Будьте одним із перших, хто поділиться враженнями.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="review-form-card">
+
+            <span class="section-eyebrow">ПОДІЛІТЬСЯ ВРАЖЕННЯМИ</span>
+            <h2>Залишити відгук</h2>
+
+            <label for="review-name">Ваше ім'я</label>
+            <input
+                id="review-name"
+                type="text"
+                placeholder="Наприклад, Олександр"
+                maxlength="60"
+            >
+
+            <label>Ваша оцінка</label>
+
+            <div class="rating-picker" id="rating-picker">
+                <button type="button" data-rating="1">★</button>
+                <button type="button" data-rating="2">★</button>
+                <button type="button" data-rating="3">★</button>
+                <button type="button" data-rating="4">★</button>
+                <button type="button" data-rating="5">★</button>
+            </div>
+
+            <input id="review-rating" type="hidden" value="0">
+
+            <label for="review-product">Яку модель ви придбали?</label>
+            <select id="review-product">
+                <option value="">Оберіть модель</option>
+            </select>
+
+            <label for="review-text">Ваш відгук</label>
+            <textarea
+                id="review-text"
+                rows="6"
+                maxlength="1500"
+                placeholder="Розкажіть, що вам сподобалося в моделі..."
+            ></textarea>
+
+            <div class="review-photo-coming">
+                📷 Додавання фото до відгуку підключимо наступним кроком
+            </div>
+
+            <label class="review-consent">
+                <input type="checkbox" id="review-consent">
+                <span>
+                    Я погоджуюся на публікацію мого імені та відгуку
+                    на сайті Alex-3D.
+                </span>
+            </label>
+
+            <button
+                type="button"
+                class="review-submit-btn"
+                id="review-submit-btn"
+                onclick="submitReview()"
+            >
+                Надіслати відгук
+            </button>
+
+            <p class="review-moderation-note">
+                Відгук з'явиться на сайті після модерації.
+            </p>
+
+            <div id="review-success" class="review-success">
+                <strong>✓ Дякуємо за відгук!</strong>
+                <span>Його надіслано на модерацію.</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+    
 <section id="contacts" class="tab-content"><footer class="footer"><p>Зв’язок: <a href="mailto:osentisev0@gmail.com">osentisev0@gmail.com</a> | Тел: +380 96 501 5297</p><p><a href="https://t.me/alex3dp" target="_blank">Telegram‑група</a> | <a href="https://www.tiktok.com/@alex_3d4?is_from_webapp=1&sender_device=pc" target="_blank">TikTok</a></p><p>© 2026 ФОП Сентіщев О.О. Всі права захищено.</p></footer></section>
 <div id="cart-modal" class="cart-modal"><div class="cart-box"><button class="cart-close" onclick="closeCart()">×</button><h2>Ваш кошик</h2><div id="cart-items"></div><h3>Разом: <span id="cart-total">0</span> грн</h3><h3>Оформлення замовлення</h3><input id="customer-name" type="text" placeholder="Ваше ПІБ"><input id="customer-phone" type="tel" placeholder="Телефон"><input id="customer-city" type="text" placeholder="Місто"><input id="customer-post" type="text" placeholder="Відділення Нової пошти"><textarea id="customer-comment" placeholder="Коментар до замовлення"></textarea><div class="checkout-warning"><p>Увага! Ми беремо замовлення в обробку. Після друку та складання моделі надсилаємо відеозвіт у месенджер. Після цього ви надсилаєте повну суму замовлення на рахунок ФОП, і ми відправляємо замовлення. З післяплатою не працюємо.</p><label><input type="checkbox" id="payment-agree"> Я ознайомлений(а) з умовами оплати та оформлення замовлення.</label><label><input type="checkbox" id="personal-agree"> Я даю згоду на обробку персональних даних.</label></div><button class="checkout-btn" onclick="checkout()">Оформити замовлення</button></div></div>
 <script>
@@ -192,11 +303,12 @@ function showTab(tabId) {
     document.getElementById(tabId).classList.add("active-tab");
 
     const tabNames = {
-        home: "Головна",
-        catalog: "Каталог",
-        about: "Про нас",
-        contacts: "Контакти"
-    };
+    home: "Головна",
+    catalog: "Каталог",
+    about: "Про нас",
+    reviews: "Відгуки",
+    contacts: "Контакти"
+};
 
     trackEvent(
         "section_view",
@@ -254,9 +366,179 @@ function renderCart(){const items=document.getElementById("cart-items"),totalBox
 function changeQuantity(i,a){cart[i].quantity+=a;if(cart[i].quantity<=0)cart.splice(i,1);saveCart();renderCart()}
 function removeFromCart(i){cart.splice(i,1);saveCart();renderCart()}
 async function checkout(){const name=document.getElementById("customer-name").value.trim();const phone=document.getElementById("customer-phone").value.trim();const city=document.getElementById("customer-city").value.trim();const post=document.getElementById("customer-post").value.trim();const comment=document.getElementById("customer-comment").value.trim();const paymentAgree=document.getElementById("payment-agree").checked;const personalAgree=document.getElementById("personal-agree").checked;if(!name||!phone||!city||!post){alert("Будь ласка, заповніть ім’я, телефон, місто та відділення Нової пошти.");return}if(!paymentAgree||!personalAgree){alert("Потрібно погодитися з умовами оплати та обробкою персональних даних.");return}if(!cart.length){alert("Кошик порожній.");return}const total=cart.reduce((s,i)=>s+i.price*i.quantity,0);const order={date:new Date().toLocaleString("uk-UA"),customer:{name,phone,city,post,comment},items:cart,total,paymentAgree,personalAgree};try{await fetch(GOOGLE_SCRIPT_URL,{method:"POST",mode:"no-cors",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(order)});alert("Замовлення успішно оформлено!");cart=[];saveCart();renderCart();closeCart()}catch(e){console.error(e);alert("Помилка відправлення замовлення. Спробуйте ще раз або зв'яжіться з нами напряму.")}}
-document.addEventListener("DOMContentLoaded", () => {
-    loadProducts();
+
+// ===============================
+// ВІДГУКИ ALEX-3D
+// ===============================
+
+let selectedReviewRating = 0;
+
+function initReviewForm() {
+    const picker = document.getElementById("rating-picker");
+
+    if (picker) {
+        const stars = picker.querySelectorAll("button");
+
+        stars.forEach(star => {
+            star.addEventListener("click", () => {
+                selectedReviewRating = Number(star.dataset.rating);
+
+                document.getElementById("review-rating").value =
+                    selectedReviewRating;
+
+                stars.forEach(item => {
+                    item.classList.toggle(
+                        "active",
+                        Number(item.dataset.rating) <= selectedReviewRating
+                    );
+                });
+            });
+        });
+    }
+
+    fillReviewProducts();
+}
+
+function fillReviewProducts() {
+    const select = document.getElementById("review-product");
+
+    if (!select || !allProducts.length) return;
+
+    select.innerHTML =
+        '<option value="">Оберіть модель</option>';
+
+    allProducts.forEach(product => {
+        const option = document.createElement("option");
+
+        option.value = product.id;
+        option.textContent = product.name;
+        option.dataset.name = product.name;
+
+        select.appendChild(option);
+    });
+}
+
+async function submitReview() {
+    const name =
+        document.getElementById("review-name").value.trim();
+
+    const rating =
+        Number(document.getElementById("review-rating").value);
+
+    const productSelect =
+        document.getElementById("review-product");
+
+    const productId =
+        productSelect.value;
+
+    const productName =
+        productId
+            ? productSelect.options[productSelect.selectedIndex].textContent
+            : "";
+
+    const review =
+        document.getElementById("review-text").value.trim();
+
+    const consent =
+        document.getElementById("review-consent").checked;
+
+    if (!name) {
+        alert("Будь ласка, вкажіть ваше ім'я.");
+        return;
+    }
+
+    if (rating < 1 || rating > 5) {
+        alert("Будь ласка, поставте оцінку від 1 до 5 зірок.");
+        return;
+    }
+
+    if (!productId) {
+        alert("Будь ласка, оберіть модель.");
+        return;
+    }
+
+    if (review.length < 10) {
+        alert("Напишіть, будь ласка, трохи детальніший відгук.");
+        return;
+    }
+
+    if (!consent) {
+        alert("Потрібна згода на публікацію відгуку.");
+        return;
+    }
+
+    const button =
+        document.getElementById("review-submit-btn");
+
+    button.disabled = true;
+    button.textContent = "Надсилаємо...";
+
+    const reviewData = {
+        type: "review",
+        name: name,
+        rating: rating,
+        productId: productId,
+        productName: productName,
+        review: review,
+        photo: "",
+        visitorId: getVisitorId()
+    };
+
+    try {
+        await fetch(GOOGLE_SCRIPT_URL, {
+            method: "POST",
+            mode: "no-cors",
+            headers: {
+                "Content-Type": "text/plain;charset=utf-8"
+            },
+            body: JSON.stringify(reviewData)
+        });
+
+        trackEvent(
+            "review_submit",
+            "Відгуки",
+            productId,
+            productName
+        );
+
+        document.getElementById("review-name").value = "";
+        document.getElementById("review-rating").value = "0";
+        document.getElementById("review-product").value = "";
+        document.getElementById("review-text").value = "";
+        document.getElementById("review-consent").checked = false;
+
+        selectedReviewRating = 0;
+
+        document
+            .querySelectorAll("#rating-picker button")
+            .forEach(star => star.classList.remove("active"));
+
+        const success =
+            document.getElementById("review-success");
+
+        success.classList.add("show");
+
+        setTimeout(() => {
+            success.classList.remove("show");
+        }, 6000);
+
+    } catch (error) {
+        console.error("Помилка відправлення відгуку:", error);
+
+        alert(
+            "Не вдалося надіслати відгук. Спробуйте ще раз."
+        );
+    } finally {
+        button.disabled = false;
+        button.textContent = "Надіслати відгук";
+    }
+}    
+
+document.addEventListener("DOMContentLoaded", async () => {
+    await loadProducts();
+
     updateCartCount();
+    initReviewForm();
 
     trackEvent("page_view", "Головна");
 });

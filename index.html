@@ -183,9 +183,41 @@
                 placeholder="Розкажіть, що вам сподобалося в моделі..."
             ></textarea>
 
-            <div class="review-photo-coming">
-                📷 Додавання фото до відгуку підключимо наступним кроком
-            </div>
+            <div class="review-photo-field">
+
+    <label class="review-photo-label">
+        Фото або скрін моделі
+        <span>необов'язково</span>
+    </label>
+
+    <label for="review-photo" class="review-photo-upload">
+        <div class="review-upload-icon">📷</div>
+
+        <div>
+            <strong>Додати фото</strong>
+            <span>JPG, PNG або WEBP · до 5 МБ</span>
+        </div>
+    </label>
+
+    <input
+        type="file"
+        id="review-photo"
+        accept="image/jpeg,image/png,image/webp"
+        hidden
+    >
+
+    <div id="review-photo-preview" class="review-photo-preview">
+        <img id="review-preview-image" alt="Попередній перегляд фото">
+
+        <button
+            type="button"
+            onclick="removeReviewPhoto()"
+        >
+            ×
+        </button>
+    </div>
+
+</div>
 
             <label class="review-consent">
                 <input type="checkbox" id="review-consent">
@@ -418,6 +450,146 @@ function fillReviewProducts() {
     });
 }
 
+let reviewPhotoData = null;
+
+function initReviewPhoto() {
+    const input = document.getElementById("review-photo");
+
+    if (!input) return;
+
+    input.addEventListener("change", async function () {
+
+        const file = this.files[0];
+
+        if (!file) return;
+
+        const allowedTypes = [
+            "image/jpeg",
+            "image/png",
+            "image/webp"
+        ];
+
+        if (!allowedTypes.includes(file.type)) {
+            alert("Можна завантажити JPG, PNG або WEBP.");
+            this.value = "";
+            return;
+        }
+
+        if (file.size > 5 * 1024 * 1024) {
+            alert("Фото має бути не більше 5 МБ.");
+            this.value = "";
+            return;
+        }
+
+        try {
+            reviewPhotoData = await compressReviewPhoto(file);
+
+            const preview =
+                document.getElementById("review-photo-preview");
+
+            const image =
+                document.getElementById("review-preview-image");
+
+            image.src = reviewPhotoData.data;
+
+            preview.classList.add("show");
+
+        } catch (error) {
+            console.error(error);
+            alert("Не вдалося обробити фотографію.");
+            this.value = "";
+        }
+    });
+}
+
+
+function compressReviewPhoto(file) {
+
+    return new Promise((resolve, reject) => {
+
+        const reader = new FileReader();
+
+        reader.onload = function (event) {
+
+            const img = new Image();
+
+            img.onload = function () {
+
+                const maxSize = 1600;
+
+                let width = img.width;
+                let height = img.height;
+
+                if (width > maxSize || height > maxSize) {
+
+                    const ratio =
+                        Math.min(
+                            maxSize / width,
+                            maxSize / height
+                        );
+
+                    width = Math.round(width * ratio);
+                    height = Math.round(height * ratio);
+                }
+
+                const canvas =
+                    document.createElement("canvas");
+
+                canvas.width = width;
+                canvas.height = height;
+
+                const ctx =
+                    canvas.getContext("2d");
+
+                ctx.drawImage(
+                    img,
+                    0,
+                    0,
+                    width,
+                    height
+                );
+
+                const compressed =
+                    canvas.toDataURL(
+                        "image/jpeg",
+                        0.82
+                    );
+
+                resolve({
+                    data: compressed,
+                    type: "image/jpeg"
+                });
+            };
+
+            img.onerror = reject;
+            img.src = event.target.result;
+        };
+
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
+    });
+}
+
+
+function removeReviewPhoto() {
+
+    reviewPhotoData = null;
+
+    const input =
+        document.getElementById("review-photo");
+
+    const preview =
+        document.getElementById("review-photo-preview");
+
+    const image =
+        document.getElementById("review-preview-image");
+
+    if (input) input.value = "";
+    if (image) image.src = "";
+    if (preview) preview.classList.remove("show");
+}
+
+    
 async function submitReview() {
     const name =
         document.getElementById("review-name").value.trim();
@@ -474,15 +646,15 @@ async function submitReview() {
     button.textContent = "Надсилаємо...";
 
     const reviewData = {
-        type: "review",
-        name: name,
-        rating: rating,
-        productId: productId,
-        productName: productName,
-        review: review,
-        photo: "",
-        visitorId: getVisitorId()
-    };
+    type: "review",
+    name: name,
+    rating: rating,
+    productId: productId,
+    productName: productName,
+    review: review,
+    photo: reviewPhotoData,
+    visitorId: getVisitorId()
+};
 
     try {
         await fetch(GOOGLE_SCRIPT_URL, {
@@ -506,7 +678,8 @@ async function submitReview() {
         document.getElementById("review-product").value = "";
         document.getElementById("review-text").value = "";
         document.getElementById("review-consent").checked = false;
-
+        // Очищаємо прикріплене фото
+        removeReviewPhoto();
         selectedReviewRating = 0;
 
         document
@@ -539,6 +712,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     updateCartCount();
     initReviewForm();
+    initReviewPhoto();
 
     trackEvent("page_view", "Головна");
 });

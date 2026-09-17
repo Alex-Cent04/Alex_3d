@@ -45,6 +45,41 @@
       <button class="checkout-btn" onclick="addConfiguredToCart()">Додати в кошик</button>
     </div>
   </div>
+
+  <!-- ========================================
+       ВІДГУКИ ПРО ЦЮ МОДЕЛЬ
+  ========================================= -->
+  <section class="product-reviews-section">
+    <div class="product-reviews-heading">
+      <div>
+        <span class="product-reviews-kicker">ВІДГУКИ ПОКУПЦІВ</span>
+        <h2>Відгуки про <span id="reviews-product-name">цю модель</span></h2>
+      </div>
+
+      <div id="product-rating-summary" class="product-rating-summary" style="display:none;">
+        <strong id="product-rating-average">5.0</strong>
+        <div>
+          <span class="product-rating-stars">★★★★★</span>
+          <small id="product-reviews-count"></small>
+        </div>
+      </div>
+    </div>
+
+    <div id="product-reviews-list" class="product-reviews-list">
+      <div class="product-reviews-loading">Завантажуємо відгуки...</div>
+    </div>
+
+    <div class="product-review-action">
+      <div>
+        <strong>Вже придбали цю модель?</strong>
+        <span>Поділіться своїми враженнями з іншими покупцями.</span>
+      </div>
+
+      <button type="button" class="product-review-button" onclick="leaveReviewForProduct()">
+        ⭐ Залишити відгук
+      </button>
+    </div>
+  </section>
 </main>
 
 <div id="cart-modal" class="cart-modal">
@@ -208,10 +243,173 @@ async function loadProductDetails() {
     currentProduct.name
 );
 
+    document.getElementById("reviews-product-name").textContent =
+      currentProduct.name;
+
+    await loadProductReviews();
+
   } catch (error) {
     console.error(error);
     document.querySelector("main").innerHTML = "<h2 class='not-found'>Помилка завантаження товару</h2>";
   }
+}
+
+
+// ========================================
+// ВІДГУКИ ПРО КОНКРЕТНУ МОДЕЛЬ
+// ========================================
+
+async function loadProductReviews() {
+  const container = document.getElementById("product-reviews-list");
+  if (!container || !currentProduct) return;
+
+  try {
+    const response = await fetch(GOOGLE_SCRIPT_URL);
+    const data = await response.json();
+
+    if (!data.success) {
+      throw new Error(data.error || "Не вдалося отримати відгуки");
+    }
+
+    const allReviews = Array.isArray(data.reviews) ? data.reviews : [];
+
+    const productReviews = allReviews.filter(review =>
+      String(review.productId).trim() === String(currentProduct.id).trim()
+    );
+
+    renderProductReviews(productReviews);
+
+  } catch (error) {
+    console.error("Помилка завантаження відгуків:", error);
+
+    container.innerHTML = `
+      <div class="product-reviews-empty">
+        <span>💬</span>
+        <strong>Не вдалося завантажити відгуки</strong>
+        <p>Спробуйте оновити сторінку трохи пізніше.</p>
+      </div>
+    `;
+  }
+}
+
+function renderProductReviews(reviews) {
+  const container = document.getElementById("product-reviews-list");
+  const summary = document.getElementById("product-rating-summary");
+
+  if (!reviews.length) {
+    summary.style.display = "none";
+
+    container.innerHTML = `
+      <div class="product-reviews-empty">
+        <span>💬</span>
+        <strong>Поки що немає відгуків про цю модель</strong>
+        <p>Уже придбали її? Будьте першим, хто поділиться враженнями.</p>
+      </div>
+    `;
+    return;
+  }
+
+  const totalRating = reviews.reduce(
+    (sum, review) => sum + Number(review.rating || 0),
+    0
+  );
+
+  const average = totalRating / reviews.length;
+
+  document.getElementById("product-rating-average").textContent =
+    average.toFixed(1);
+
+  document.getElementById("product-reviews-count").textContent =
+    formatProductReviewCount(reviews.length);
+
+  summary.style.display = "flex";
+
+  container.innerHTML = reviews.map(createProductReviewCard).join("");
+}
+
+function createProductReviewCard(review) {
+  const rating = Math.max(1, Math.min(5, Number(review.rating) || 0));
+
+  const stars =
+    "★".repeat(rating) +
+    "☆".repeat(5 - rating);
+
+  const photo =
+    review.photo && review.photo.startsWith("http")
+      ? `
+          <div class="product-review-photo">
+            <img
+              src="${escapeProductReviewHtml(review.photo)}"
+              alt="Фото моделі від покупця"
+              loading="lazy"
+            >
+          </div>
+        `
+      : "";
+
+  const reply =
+    review.reply
+      ? `
+          <div class="product-review-reply">
+            <div class="product-review-reply-title">
+              <strong>Alex-3D</strong>
+              <span>Відповідь магазину</span>
+            </div>
+            <p>${escapeProductReviewHtml(review.reply)}</p>
+          </div>
+        `
+      : "";
+
+  return `
+    <article class="product-review-card">
+      <div class="product-review-card-top">
+        <div>
+          <strong class="product-review-author">
+            ${escapeProductReviewHtml(review.name)}
+          </strong>
+          <span class="product-review-date">
+            ${escapeProductReviewHtml(review.date)}
+          </span>
+        </div>
+
+        <div class="product-review-stars">${stars}</div>
+      </div>
+
+      <p class="product-review-text">
+        ${escapeProductReviewHtml(review.review)}
+      </p>
+
+      ${photo}
+      ${reply}
+    </article>
+  `;
+}
+
+function formatProductReviewCount(count) {
+  const lastTwo = count % 100;
+  const last = count % 10;
+
+  if (lastTwo >= 11 && lastTwo <= 14) return count + " відгуків";
+  if (last === 1) return count + " відгук";
+  if (last >= 2 && last <= 4) return count + " відгуки";
+
+  return count + " відгуків";
+}
+
+function escapeProductReviewHtml(value) {
+  return String(value ?? "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
+function leaveReviewForProduct() {
+  if (!currentProduct) return;
+
+  sessionStorage.setItem("review_product_id", currentProduct.id);
+  window.location.href = "index.html#reviews";
 }
 
 function renderThumbs(images) {

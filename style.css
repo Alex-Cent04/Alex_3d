@@ -873,9 +873,8 @@ body {
     width: 100%;
     height: 340px;
     display: block;
-    object-fit: contain !important;
-    object-position: center center !important;
-    background: #f3f3f3;
+    object-fit: cover !important;
+    object-position: center 70% !important;
 }
 
 .choice-card-copy {
@@ -1203,8 +1202,12 @@ body {
     /* Обидва фото однакової висоти на телефоні */
     .choice-card > img,
     .choice-card > img.kit-full-image {
-        height: 280px;
-    }
+    width: 100%;
+    height: 340px;
+    display: block;
+    object-fit: cover !important;
+    object-position: center 70% !important;
+}
 
     .works-grid {
         grid-template-columns: 1fr;

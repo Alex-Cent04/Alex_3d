@@ -1471,3 +1471,113 @@ body {
         padding: 25px 20px;
     }
 }
+/* PHOTO IN REVIEW */
+
+.review-photo-field {
+    margin-top: 22px;
+}
+
+.review-photo-label {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+    color: #073a70;
+    font-weight: 700;
+    margin-bottom: 9px !important;
+}
+
+.review-photo-label span {
+    font-size: 12px;
+    font-weight: 500;
+    color: #8a96a3;
+}
+
+.review-photo-upload {
+    display: flex !important;
+    align-items: center;
+    gap: 15px;
+    padding: 18px;
+    margin: 0 !important;
+
+    border: 1.5px dashed #b9cadb;
+    border-radius: 15px;
+
+    background: #f8fafc;
+    cursor: pointer;
+
+    transition: .2s ease;
+}
+
+.review-photo-upload:hover {
+    border-color: #00509e;
+    background: #f1f6fb;
+}
+
+.review-upload-icon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #e8f1f9;
+    border-radius: 12px;
+
+    font-size: 23px;
+}
+
+.review-photo-upload strong {
+    display: block;
+    color: #073a70;
+    margin-bottom: 3px;
+}
+
+.review-photo-upload span {
+    display: block;
+    color: #7a8794;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.review-photo-preview {
+    position: relative;
+    display: none;
+    margin-top: 12px;
+    width: 170px;
+}
+
+.review-photo-preview.show {
+    display: block;
+}
+
+.review-photo-preview img {
+    display: block;
+    width: 170px;
+    height: 125px;
+
+    object-fit: cover;
+
+    border-radius: 13px;
+    border: 1px solid #d7e0e8;
+}
+
+.review-photo-preview button {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+
+    width: 27px;
+    height: 27px;
+
+    border: 0;
+    border-radius: 50%;
+
+    background: #073a70;
+    color: white;
+
+    font-size: 19px;
+    line-height: 1;
+
+    cursor: pointer;
+}

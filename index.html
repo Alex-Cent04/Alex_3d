@@ -112,9 +112,97 @@
 <div id="cart-modal" class="cart-modal"><div class="cart-box"><button class="cart-close" onclick="closeCart()">×</button><h2>Ваш кошик</h2><div id="cart-items"></div><h3>Разом: <span id="cart-total">0</span> грн</h3><h3>Оформлення замовлення</h3><input id="customer-name" type="text" placeholder="Ваше ПІБ"><input id="customer-phone" type="tel" placeholder="Телефон"><input id="customer-city" type="text" placeholder="Місто"><input id="customer-post" type="text" placeholder="Відділення Нової пошти"><textarea id="customer-comment" placeholder="Коментар до замовлення"></textarea><div class="checkout-warning"><p>Увага! Ми беремо замовлення в обробку. Після друку та складання моделі надсилаємо відеозвіт у месенджер. Після цього ви надсилаєте повну суму замовлення на рахунок ФОП, і ми відправляємо замовлення. З післяплатою не працюємо.</p><label><input type="checkbox" id="payment-agree"> Я ознайомлений(а) з умовами оплати та оформлення замовлення.</label><label><input type="checkbox" id="personal-agree"> Я даю згоду на обробку персональних даних.</label></div><button class="checkout-btn" onclick="checkout()">Оформити замовлення</button></div></div>
 <script>
 const GOOGLE_SCRIPT_URL="https://script.google.com/macros/s/AKfycbxgyBZoeWmpQncKgJy5H0FWbdE5JCpy-whHFIl1Y8K4tXei_d3P73bmstw9EFpJWtkm/exec";
+
+// ===============================
+// СТАТИСТИКА ALEX-3D
+// ===============================
+
+function getVisitorId() {
+    let visitorId = localStorage.getItem("alex3d_visitor_id");
+
+    if (!visitorId) {
+        visitorId =
+            "visitor_" +
+            Date.now().toString(36) +
+            "_" +
+            Math.random().toString(36).substring(2, 10);
+
+        localStorage.setItem("alex3d_visitor_id", visitorId);
+    }
+
+    return visitorId;
+}
+
+function getTrafficSource() {
+    const referrer = document.referrer;
+
+    if (!referrer) {
+        return "Прямий перехід";
+    }
+
+    try {
+        const hostname = new URL(referrer).hostname;
+
+        if (hostname.includes("google.")) return "Google";
+        if (hostname.includes("t.me") || hostname.includes("telegram")) return "Telegram";
+        if (hostname.includes("tiktok")) return "TikTok";
+        if (hostname.includes("instagram")) return "Instagram";
+        if (hostname.includes("facebook")) return "Facebook";
+
+        if (hostname === window.location.hostname) {
+            return "Alex-3D";
+        }
+
+        return hostname;
+    } catch {
+        return "Інше";
+    }
+}
+
+function trackEvent(eventName, pageName, productId = "", productName = "") {
+    const analyticsData = {
+        type: "analytics",
+        event: eventName,
+        page: pageName,
+        productId: productId,
+        productName: productName,
+        visitorId: getVisitorId(),
+        source: getTrafficSource()
+    };
+
+    fetch(GOOGLE_SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+            "Content-Type": "text/plain;charset=utf-8"
+        },
+        body: JSON.stringify(analyticsData)
+    }).catch(error => {
+        console.error("Помилка статистики:", error);
+    });
+}
+    
 let cart=JSON.parse(localStorage.getItem("cart"))||[];let allProducts=[];
 const categoryNames={auto:"Ваше авто по фото",tractors:"Трактори",combines:"Комбайни",trailers:"Причепи",attachments:"Причіпні пристрої",buses:"Автобуси",tanks:"Танки"};
-function showTab(tabId){document.querySelectorAll('.tab-content').forEach(s=>s.classList.remove('active-tab'));document.getElementById(tabId).classList.add('active-tab')}
+function showTab(tabId) {
+    document.querySelectorAll(".tab-content").forEach(section => {
+        section.classList.remove("active-tab");
+    });
+
+    document.getElementById(tabId).classList.add("active-tab");
+
+    const tabNames = {
+        home: "Головна",
+        catalog: "Каталог",
+        about: "Про нас",
+        contacts: "Контакти"
+    };
+
+    trackEvent(
+        "section_view",
+        tabNames[tabId] || tabId
+    );
+}
 function showCategory(categoryId){document.querySelectorAll('.catalog-category').forEach(d=>d.classList.remove('active-category'));const c=document.getElementById(categoryId);if(c)c.classList.add('active-category')}
 function saveCart(){localStorage.setItem("cart",JSON.stringify(cart));updateCartCount()}
 function updateCartCount(){const c=document.getElementById("cart-count");if(c)c.textContent=cart.reduce((s,i)=>s+i.quantity,0)}
@@ -134,5 +222,10 @@ function renderCart(){const items=document.getElementById("cart-items"),totalBox
 function changeQuantity(i,a){cart[i].quantity+=a;if(cart[i].quantity<=0)cart.splice(i,1);saveCart();renderCart()}
 function removeFromCart(i){cart.splice(i,1);saveCart();renderCart()}
 async function checkout(){const name=document.getElementById("customer-name").value.trim();const phone=document.getElementById("customer-phone").value.trim();const city=document.getElementById("customer-city").value.trim();const post=document.getElementById("customer-post").value.trim();const comment=document.getElementById("customer-comment").value.trim();const paymentAgree=document.getElementById("payment-agree").checked;const personalAgree=document.getElementById("personal-agree").checked;if(!name||!phone||!city||!post){alert("Будь ласка, заповніть ім’я, телефон, місто та відділення Нової пошти.");return}if(!paymentAgree||!personalAgree){alert("Потрібно погодитися з умовами оплати та обробкою персональних даних.");return}if(!cart.length){alert("Кошик порожній.");return}const total=cart.reduce((s,i)=>s+i.price*i.quantity,0);const order={date:new Date().toLocaleString("uk-UA"),customer:{name,phone,city,post,comment},items:cart,total,paymentAgree,personalAgree};try{await fetch(GOOGLE_SCRIPT_URL,{method:"POST",mode:"no-cors",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(order)});alert("Замовлення успішно оформлено!");cart=[];saveCart();renderCart();closeCart()}catch(e){console.error(e);alert("Помилка відправлення замовлення. Спробуйте ще раз або зв'яжіться з нами напряму.")}}
-document.addEventListener("DOMContentLoaded",()=>{loadProducts();updateCartCount()});
+document.addEventListener("DOMContentLoaded", () => {
+    loadProducts();
+    updateCartCount();
+
+    trackEvent("page_view", "Головна");
+});
 </script></body></html>

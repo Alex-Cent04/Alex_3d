@@ -88,6 +88,74 @@
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 let currentProduct = null;
 
+const GOOGLE_SCRIPT_URL =
+    "https://script.google.com/macros/s/AKfycbxgyBZoeWmpQncKgJy5H0FWbdE5JCpy-whHFIl1Y8K4tXei_d3P73bmstw9EFpJWtkm/exec";
+
+function getVisitorId() {
+    let visitorId = localStorage.getItem("alex3d_visitor_id");
+
+    if (!visitorId) {
+        visitorId =
+            "visitor_" +
+            Date.now().toString(36) +
+            "_" +
+            Math.random().toString(36).substring(2, 10);
+
+        localStorage.setItem("alex3d_visitor_id", visitorId);
+    }
+
+    return visitorId;
+}
+
+function getTrafficSource() {
+    const referrer = document.referrer;
+
+    if (!referrer) return "Прямий перехід";
+
+    try {
+        const hostname = new URL(referrer).hostname;
+
+        if (hostname.includes("google.")) return "Google";
+        if (hostname.includes("t.me") || hostname.includes("telegram")) return "Telegram";
+        if (hostname.includes("tiktok")) return "TikTok";
+        if (hostname.includes("instagram")) return "Instagram";
+        if (hostname.includes("facebook")) return "Facebook";
+
+        if (hostname === window.location.hostname) {
+            return "Alex-3D";
+        }
+
+        return hostname;
+
+    } catch {
+        return "Інше";
+    }
+}
+
+function trackEvent(eventName, pageName, productId = "", productName = "") {
+
+    const analyticsData = {
+        type: "analytics",
+        event: eventName,
+        page: pageName,
+        productId: productId,
+        productName: productName,
+        visitorId: getVisitorId(),
+        source: getTrafficSource()
+    };
+
+    fetch(GOOGLE_SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+            "Content-Type": "text/plain;charset=utf-8"
+        },
+        body: JSON.stringify(analyticsData)
+    }).catch(error => {
+        console.error("Помилка статистики:", error);
+    });
+}
+  
 function getProductIdFromUrl() {
   return new URLSearchParams(window.location.search).get("id");
 }
@@ -132,6 +200,13 @@ async function loadProductDetails() {
     renderColorVariants();
     renderProductOptions();
     updateDetailPrice();
+
+    trackEvent(
+    "product_view",
+    "Сторінка товару",
+    currentProduct.id,
+    currentProduct.name
+);
 
   } catch (error) {
     console.error(error);
@@ -447,6 +522,12 @@ function addConfiguredToCart() {
   }
 
   saveCart();
+  trackEvent(
+    "add_to_cart",
+    "Сторінка товару",
+    currentProduct.id,
+    currentProduct.name
+);
   alert("Товар додано в кошик!");
 }
 
@@ -573,6 +654,11 @@ async function checkout() {
       body: JSON.stringify(order)
     });
 
+trackEvent(
+    "checkout",
+    "Оформлення замовлення"
+);
+    
     alert("Замовлення успішно оформлено!");
 
     cart = [];

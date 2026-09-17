@@ -1,212 +1,1234 @@
-body{font-family:Arial,sans-serif;background-color:#f7f7f7;margin:0;padding:0;color:#333}.nav-tabs{display:flex;justify-content:center;flex-wrap:wrap;background-color:#003f7d;padding:1rem 0;gap:.5rem}.nav-tabs button{background-color:#fff;color:#003f7d;border:none;padding:.6rem 1.2rem;font-size:1rem;font-weight:bold;border-radius:6px;cursor:pointer;transition:all .3s}.nav-tabs button:hover{background-color:#00509e;color:#fff;transform:scale(1.05)}.tab-content{display:none}.tab-content.active-tab{display:block}.header{text-align:center;padding:2rem;background-color:#00509e;color:#fff}.home-header{background-color:#f0f8ff;color:#003f7d}.banner-img{max-width:100%;height:auto;border-radius:10px;margin:1.5rem 0;box-shadow:0 4px 10px #0002}.home-content{max-width:1100px;margin:0 auto;padding:2rem}.news-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}.news-card,.product-card,.product-detail-card,.about-section{background:#fff;border-radius:12px;box-shadow:0 4px 10px #0001}.news-card{padding:1rem;text-align:center}.news-card img{width:100%;height:160px;object-fit:contain}.catalog-tabs{text-align:center;margin:1rem 0}.catalog-tabs button{background-color:#00509e;color:white;border:none;padding:.7rem 1.2rem;margin:.3rem;border-radius:4px;cursor:pointer;font-size:1rem;font-weight:bold}.catalog-tabs button:hover{background-color:#003f7d}.products-container{padding:2rem}.catalog-category{display:none;flex-wrap:wrap;justify-content:center;gap:1.5rem}.catalog-category.active-category{display:flex}.category-title{width:100%;text-align:center;font-size:1.6rem;margin:1rem 0;color:#003a75}.empty-category{width:100%;text-align:center;color:#777}.product-card{width:260px;padding:1rem;text-align:center}.product-card img{width:100%;height:180px;object-fit:contain;border-radius:6px;margin-bottom:1rem}.product-card h3{font-size:1.15rem;margin-bottom:.5rem}.product-card p{font-size:.95rem;margin:.3rem 0}.scale-select,#detail-scale,#detail-type,.option-block select,.option-block input[type=text]{width:100%;padding:9px;margin:8px 0;border:1px solid #ccc;border-radius:8px;box-sizing:border-box}.product-buttons{display:flex;gap:8px;flex-direction:column;margin-top:10px}.product-buttons button,.checkout-btn,.details-btn{color:white;border:none;padding:10px;border-radius:8px;cursor:pointer;font-weight:bold}.product-buttons button,.checkout-btn{background:#1f7a3f}.product-buttons button:hover,.checkout-btn:hover{background:#155c2f}.details-btn{background:#00509e}.details-btn:hover{background:#003f7d}.order-btn{display:inline-block;margin-top:1rem;background:#f29f05;color:#fff;padding:.8rem 1.4rem;font-size:1rem;border:none;border-radius:6px;text-decoration:none;transition:background .3s;cursor:pointer}.order-btn:hover{background:#d98804}.about-section{max-width:900px;margin:2rem auto;padding:2rem;text-align:center}.footer{text-align:center;padding:1rem;background:#222;color:#fff;font-size:.9rem}.footer a{color:#f29f05}.cart-modal{display:none;position:fixed;inset:0;background:#0009;justify-content:center;align-items:center;z-index:9999}.cart-box{background:white;width:90%;max-width:560px;max-height:90vh;overflow-y:auto;padding:20px;border-radius:14px;position:relative}.cart-close{position:absolute;top:10px;right:15px;border:none;background:none;font-size:28px;cursor:pointer}.cart-item{display:flex;gap:12px;align-items:center;border-bottom:1px solid #ddd;padding:12px 0}.cart-img{width:80px;height:80px;object-fit:contain;border-radius:8px;background:#f5f5f5;flex-shrink:0}.cart-item-info{flex:1}.cart-item button{margin-right:5px;margin-top:5px;padding:6px 10px}.cart-box input,.cart-box textarea{width:100%;box-sizing:border-box;margin-bottom:10px;padding:10px;border:1px solid #ccc;border-radius:8px}.checkout-warning{background:#fff8e6;border:1px solid #f0d28a;border-radius:10px;padding:12px;margin:12px 0;font-size:.92rem}.checkout-warning label{display:block;margin-top:8px}.cart-options{background:#f4f8ff;padding:8px;border-radius:8px;font-size:.9rem}.product-detail-page{max-width:1100px;margin:30px auto;padding:20px}.product-detail-card{padding:25px;display:flex;gap:30px}.detail-gallery{width:45%}.detail-image{width:100%;max-height:420px;object-fit:contain;background:#f7f7f7;border-radius:12px}.product-thumbs{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.product-thumbs img{width:70px;height:70px;object-fit:contain;background:#f7f7f7;border-radius:8px;cursor:pointer;border:1px solid #ddd}.detail-info{flex:1}.product-options{margin-top:20px;padding:15px;background:#f4f8ff;border-radius:12px}.option-block{margin-bottom:12px}.option-block label{display:block;font-weight:bold;margin-bottom:5px}.checkbox-option{display:flex!important;gap:8px;align-items:center;cursor:pointer}.not-found{text-align:center;margin:3rem}@media(max-width:768px){.nav-tabs{flex-direction:column;align-items:center}.nav-tabs button{width:90%}.products-container{padding:1rem}.product-card{width:90%}.product-detail-card{flex-direction:column}.detail-gallery{width:100%}.cart-item{align-items:flex-start}.cart-img{width:65px;height:65px}}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* ===== НАВІГАЦІЯ ===== */
+
+.nav-tabs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: #003f7d;
+    padding: 1rem 0;
+    gap: .5rem;
+}
+
+.nav-tabs button {
+    background-color: #fff;
+    color: #003f7d;
+    border: none;
+    padding: .6rem 1.2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.nav-tabs button:hover {
+    background-color: #00509e;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active-tab {
+    display: block;
+}
+
+/* ===== ГОЛОВНА ===== */
+
+.header {
+    text-align: center;
+    padding: 2rem;
+    background-color: #00509e;
+    color: #fff;
+}
+
+.home-header {
+    background-color: #f0f8ff;
+    color: #003f7d;
+}
+
+.banner-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin: 1.5rem 0;
+    box-shadow: 0 4px 10px #0002;
+}
+
+.home-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* ===== НОВИНИ ===== */
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+}
+
+.news-card,
+.product-card,
+.product-detail-card,
+.about-section {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px #0001;
+}
+
+.news-card {
+    padding: 1rem;
+    text-align: center;
+}
+
+.news-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: contain;
+}
+
+/* ===== КАТАЛОГ ===== */
+
+.catalog-tabs {
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.catalog-tabs button {
+    background-color: #00509e;
+    color: white;
+    border: none;
+    padding: .7rem 1.2rem;
+    margin: .3rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.catalog-tabs button:hover {
+    background-color: #003f7d;
+}
+
+.products-container {
+    padding: 2rem;
+}
+
+.catalog-category {
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.catalog-category.active-category {
+    display: flex;
+}
+
+.category-title {
+    width: 100%;
+    text-align: center;
+    font-size: 1.6rem;
+    margin: 1rem 0;
+    color: #003a75;
+}
+
+.empty-category {
+    width: 100%;
+    text-align: center;
+    color: #777;
+}
+
+/* ===== КАРТКИ ТОВАРІВ ===== */
+
+.product-card {
+    width: 260px;
+    padding: 1rem;
+    text-align: center;
+}
+
+.product-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+}
+
+.product-card h3 {
+    font-size: 1.15rem;
+    margin-bottom: .5rem;
+}
+
+.product-card p {
+    font-size: .95rem;
+    margin: .3rem 0;
+}
+
+.scale-select,
+#detail-scale,
+#detail-type,
+.option-block select,
+.option-block input[type="text"] {
+    width: 100%;
+    padding: 9px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.product-buttons {
+    display: flex;
+    gap: 8px;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.product-buttons button,
+.checkout-btn,
+.details-btn {
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.product-buttons button,
+.checkout-btn {
+    background: #1f7a3f;
+}
+
+.product-buttons button:hover,
+.checkout-btn:hover {
+    background: #155c2f;
+}
+
+.details-btn {
+    background: #00509e;
+}
+
+.details-btn:hover {
+    background: #003f7d;
+}
+
+.order-btn {
+    display: inline-block;
+    margin-top: 1rem;
+    background: #f29f05;
+    color: #fff;
+    padding: .8rem 1.4rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background .3s;
+    cursor: pointer;
+}
+
+.order-btn:hover {
+    background: #d98804;
+}
+
+/* ===== СТАРИЙ ABOUT ===== */
+
+.about-section {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+/* ===== FOOTER ===== */
+
+.footer {
+    text-align: center;
+    padding: 1rem;
+    background: #222;
+    color: #fff;
+    font-size: .9rem;
+}
+
+.footer a {
+    color: #f29f05;
+}
+
+/* ===== КОШИК ===== */
+
+.cart-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: #0009;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.cart-box {
+    background: white;
+    width: 90%;
+    max-width: 560px;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 20px;
+    border-radius: 14px;
+    position: relative;
+}
+
+.cart-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    border: none;
+    background: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.cart-item {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding: 12px 0;
+}
+
+.cart-img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border-radius: 8px;
+    background: #f5f5f5;
+    flex-shrink: 0;
+}
+
+.cart-item-info {
+    flex: 1;
+}
+
+.cart-item button {
+    margin-right: 5px;
+    margin-top: 5px;
+    padding: 6px 10px;
+}
+
+.cart-box input,
+.cart-box textarea {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.checkout-warning {
+    background: #fff8e6;
+    border: 1px solid #f0d28a;
+    border-radius: 10px;
+    padding: 12px;
+    margin: 12px 0;
+    font-size: .92rem;
+}
+
+.checkout-warning label {
+    display: block;
+    margin-top: 8px;
+}
+
+.cart-options {
+    background: #f4f8ff;
+    padding: 8px;
+    border-radius: 8px;
+    font-size: .9rem;
+}
+
+/* ===== СТОРІНКА ТОВАРУ ===== */
+
+.product-detail-page {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+.product-detail-card {
+    padding: 25px;
+    display: flex;
+    gap: 30px;
+}
+
+.detail-gallery {
+    width: 45%;
+}
+
+.detail-image {
+    width: 100%;
+    max-height: 420px;
+    object-fit: contain;
+    background: #f7f7f7;
+    border-radius: 12px;
+}
+
+.product-thumbs {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.product-thumbs img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    background: #f7f7f7;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 1px solid #ddd;
+}
+
+.detail-info {
+    flex: 1;
+}
+
+.product-options {
+    margin-top: 20px;
+    padding: 15px;
+    background: #f4f8ff;
+    border-radius: 12px;
+}
+
+.option-block {
+    margin-bottom: 12px;
+}
+
+.option-block label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.checkbox-option {
+    display: flex !important;
+    gap: 8px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.not-found {
+    text-align: center;
+    margin: 3rem;
+}
+
+/* ===== КОЛЬОРОВІ ВАРІАНТИ ===== */
+
 .color-variant-btn {
-  background: #00509e;
-  color: white;
-  border: none;
-  padding: 10px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: bold;
-  margin: 5px 5px 5px 0;
+    background: #00509e;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    margin: 5px 5px 5px 0;
 }
 
 .color-variant-btn:hover {
-  background: #003f7d;
+    background: #003f7d;
 }
 
 .color-variant-btn.active-color {
-  background: #f29f05;
+    background: #f29f05;
 }
+
 /* ===== TELEGRAM НА ГОЛОВНІЙ ===== */
 
 .telegram-promo {
-  max-width: 900px;
-  margin: 25px auto 5px;
-  padding: 24px 30px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 25px;
-
-  background: linear-gradient(135deg, #229ED9, #00509e);
-  color: #fff;
-
-  border-radius: 16px;
-  box-shadow: 0 6px 18px #0003;
+    max-width: 900px;
+    margin: 25px auto 5px;
+    padding: 24px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    background: linear-gradient(135deg, #229ED9, #00509e);
+    color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 6px 18px #0003;
 }
 
 .telegram-promo-icon {
-  font-size: 58px;
-  flex-shrink: 0;
+    font-size: 58px;
+    flex-shrink: 0;
 }
 
 .telegram-promo-text {
-  text-align: left;
+    text-align: left;
 }
 
 .telegram-promo-text h2 {
-  margin: 0 0 7px;
-  font-size: 25px;
-  color: #fff;
+    margin: 0 0 7px;
+    font-size: 25px;
+    color: #fff;
 }
 
 .telegram-promo-text p {
-  margin: 0 0 14px;
-  line-height: 1.5;
-  font-size: 16px;
+    margin: 0 0 14px;
+    line-height: 1.5;
+    font-size: 16px;
 }
 
 .telegram-promo-btn {
-  display: inline-block;
-
-  background: #f29f05;
-  color: #fff;
-
-  padding: 12px 22px;
-
-  border-radius: 8px;
-
-  text-decoration: none;
-  font-weight: bold;
-
-  transition: all .25s;
+    display: inline-block;
+    background: #f29f05;
+    color: #fff;
+    padding: 12px 22px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all .25s;
 }
 
 .telegram-promo-btn:hover {
-  background: #d98804;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 10px #0003;
+    background: #d98804;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px #0003;
 }
 
 .telegram-promo-text small {
-  display: block;
-  margin-top: 9px;
-  opacity: .9;
-}
-
-/* Telegram на телефоні */
-
-@media(max-width:768px) {
-
-  .telegram-promo {
-    margin: 18px 15px 5px;
-    padding: 20px;
-
-    flex-direction: column;
-    gap: 10px;
-
-    text-align: center;
-  }
-
-  .telegram-promo-icon {
-    font-size: 45px;
-  }
-
-  .telegram-promo-text {
-    text-align: center;
-  }
-
-  .telegram-promo-text h2 {
-    font-size: 22px;
-  }
-
-  .telegram-promo-text p {
-    font-size: 15px;
-  }
-
-  .telegram-promo-btn {
     display: block;
-    width: 100%;
-    box-sizing: border-box;
-  }
+    margin-top: 9px;
+    opacity: .9;
 }
-/* ===== НОВА СТОРІНКА «ПРО НАС» ===== */
-.about-page{background:#f6f8fb;overflow:hidden}.about-page *{box-sizing:border-box}.about-hero{max-width:1200px;margin:0 auto;padding:64px 32px;display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:center}.about-kicker,.section-eyebrow{display:inline-block;font-size:.76rem;font-weight:800;letter-spacing:.14em;color:#f29f05;margin-bottom:12px}.about-hero-copy h1{font-size:clamp(2.4rem,5vw,4.8rem);line-height:.98;letter-spacing:-.045em;color:#073a70;margin:0 0 24px}.about-hero-copy>p{font-size:1.08rem;line-height:1.75;color:#536171;max-width:650px}.about-hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin:28px 0}.about-primary-btn,.about-secondary-btn,.choice-card button{border:0;border-radius:10px;padding:13px 20px;font-weight:800;font-size:.95rem;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;transition:.25s}.about-primary-btn,.choice-card button{background:#f29f05;color:#fff}.about-primary-btn:hover,.choice-card button:hover{background:#d98804;transform:translateY(-2px)}.about-secondary-btn{border:1px solid #c8d5e3;color:#073a70;background:#fff}.about-secondary-btn:hover{border-color:#00509e;transform:translateY(-2px)}.about-badges{display:flex;gap:9px;flex-wrap:wrap}.about-badges span{background:#e8f0f8;color:#174b7c;border-radius:999px;padding:8px 12px;font-size:.82rem;font-weight:700}.about-hero-photo{position:relative;min-height:520px}.about-hero-photo>img{width:100%;height:520px;object-fit:cover;border-radius:28px;box-shadow:0 24px 60px #003f7d2b}.about-photo-label{position:absolute;left:20px;bottom:20px;background:#ffffffed;padding:13px 17px;border-radius:12px;box-shadow:0 8px 25px #0002}.about-photo-label strong,.about-photo-label small{display:block}.about-photo-label strong{color:#003f7d;font-size:1.05rem}.about-photo-label small{color:#687788;margin-top:3px}.about-intro{max-width:1100px;margin:0 auto;padding:36px 32px 76px;display:grid;grid-template-columns:.8fr 1.2fr;gap:60px;align-items:start}.about-intro h2,.section-heading h2,.details-feature h2{font-size:clamp(2rem,4vw,3.2rem);line-height:1.08;color:#073a70;margin:0}.about-intro p,.section-heading p{font-size:1.03rem;line-height:1.8;color:#617080;margin:0}.process-section,.choice-section,.works-section{max-width:1200px;margin:0 auto;padding:72px 32px}.process-section{max-width:none;background:#fff}.process-section>.section-heading,.process-grid{max-width:1200px;margin-left:auto;margin-right:auto}.section-heading{text-align:center;max-width:720px!important;margin-bottom:38px!important}.section-heading p{margin-top:13px}.process-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:15px}.process-card{background:#f7f9fc;border:1px solid #e5ebf1;border-radius:18px;overflow:hidden;transition:.25s}.process-card:hover{transform:translateY(-5px);box-shadow:0 14px 30px #003f7d16}.process-image{height:220px;position:relative;overflow:hidden}.process-image img{width:100%;height:100%;object-fit:cover}.process-image span{position:absolute;top:12px;left:12px;background:#f29f05;color:#fff;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-weight:900}.process-copy{padding:20px}.process-copy h3{color:#073a70;margin:0 0 8px;font-size:1.08rem}.process-copy p{color:#657382;line-height:1.6;font-size:.9rem;margin:0}.details-feature{max-width:1200px;margin:80px auto;padding:0 32px;display:grid;grid-template-columns:1.08fr .92fr;align-items:stretch}.details-feature-image img{width:100%;height:100%;min-height:520px;object-fit:cover;border-radius:24px 0 0 24px}.details-feature-copy{background:#003f7d;color:#fff;border-radius:0 24px 24px 0;padding:55px;display:flex;flex-direction:column;justify-content:center}.section-eyebrow.light{color:#ffbc42}.details-feature-copy h2{color:#fff}.details-feature-copy>p{line-height:1.8;color:#dce9f5;font-size:1.02rem}.detail-points{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}.detail-points span{border:1px solid #ffffff35;background:#ffffff0d;border-radius:10px;padding:11px;font-weight:700;font-size:.9rem}.choice-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}.choice-card{background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 10px 35px #003f7d12}.choice-card>img{width:100%;height:340px;object-fit:cover}.choice-card-copy{padding:27px}.choice-tag{font-size:.72rem;letter-spacing:.12em;font-weight:900;color:#f29f05}.choice-card h3{font-size:1.7rem;color:#073a70;margin:7px 0}.choice-card p{color:#657382;line-height:1.65;min-height:54px}.works-section{padding-top:50px;padding-bottom:90px}.works-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:250px;gap:14px}.works-grid figure{margin:0;border-radius:16px;overflow:hidden;background:#e7edf4}.works-grid img{width:100%;height:100%;object-fit:cover;transition:.4s}.works-grid figure:hover img{transform:scale(1.035)}.work-large{grid-row:span 2}.work-wide{grid-column:span 2}.about-final-cta{background:linear-gradient(135deg,#003f7d,#005ba9);color:#fff;text-align:center;padding:76px 25px}.about-final-cta>span{font-size:.75rem;font-weight:900;letter-spacing:.14em;color:#ffbc42}.about-final-cta h2{font-size:clamp(2rem,4vw,3.3rem);max-width:760px;margin:12px auto;color:#fff}.about-final-cta p{color:#dce9f5;max-width:650px;margin:0 auto 24px;line-height:1.7}.about-final-cta>div{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}.about-final-cta small{display:block;margin-top:26px;color:#c8daeb}.light-btn{background:transparent;color:#fff;border-color:#ffffff75}.light-btn:hover{border-color:#fff}
-@media(max-width:1000px){.about-hero{grid-template-columns:1fr;padding-top:45px}.about-hero-photo{min-height:420px}.about-hero-photo>img{height:420px}.process-grid{grid-template-columns:repeat(2,1fr)}.process-card:last-child{grid-column:1/-1}.details-feature{grid-template-columns:1fr}.details-feature-image img{min-height:400px;border-radius:24px 24px 0 0}.details-feature-copy{border-radius:0 0 24px 24px}.works-grid{grid-template-columns:1fr 1fr}.work-wide{grid-column:span 1}}
-@media(max-width:680px){.about-hero,.about-intro,.process-section,.choice-section,.works-section,.details-feature{padding-left:17px;padding-right:17px}.about-hero{padding-top:34px;padding-bottom:44px;gap:28px}.about-hero-copy h1{font-size:2.55rem}.about-hero-actions{flex-direction:column}.about-primary-btn,.about-secondary-btn{width:100%}.about-hero-photo,.about-hero-photo>img{height:360px;min-height:360px}.about-hero-photo>img{border-radius:20px}.about-intro{grid-template-columns:1fr;gap:18px;padding-bottom:52px}.process-section,.choice-section,.works-section{padding-top:55px;padding-bottom:55px}.process-grid,.choice-grid{grid-template-columns:1fr}.process-card:last-child{grid-column:auto}.process-image{height:280px}.details-feature{margin:55px auto}.details-feature-image img{min-height:330px}.details-feature-copy{padding:32px 23px}.detail-points{grid-template-columns:1fr}.choice-card>img{height:280px}.works-grid{grid-template-columns:1fr;grid-auto-rows:280px}.work-large{grid-row:span 1}.works-grid .work-wide{grid-column:span 1}.about-final-cta{padding:58px 18px}.about-final-cta>div{flex-direction:column}.about-final-cta .about-primary-btn,.about-final-cta .about-secondary-btn{width:100%}}
-/* ===== ABOUT HERO — фінальне налаштування ===== */
 
-.about-hero-image {
-    height: 650px;
+/* =========================================================
+   НОВА СТОРІНКА «ПРО НАС»
+   ========================================================= */
+
+.about-page {
+    background: #f6f8fb;
     overflow: hidden;
-    border-radius: 28px;
 }
 
-.about-hero-image img {
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: cover;
-
-    /* Опускаємо кадр, щоб моделі в руках було видно */
-    object-position: center 72%;
-
-    border-radius: 28px;
+.about-page * {
+    box-sizing: border-box;
 }
 
+/* ===== HERO ===== */
+
+.about-hero {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 64px 32px;
+    display: grid;
+    grid-template-columns: 1.15fr .85fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.about-kicker,
+.section-eyebrow {
+    display: inline-block;
+    font-size: .76rem;
+    font-weight: 800;
+    letter-spacing: .14em;
+    color: #f29f05;
+    margin-bottom: 12px;
+}
+
+.about-hero-copy h1,
 .about-hero-content h1 {
     font-size: clamp(44px, 3.5vw, 61px);
     line-height: 1.05;
     letter-spacing: -1.5px;
+    color: #073a70;
+    margin: 0 0 24px;
     max-width: 800px;
 }
+
+.about-hero-copy > p,
 .about-hero-content > p {
     max-width: 650px;
     font-size: 19px;
     line-height: 1.7;
+    color: #536171;
 }
 
-.about-hero {
-    grid-template-columns: 1.15fr 0.85fr;
-    gap: 60px;
+.about-hero-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin: 28px 0;
+}
+
+.about-primary-btn,
+.about-secondary-btn,
+.choice-card button {
+    border: 0;
+    border-radius: 10px;
+    padding: 13px 20px;
+    font-weight: 800;
+    font-size: .95rem;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
     align-items: center;
+    justify-content: center;
+    transition: .25s;
+}
+
+.about-primary-btn,
+.choice-card button {
+    background: #f29f05;
+    color: #fff;
+}
+
+.about-primary-btn:hover,
+.choice-card button:hover {
+    background: #d98804;
+    transform: translateY(-2px);
+}
+
+.about-secondary-btn {
+    border: 1px solid #c8d5e3;
+    color: #073a70;
+    background: #fff;
+}
+
+.about-secondary-btn:hover {
+    border-color: #00509e;
+    transform: translateY(-2px);
+}
+
+.about-badges {
+    display: flex;
+    gap: 9px;
+    flex-wrap: wrap;
+}
+
+.about-badges span {
+    background: #e8f0f8;
+    color: #174b7c;
+    border-radius: 999px;
+    padding: 8px 12px;
+    font-size: .82rem;
+    font-weight: 700;
+}
+
+/* Підтримує обидві назви класу hero-фото */
+
+.about-hero-photo,
 .about-hero-image {
+    position: relative;
     width: 100%;
     height: 650px;
+    min-height: 650px;
+    overflow: hidden;
+    border-radius: 28px;
 }
 
-@media (max-width: 900px) {
-    .about-hero {
-        grid-template-columns: 1fr;
-        gap: 35px;
-    }
-
-    .about-hero-image {
-        height: 520px;
-    }
-
-    .about-hero-image img {
-        object-position: center 69%;
-    }
+.about-hero-photo > img,
+.about-hero-image > img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center 69%;
+    border-radius: 28px;
+    box-shadow: 0 24px 60px #003f7d2b;
 }
 
-@media (max-width: 600px) {
-    .about-hero-image {
-        height: 430px;
-    }
-}
-.about-process {
-    max-width: 1450px;
+/* ===== ВСТУП ===== */
+
+.about-intro {
+    max-width: 1100px;
     margin: 0 auto;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding: 36px 32px 76px;
+    display: grid;
+    grid-template-columns: .8fr 1.2fr;
+    gap: 60px;
+    align-items: start;
 }
-  .process-grid {
+
+.about-intro h2,
+.section-heading h2,
+.details-feature h2 {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    line-height: 1.08;
+    color: #073a70;
+    margin: 0;
+}
+
+.about-intro p,
+.section-heading p {
+    font-size: 1.03rem;
+    line-height: 1.8;
+    color: #617080;
+    margin: 0;
+}
+
+/* ===== ЯК СТВОРЮЄТЬСЯ МОДЕЛЬ ===== */
+
+.process-section,
+.choice-section,
+.works-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 72px 32px;
+}
+
+.process-section {
+    max-width: none;
+    background: #fff;
+}
+
+.process-section > .section-heading,
+.process-grid {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 720px !important;
+    margin-bottom: 38px !important;
+}
+
+.section-heading p {
+    margin-top: 13px;
+}
+
+.process-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 18px;
 }
-  .process-card img {
+
+.process-card {
+    background: #f7f9fc;
+    border: 1px solid #e5ebf1;
+    border-radius: 18px;
+    overflow: hidden;
+    transition: .25s;
+}
+
+.process-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 30px #003f7d16;
+}
+
+.process-image {
+    height: 245px;
+    position: relative;
+    overflow: hidden;
+}
+
+.process-image img,
+.process-card img {
     width: 100%;
     height: 245px;
     object-fit: cover;
     display: block;
 }
-.kit-full-image {
+
+.process-image span {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: #f29f05;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-weight: 900;
+}
+
+.process-copy {
+    padding: 20px;
+}
+
+.process-copy h3 {
+    color: #073a70;
+    margin: 0 0 8px;
+    font-size: 1.08rem;
+}
+
+.process-copy p {
+    color: #657382;
+    line-height: 1.6;
+    font-size: .9rem;
+    margin: 0;
+}
+
+/* ===== ДЕТАЛІ МАЮТЬ ЗНАЧЕННЯ ===== */
+
+.details-feature {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 32px;
+    display: grid;
+    grid-template-columns: 1.08fr .92fr;
+    align-items: stretch;
+}
+
+.details-feature-image img {
     width: 100%;
-    height: 430px;
-    object-fit: contain !important;
+    height: 100%;
+    min-height: 520px;
+    object-fit: cover;
+    border-radius: 24px 0 0 24px;
+}
+
+.details-feature-copy {
+    background: #003f7d;
+    color: #fff;
+    border-radius: 0 24px 24px 0;
+    padding: 55px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.section-eyebrow.light {
+    color: #ffbc42;
+}
+
+.details-feature-copy h2 {
+    color: #fff;
+}
+
+.details-feature-copy > p {
+    line-height: 1.8;
+    color: #dce9f5;
+    font-size: 1.02rem;
+}
+
+.detail-points {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.detail-points span {
+    border: 1px solid #ffffff35;
+    background: #ffffff0d;
+    border-radius: 10px;
+    padding: 11px;
+    font-weight: 700;
+    font-size: .9rem;
+}
+
+/* =========================================================
+   ЗІБРАНА / РОЗІБРАНА
+   ========================================================= */
+
+.choice-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.choice-card {
+    background: #fff;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 10px 35px #003f7d12;
+}
+
+/* Звичайне фото — зібрана модель */
+
+.choice-card > img {
+    width: 100%;
+    height: 340px;
+    display: block;
+    object-fit: cover;
     object-position: center;
-    background: #f5f5f5;
+}
+
+/*
+   ПРАВЕ ФОТО — КОМПЛЕКТ НИВИ.
+   Показуємо ОРИГІНАЛЬНЕ фото повністю.
+   Нічого зверху або знизу не обрізається.
+*/
+
+.choice-card > img.kit-full-image {
+    width: 100%;
+    height: 340px;
+    display: block;
+    object-fit: contain !important;
+    object-position: center center !important;
+    background: #f3f3f3;
+}
+
+.choice-card-copy {
+    padding: 27px;
+}
+
+.choice-tag {
+    font-size: .72rem;
+    letter-spacing: .12em;
+    font-weight: 900;
+    color: #f29f05;
+}
+
+.choice-card h3 {
+    font-size: 1.7rem;
+    color: #073a70;
+    margin: 7px 0;
+}
+
+.choice-card p {
+    color: #657382;
+    line-height: 1.65;
+    min-height: 54px;
+}
+
+/* ===== НАШІ РОБОТИ ===== */
+
+.works-section {
+    padding-top: 50px;
+    padding-bottom: 90px;
+}
+
+.works-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 250px;
+    gap: 14px;
+}
+
+.works-grid figure {
+    margin: 0;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #e7edf4;
+}
+
+.works-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .4s;
+}
+
+.works-grid figure:hover img {
+    transform: scale(1.035);
+}
+
+.work-large {
+    grid-row: span 2;
+}
+
+.work-wide {
+    grid-column: span 2;
+}
+
+/* ===== ФІНАЛЬНИЙ CTA ===== */
+
+.about-final-cta {
+    background: linear-gradient(135deg, #003f7d, #005ba9);
+    color: #fff;
+    text-align: center;
+    padding: 76px 25px;
+}
+
+.about-final-cta > span {
+    font-size: .75rem;
+    font-weight: 900;
+    letter-spacing: .14em;
+    color: #ffbc42;
+}
+
+.about-final-cta h2 {
+    font-size: clamp(2rem, 4vw, 3.3rem);
+    max-width: 760px;
+    margin: 12px auto;
+    color: #fff;
+}
+
+.about-final-cta p {
+    color: #dce9f5;
+    max-width: 650px;
+    margin: 0 auto 24px;
+    line-height: 1.7;
+}
+
+.about-final-cta > div {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.about-final-cta small {
+    display: block;
+    margin-top: 26px;
+    color: #c8daeb;
+}
+
+.light-btn {
+    background: transparent;
+    color: #fff;
+    border-color: #ffffff75;
+}
+
+.light-btn:hover {
+    border-color: #fff;
+}
+
+/* =========================================================
+   АДАПТАЦІЯ
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .about-hero {
+        grid-template-columns: 1fr;
+        padding-top: 45px;
+    }
+
+    .about-hero-photo,
+    .about-hero-image {
+        height: 520px;
+        min-height: 520px;
+    }
+
+    .about-hero-photo > img,
+    .about-hero-image > img {
+        object-position: center 69%;
+    }
+
+    .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .process-card:last-child {
+        grid-column: 1 / -1;
+    }
+
+    .details-feature {
+        grid-template-columns: 1fr;
+    }
+
+    .details-feature-image img {
+        min-height: 400px;
+        border-radius: 24px 24px 0 0;
+    }
+
+    .details-feature-copy {
+        border-radius: 0 0 24px 24px;
+    }
+
+    .works-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .work-wide {
+        grid-column: span 1;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .nav-tabs {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-tabs button {
+        width: 90%;
+    }
+
+    .products-container {
+        padding: 1rem;
+    }
+
+    .product-card {
+        width: 90%;
+    }
+
+    .product-detail-card {
+        flex-direction: column;
+    }
+
+    .detail-gallery {
+        width: 100%;
+    }
+
+    .cart-item {
+        align-items: flex-start;
+    }
+
+    .cart-img {
+        width: 65px;
+        height: 65px;
+    }
+
+    .telegram-promo {
+        margin: 18px 15px 5px;
+        padding: 20px;
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .telegram-promo-icon {
+        font-size: 45px;
+    }
+
+    .telegram-promo-text {
+        text-align: center;
+    }
+
+    .telegram-promo-text h2 {
+        font-size: 22px;
+    }
+
+    .telegram-promo-text p {
+        font-size: 15px;
+    }
+
+    .telegram-promo-btn {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 680px) {
+
+    .about-hero,
+    .about-intro,
+    .process-section,
+    .choice-section,
+    .works-section,
+    .details-feature {
+        padding-left: 17px;
+        padding-right: 17px;
+    }
+
+    .about-hero {
+        padding-top: 34px;
+        padding-bottom: 44px;
+        gap: 28px;
+    }
+
+    .about-hero-copy h1,
+    .about-hero-content h1 {
+        font-size: 2.55rem;
+    }
+
+    .about-hero-actions {
+        flex-direction: column;
+    }
+
+    .about-primary-btn,
+    .about-secondary-btn {
+        width: 100%;
+    }
+
+    .about-hero-photo,
+    .about-hero-image {
+        height: 430px;
+        min-height: 430px;
+    }
+
+    .about-hero-photo > img,
+    .about-hero-image > img {
+        border-radius: 20px;
+    }
+
+    .about-intro {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        padding-bottom: 52px;
+    }
+
+    .process-section,
+    .choice-section,
+    .works-section {
+        padding-top: 55px;
+        padding-bottom: 55px;
+    }
+
+    .process-grid,
+    .choice-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .process-card:last-child {
+        grid-column: auto;
+    }
+
+    .process-image,
+    .process-image img,
+    .process-card img {
+        height: 280px;
+    }
+
+    .details-feature {
+        margin: 55px auto;
+    }
+
+    .details-feature-image img {
+        min-height: 330px;
+    }
+
+    .details-feature-copy {
+        padding: 32px 23px;
+    }
+
+    .detail-points {
+        grid-template-columns: 1fr;
+    }
+
+    /* Обидва фото однакової висоти на телефоні */
+    .choice-card > img,
+    .choice-card > img.kit-full-image {
+        height: 280px;
+    }
+
+    .works-grid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 280px;
+    }
+
+    .work-large {
+        grid-row: span 1;
+    }
+
+    .works-grid .work-wide {
+        grid-column: span 1;
+    }
+
+    .about-final-cta {
+        padding: 58px 18px;
+    }
+
+    .about-final-cta > div {
+        flex-direction: column;
+    }
+
+    .about-final-cta .about-primary-btn,
+    .about-final-cta .about-secondary-btn {
+        width: 100%;
+    }
 }

@@ -1,4 +1,27 @@
 [
+   {
+    "id": "dt-75",
+    "category": "tractors",
+    "name": "Модель трактора ДТ-75",
+    "image": "images/step-finished.jpg",
+    "images": [
+      
+      "images/step-finished.jpg"
+    ],
+    "material": "PETG",
+    "description": "Модель трактора ДТ-75 з PETG пластику. Доступна у зібраному та розібраному варіанті.",
+    "scales": [
+      
+      { "scale": "1:16", "assembled": 5500, "unassembled": 4000 }
+    ],
+    "colorVariants": [
+      
+      { "name": "Червоний", "image": "images/step-finished.jpg", "price": 0 },
+      
+      { "name": "Індивідуальні кольори", "image": "images/step-finished.jpg", "price": 200 }
+    ]
+   
+  },
   {
     "id": "mtz-892-blue",
     "category": "tractors",

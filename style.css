@@ -874,7 +874,8 @@ body {
     height: 340px;
     display: block;
     object-fit: cover !important;
-    object-position: center 70% !important;
+    object-position: 68% 72% !important;
+    background: #f3f3f3;
 }
 
 .choice-card-copy {
@@ -1201,12 +1202,13 @@ body {
 
     /* Обидва фото однакової висоти на телефоні */
     .choice-card > img,
-    .choice-card > img.kit-full-image {
+   .choice-card > img.kit-full-image {
     width: 100%;
     height: 340px;
     display: block;
     object-fit: cover !important;
-    object-position: center 70% !important;
+    object-position: 68% 72% !important;
+    background: #f3f3f3;
 }
 
     .works-grid {

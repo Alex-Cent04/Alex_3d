@@ -128,22 +128,29 @@
 
     <div class="reviews-layout">
 
-        <div class="reviews-info">
-            <div class="reviews-stars">★★★★★</div>
-            <h2>Відгуки наших клієнтів</h2>
-            <p>
-                Тут з'являтимуться відгуки власників моделей Alex-3D
-                після перевірки та публікації.
-            </p>
+       <div class="reviews-info">
 
-            <div id="published-reviews">
-                <div class="reviews-empty">
-                    <span>💬</span>
-                    <h3>Відгуки незабаром з'являться</h3>
-                    <p>Будьте одним із перших, хто поділиться враженнями.</p>
-                </div>
-            </div>
+    <div class="reviews-summary">
+        <div class="reviews-summary-score">
+            <strong id="reviews-average">—</strong>
+            <span>★★★★★</span>
         </div>
+
+        <div class="reviews-summary-text">
+            <strong>Відгуки наших клієнтів</strong>
+            <span id="reviews-count">Завантажуємо відгуки...</span>
+        </div>
+    </div>
+
+    <div id="published-reviews" class="published-reviews">
+
+        <div class="reviews-loading">
+            Завантажуємо відгуки...
+        </div>
+
+    </div>
+
+</div>
 
         <div class="review-form-card">
 
@@ -589,6 +596,245 @@ function removeReviewPhoto() {
     if (preview) preview.classList.remove("show");
 }
 
+// ========================================
+// ОПУБЛІКОВАНІ ВІДГУКИ
+// ========================================
+
+let publishedReviews = [];
+
+
+async function loadPublishedReviews() {
+
+    const container =
+        document.getElementById("published-reviews");
+
+    if (!container) return;
+
+    try {
+
+        const response =
+            await fetch(GOOGLE_SCRIPT_URL);
+
+        const data =
+            await response.json();
+
+        if (!data.success) {
+            throw new Error(
+                data.error || "Не вдалося отримати відгуки"
+            );
+        }
+
+        publishedReviews =
+            Array.isArray(data.reviews)
+                ? data.reviews
+                : [];
+
+        renderPublishedReviews();
+
+    } catch (error) {
+
+        console.error(
+            "Помилка завантаження відгуків:",
+            error
+        );
+
+        container.innerHTML = `
+            <div class="reviews-empty">
+                <span>💬</span>
+                <h3>Не вдалося завантажити відгуки</h3>
+                <p>Спробуйте оновити сторінку трохи пізніше.</p>
+            </div>
+        `;
+
+        updateReviewsSummary([]);
+    }
+}
+
+
+function renderPublishedReviews() {
+
+    const container =
+        document.getElementById("published-reviews");
+
+    if (!container) return;
+
+    updateReviewsSummary(publishedReviews);
+
+    if (!publishedReviews.length) {
+
+        container.innerHTML = `
+            <div class="reviews-empty">
+                <span>💬</span>
+                <h3>Поки що немає опублікованих відгуків</h3>
+                <p>
+                    Будьте одним із перших,
+                    хто поділиться враженнями.
+                </p>
+            </div>
+        `;
+
+        return;
+    }
+
+    container.innerHTML =
+        publishedReviews
+            .map(createReviewCard)
+            .join("");
+}
+
+
+function createReviewCard(review) {
+
+    const rating =
+        Math.max(
+            1,
+            Math.min(5, Number(review.rating) || 0)
+        );
+
+    const stars =
+        "★".repeat(rating) +
+        "☆".repeat(5 - rating);
+
+    const photoHtml =
+        review.photo &&
+        review.photo.startsWith("http")
+            ? `
+                <div class="review-customer-photo">
+                    <img
+                        src="${escapeReviewHtml(review.photo)}"
+                        alt="Фото моделі від покупця"
+                        loading="lazy"
+                    >
+                </div>
+              `
+            : "";
+
+    const replyHtml =
+        review.reply
+            ? `
+                <div class="alex-review-reply">
+                    <div class="alex-review-reply-head">
+                        <strong>Alex-3D</strong>
+                        <span>Відповідь магазину</span>
+                    </div>
+
+                    <p>
+                        ${escapeReviewHtml(review.reply)}
+                    </p>
+                </div>
+              `
+            : "";
+
+    return `
+        <article class="customer-review-card">
+
+            <div class="customer-review-top">
+
+                <div>
+                    <strong class="review-author">
+                        ${escapeReviewHtml(review.name)}
+                    </strong>
+
+                    <span class="review-date">
+                        ${escapeReviewHtml(review.date)}
+                    </span>
+                </div>
+
+                <div class="customer-review-stars">
+                    ${stars}
+                </div>
+
+            </div>
+
+            <a
+                class="review-product-link"
+                href="product.html?id=${encodeURIComponent(review.productId)}"
+            >
+                🚜 ${escapeReviewHtml(review.productName)}
+            </a>
+
+            <p class="customer-review-text">
+                ${escapeReviewHtml(review.review)}
+            </p>
+
+            ${photoHtml}
+
+            ${replyHtml}
+
+        </article>
+    `;
+}
+
+
+function updateReviewsSummary(reviews) {
+
+    const averageBox =
+        document.getElementById("reviews-average");
+
+    const countBox =
+        document.getElementById("reviews-count");
+
+    if (!averageBox || !countBox) return;
+
+    if (!reviews.length) {
+        averageBox.textContent = "—";
+        countBox.textContent =
+            "Поки що немає відгуків";
+        return;
+    }
+
+    const total =
+        reviews.reduce(
+            (sum, review) =>
+                sum + Number(review.rating || 0),
+            0
+        );
+
+    const average =
+        total / reviews.length;
+
+    averageBox.textContent =
+        average.toFixed(1);
+
+    countBox.textContent =
+        formatReviewCount(reviews.length);
+}
+
+
+function formatReviewCount(count) {
+
+    const lastTwo =
+        count % 100;
+
+    const last =
+        count % 10;
+
+    if (lastTwo >= 11 && lastTwo <= 14) {
+        return count + " відгуків";
+    }
+
+    if (last === 1) {
+        return count + " відгук";
+    }
+
+    if (last >= 2 && last <= 4) {
+        return count + " відгуки";
+    }
+
+    return count + " відгуків";
+}
+
+
+function escapeReviewHtml(value) {
+
+    return String(value ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
+
     
 async function submitReview() {
     const name =
@@ -713,6 +959,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     updateCartCount();
     initReviewForm();
     initReviewPhoto();
+
+    loadPublishedReviews();
 
     trackEvent("page_view", "Головна");
 });

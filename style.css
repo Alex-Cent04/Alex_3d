@@ -2369,3 +2369,19 @@ body {
         padding: 14px 18px;
     }
 }
+/* 4 показники Alex-3D у цифрах */
+.alex-stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 900px) {
+    .alex-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 550px) {
+    .alex-stats-grid {
+        grid-template-columns: 1fr;
+    }
+}

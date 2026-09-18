@@ -1801,3 +1801,27 @@ body {
         gap: 7px;
     }
 }
+
+
+/* ===== ВІДГУКИ НА СТОРІНЦІ КОНКРЕТНОГО ТОВАРУ ===== */
+.product-reviews-section{max-width:1100px;margin:34px auto 0;padding:0 20px 50px;box-sizing:border-box}
+.product-reviews-section *{box-sizing:border-box}
+.product-reviews-section h2{margin:0 0 8px;color:#073a70;font-size:clamp(26px,3vw,36px);line-height:1.15}
+.product-reviews-section>p{margin:0 0 22px;color:#667586;line-height:1.6}
+.product-reviews-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.product-review-card{min-width:0;background:#fff;border:1px solid rgba(0,63,125,.07);border-radius:22px;padding:24px;box-shadow:0 12px 35px rgba(0,63,125,.08)}
+.product-review-top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+.product-review-author{color:#073a70;font-size:18px;font-weight:800}
+.product-review-date{display:block;margin-top:4px;color:#8a96a3;font-size:12px}
+.product-review-stars{flex-shrink:0;color:#f29f05;font-size:20px;letter-spacing:1px;white-space:nowrap}
+.product-review-text{margin:18px 0 0;color:#455565;font-size:15px;line-height:1.65;white-space:pre-line;overflow-wrap:anywhere}
+.product-review-photo{margin-top:18px;width:100%;overflow:hidden;border-radius:16px;background:#f3f5f7}
+.product-review-photo img{display:block;width:100%;height:auto;max-height:430px;object-fit:contain;background:#f3f5f7}
+.product-review-reply{margin-top:20px;padding:16px 18px;border-left:4px solid #f29f05;border-radius:0 13px 13px 0;background:#f7f9fb}
+.product-review-reply strong{display:block;margin-bottom:6px;color:#073a70;font-size:15px}
+.product-review-reply p{margin:0;color:#526171;font-size:14px;line-height:1.55}
+.product-reviews-empty,.product-reviews-loading{grid-column:1/-1;padding:28px;border-radius:18px;background:#fff;color:#748291;text-align:center;border:1px dashed #bfd0df}
+.product-review-btn{display:inline-flex;align-items:center;justify-content:center;margin-top:22px;padding:13px 20px;border:0;border-radius:11px;background:#f29f05;color:#fff;font:inherit;font-weight:800;text-decoration:none;cursor:pointer;transition:.2s ease}
+.product-review-btn:hover{background:#d98804;transform:translateY(-2px)}
+@media(max-width:800px){.product-reviews-section{padding-left:17px;padding-right:17px;margin-top:24px}.product-reviews-list{grid-template-columns:1fr}}
+@media(max-width:520px){.product-review-card{padding:20px;border-radius:18px}.product-review-top{flex-direction:column;gap:7px}.product-review-photo img{max-height:360px}.product-review-btn{width:100%}}

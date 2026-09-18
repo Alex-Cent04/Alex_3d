@@ -190,6 +190,36 @@
                 placeholder="Розкажіть, що вам сподобалося в моделі..."
             ></textarea>
 
+            <div class="review-extra-fields">
+
+    <div class="review-field">
+        <label for="review-pros">
+            Переваги
+            <span class="review-optional">необов'язково</span>
+        </label>
+
+        <textarea
+            id="review-pros"
+            rows="3"
+            placeholder="Наприклад: гарна деталізація, якісний друк, міцна конструкція..."
+        ></textarea>
+    </div>
+
+    <div class="review-field">
+        <label for="review-cons">
+            Недоліки
+            <span class="review-optional">необов'язково</span>
+        </label>
+
+        <textarea
+            id="review-cons"
+            rows="3"
+            placeholder="Наприклад: хотілося б більше варіантів кольору..."
+        ></textarea>
+    </div>
+
+</div>
+
             <div class="review-photo-field">
 
     <label class="review-photo-label">
@@ -899,6 +929,8 @@ async function submitReview() {
     productName: productName,
     review: review,
     photo: reviewPhotoData,
+    pros: document.getElementById("review-pros").value.trim(),
+    cons: document.getElementById("review-cons").value.trim(),
     visitorId: getVisitorId()
 };
 

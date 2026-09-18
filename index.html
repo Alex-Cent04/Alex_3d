@@ -997,5 +997,42 @@ document.addEventListener("DOMContentLoaded", async () => {
     loadPublishedReviews();
 
     trackEvent("page_view", "Головна");
+const params = new URLSearchParams(window.location.search);
+
+if (params.get("openReviews") === "1") {
+
+    // Відкриваємо вкладку "Відгуки"
+    showTab("reviews");
+
+    setTimeout(() => {
+
+        // Беремо ID моделі, з якої прийшов покупець
+        const savedProductId =
+            sessionStorage.getItem("review_product_id");
+
+        const productSelect =
+            document.getElementById("review-product");
+
+        // Автоматично вибираємо цю модель
+        if (savedProductId && productSelect) {
+            productSelect.value = savedProductId;
+        }
+
+        // Прокручуємо до форми відгуку
+        const reviewForm =
+            document.querySelector(".review-form-card");
+
+        if (reviewForm) {
+            reviewForm.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+        }
+
+        sessionStorage.removeItem("review_product_id");
+
+    }, 500);
+}
+    
 });
 </script></body></html>

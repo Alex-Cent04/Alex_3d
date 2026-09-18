@@ -1066,4 +1066,87 @@ if (params.get("openReviews") === "1") {
 }
     
 });
+    /* =========================================
+   ALEX-3D У ЦИФРАХ
+   ========================================= */
+
+async function loadAlexStats() {
+
+    /* 1. Кількість моделей у каталозі */
+    try {
+        const productsResponse = await fetch("products.json");
+        const products = await productsResponse.json();
+
+        const productsElement =
+            document.getElementById("stat-products");
+
+        if (productsElement) {
+            productsElement.textContent = products.length;
+        }
+
+    } catch (error) {
+        console.error("Помилка статистики каталогу:", error);
+    }
+
+
+    /* 2. Відгуки та середня оцінка */
+    try {
+
+        const reviewsResponse =
+            await fetch(GOOGLE_SCRIPT_URL);
+
+        const data = await reviewsResponse.json();
+
+        const reviews =
+            Array.isArray(data.reviews)
+                ? data.reviews
+                : [];
+
+        /* Кількість опублікованих відгуків */
+        const reviewsElement =
+            document.getElementById("stat-reviews");
+
+        if (reviewsElement) {
+            reviewsElement.textContent = reviews.length;
+        }
+
+
+        /* Середня оцінка */
+        const ratingElement =
+            document.getElementById("stat-rating");
+
+        if (ratingElement) {
+
+            if (reviews.length > 0) {
+
+                const ratingSum = reviews.reduce(
+                    (sum, review) =>
+                        sum + Number(review.rating || 0),
+                    0
+                );
+
+                const averageRating =
+                    ratingSum / reviews.length;
+
+                ratingElement.textContent =
+                    averageRating.toFixed(1);
+
+            } else {
+
+                ratingElement.textContent = "—";
+
+            }
+        }
+
+    } catch (error) {
+        console.error("Помилка статистики відгуків:", error);
+    }
+}
+
+
+/* Запускаємо після завантаження сторінки */
+document.addEventListener(
+    "DOMContentLoaded",
+    loadAlexStats
+);
 </script></body></html>

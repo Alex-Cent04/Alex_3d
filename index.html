@@ -38,7 +38,11 @@
             <div class="alex-stat-number" id="stat-reviews">—</div>
             <div class="alex-stat-label">відгуків покупців</div>
         </div>
-
+        <div class="alex-stat-card">
+            <div class="alex-stat-icon">🏆</div>
+            <div class="alex-stat-number" id="stat-completed">—</div>
+            <div class="alex-stat-label">виготовлено моделей</div>
+        </div>
     </div>
 
 </section>
@@ -1097,6 +1101,15 @@ async function loadAlexStats() {
 
         const data = await reviewsResponse.json();
 
+        /* Кількість виготовлених моделей */
+const completedElement =
+    document.getElementById("stat-completed");
+
+if (completedElement) {
+    completedElement.textContent =
+        Number(data.completedModels || 0);
+}
+        
         const reviews =
             Array.isArray(data.reviews)
                 ? data.reviews

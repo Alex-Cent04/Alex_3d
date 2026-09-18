@@ -1825,3 +1825,51 @@ body {
 .product-review-btn:hover{background:#d98804;transform:translateY(-2px)}
 @media(max-width:800px){.product-reviews-section{padding-left:17px;padding-right:17px;margin-top:24px}.product-reviews-list{grid-template-columns:1fr}}
 @media(max-width:520px){.product-review-card{padding:20px;border-radius:18px}.product-review-top{flex-direction:column;gap:7px}.product-review-photo img{max-height:360px}.product-review-btn{width:100%}}
+
+.review-extra-fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.review-extra-fields .review-field {
+    margin: 0;
+}
+
+.review-extra-fields textarea {
+    width: 100%;
+    min-height: 105px;
+    padding: 15px 17px;
+
+    border: 1px solid #c9d7e4;
+    border-radius: 14px;
+
+    font: inherit;
+    font-size: 14px;
+    line-height: 1.5;
+
+    resize: vertical;
+    outline: none;
+
+    transition: .2s ease;
+}
+
+.review-extra-fields textarea:focus {
+    border-color: #00509e;
+    box-shadow: 0 0 0 3px rgba(0, 80, 158, .08);
+}
+
+.review-optional {
+    float: right;
+
+    color: #8a96a3;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+@media (max-width: 650px) {
+    .review-extra-fields {
+        grid-template-columns: 1fr;
+    }
+}

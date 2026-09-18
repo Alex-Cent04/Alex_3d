@@ -424,10 +424,14 @@ function escapeProductReviewHtml(value) {
 }
 
 function leaveReviewForProduct() {
-  if (!currentProduct) return;
+    if (!currentProduct) return;
 
-  sessionStorage.setItem("review_product_id", currentProduct.id);
-  window.location.href = "index.html#reviews";
+    sessionStorage.setItem(
+        "review_product_id",
+        currentProduct.id
+    );
+
+    window.location.href = "index.html?openReviews=1";
 }
 
 function renderThumbs(images) {

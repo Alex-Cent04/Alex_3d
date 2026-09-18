@@ -1873,3 +1873,31 @@ body {
         grid-template-columns: 1fr;
     }
 }
+/* Відгук / переваги / недоліки */
+
+.product-review-content {
+    margin-top: 24px;
+}
+
+.product-review-content .product-review-text {
+    margin: 0 0 22px;
+    color: #263746;
+    font-size: 15px;
+    line-height: 1.65;
+}
+
+.product-review-detail {
+    margin: 8px 0 0;
+    color: #263746;
+    font-size: 15px;
+    line-height: 1.55;
+}
+
+.product-review-detail strong {
+    color: #073a70;
+    font-weight: 800;
+}
+
+.product-review-content + .product-review-photo {
+    margin-top: 22px;
+}

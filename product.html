@@ -375,12 +375,26 @@ function createProductReviewCard(review) {
         <div class="product-review-stars">${stars}</div>
       </div>
 
-      <p class="product-review-text">
-        ${escapeProductReviewHtml(review.review)}
-      </p>
+     <p class="product-review-text">
+  ${escapeProductReviewHtml(review.review)}
+</p>
 
-      ${photo}
-      ${reply}
+${review.pros ? `
+  <div class="product-review-pros">
+    <strong>✓ Переваги</strong>
+    <p>${escapeProductReviewHtml(review.pros)}</p>
+  </div>
+` : ""}
+
+${review.cons ? `
+  <div class="product-review-cons">
+    <strong>− Недоліки</strong>
+    <p>${escapeProductReviewHtml(review.cons)}</p>
+  </div>
+` : ""}
+
+${photo}
+${reply}
     </article>
   `;
 }

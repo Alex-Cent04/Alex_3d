@@ -12,7 +12,7 @@
     "description": "Модель трактора  Т-40 з кабіною від ЮМЗ з PETG пластику. Доступна у зібраному та розібраному варіанті.",
     "scales": [
       
-      { "scale": "1:43", "assembled": 1200, "unassembled": 700 }
+      { "scale": "1:43", "assembled": 800, "unassembled": 600 }
     ],
     "colorVariants": [
       

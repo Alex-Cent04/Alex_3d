@@ -44,7 +44,7 @@
        { "name": "Зелений", "image": "images/JD8530.jpg", "price": 0 },
       
       { "name": "Індивідуальні кольори", "image": "images/JD8530.jpg", "price": 200 }
-    ]
+    ],
     "options": [
       { "id": "wheels", "title": "Задня спарка коліс", "type": "checkbox", "price": 150 },
        { "id": "wheels", "title": "Передня спарка коліс", "type": "checkbox", "price": 100 },

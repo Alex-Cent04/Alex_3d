@@ -45,7 +45,7 @@
       { "id": "wheels_front", "title": "Передня спарка коліс", "type": "checkbox", "price": 100 },
       { "id": "wheels_full", "title": "Повністю на спарці коліс", "type": "checkbox", "price": 200 }
     ]
-  }
+  },
    {
     "id": "Big_t150",
     "category": "tractors",

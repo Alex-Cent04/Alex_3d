@@ -1,4 +1,31 @@
 [
+   
+   {
+    "id": "Big_t150",
+    "category": "tractors",
+    "name": "Модель трактора Т-150",
+    "image": "images/big_t150.png",
+    "images": [
+      
+      "images/step-finished.jpg"
+    ],
+    "material": "PETG",
+    "description": "Модель трактора Т-150 з PETG пластику. Доступна у зібраному та розібраному варіанті.",
+    "scales": [
+      
+      { "scale": "1:16", "assembled": 4500, "unassembled": 3500 }
+    ],
+    "colorVariants": [
+      
+      { "name": "Червоний", "image": "images/big_t150_red.jpg", "price": 0 },
+       { "name": "Синій", "image": "images/big_t150_blue.jpg", "price": 0 },
+       { "name": "Новий", "image": "images/big_t150.png", "price": 0 },
+       { "name": "Зелений", "image": "images/big_t150_green.jpg", "price": 0 },
+      
+      { "name": "Індивідуальні кольори", "image": "images/big_t150.png", "price": 200 }
+    ]
+   
+  },
    {
     "id": "dt-75",
     "category": "tractors",

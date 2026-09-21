@@ -1,5 +1,56 @@
 [
+    {
+    "id": "t40umz",
+    "category": "tractors",
+    "name": "Модель трактора Т-40 з кабіною від ЮМЗ",
+    "image": "images/t40_UMZ.jpg",
+    "images": [
+      
+      "images/t40_UMZ.jpg"
+    ],
+    "material": "PETG",
+    "description": "Модель трактора  Т-40 з кабіною від ЮМЗ з PETG пластику. Доступна у зібраному та розібраному варіанті.",
+    "scales": [
+      
+      { "scale": "1:43", "assembled": 1200, "unassembled": 700 }
+    ],
+    "colorVariants": [
+      
+     
+       { "name": "Зелений", "image": "images/t40_UMZ.jpg", "price": 0 },
+      
+      { "name": "Індивідуальні кольори", "image": "images/t40_UMZ.jpg", "price": 200 }
+    ]
    
+  },
+    {
+    "id": "JD8530",
+    "category": "tractors",
+    "name": "Модель трактора John Deere 8530",
+    "image": "images/JD8530.jpg",
+    "images": [
+      
+      "images/JD8530.jpg"
+    ],
+    "material": "PETG",
+    "description": "Модель трактора John Deere 8530 з PETG пластику. Доступна у зібраному та розібраному варіанті.",
+    "scales": [
+      
+      { "scale": "1:43", "assembled": 1200, "unassembled": 700 }
+    ],
+    "colorVariants": [
+      
+     
+       { "name": "Зелений", "image": "images/JD8530.jpg", "price": 0 },
+      
+      { "name": "Індивідуальні кольори", "image": "images/JD8530.jpg", "price": 200 }
+    ]
+    "options": [
+      { "id": "wheels", "title": "Задня спарка коліс", "type": "checkbox", "price": 150 },
+       { "id": "wheels", "title": "Передня спарка коліс", "type": "checkbox", "price": 100 },
+       { "id": "wheels", "title": "Повністю на спарці коліс", "type": "checkbox", "price": 200 },
+    ]
+  },
    {
     "id": "Big_t150",
     "category": "tractors",
@@ -393,6 +444,22 @@
       
       { "id": "glas", "title": "Скло", "type": "checkbox", "price": 100 }
       
+      
+    ]
+  },
+    {
+    "id": "mini_niva",
+    "category": "combines",
+    "name": "Іграшкова модель комбайна Нива-СК5",
+    "image": "images/mini_niva.png",
+    "images": [
+      "images/mini_niva.png"
+     
+    ],
+    "material": "PETG",
+    "description": "Іграшкова модель комбайна Нива-СК-5 з PETG пластику. Доступна у зібраному та розібраному варіанті.",
+    "scales": [
+      { "scale": "1:58", "assembled": 400, "unassembled": 300 }
       
     ]
   },

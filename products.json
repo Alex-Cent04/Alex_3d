@@ -29,28 +29,23 @@
     "name": "Модель трактора John Deere 8530",
     "image": "images/JD8530.jpg",
     "images": [
-      
       "images/JD8530.jpg"
     ],
     "material": "PETG",
     "description": "Модель трактора John Deere 8530 з PETG пластику. Доступна у зібраному та розібраному варіанті.",
     "scales": [
-      
       { "scale": "1:43", "assembled": 1200, "unassembled": 700 }
     ],
     "colorVariants": [
-      
-     
-       { "name": "Зелений", "image": "images/JD8530.jpg", "price": 0 },
-      
+      { "name": "Зелений", "image": "images/JD8530.jpg", "price": 0 },
       { "name": "Індивідуальні кольори", "image": "images/JD8530.jpg", "price": 200 }
     ],
     "options": [
-      { "id": "wheels", "title": "Задня спарка коліс", "type": "checkbox", "price": 150 },
-       { "id": "wheels", "title": "Передня спарка коліс", "type": "checkbox", "price": 100 },
-       { "id": "wheels", "title": "Повністю на спарці коліс", "type": "checkbox", "price": 200 },
+      { "id": "wheels_rear", "title": "Задня спарка коліс", "type": "checkbox", "price": 150 },
+      { "id": "wheels_front", "title": "Передня спарка коліс", "type": "checkbox", "price": 100 },
+      { "id": "wheels_full", "title": "Повністю на спарці коліс", "type": "checkbox", "price": 200 }
     ]
-  },
+  }
    {
     "id": "Big_t150",
     "category": "tractors",
